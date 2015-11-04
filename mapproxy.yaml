@@ -65,7 +65,7 @@ sources:
   lki_kot_wms:
     type: wms
     req:
-      url: vps06.datalabamsterdam.nl/cgi-bin/mapserv?map=/srv/mapserver/lki.map
+      url: http://vps06.datalabamsterdam.nl/cgi-bin/mapserv?map=/srv/mapserver/lki.map
       layers: kadastraal_object
 
 grids:

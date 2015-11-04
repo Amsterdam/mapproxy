@@ -15,6 +15,14 @@ seeds:
       from: 12
       to: 14
 
+  lki_kot_detail:
+    caches: [lki_kot_rd_cache]
+    grids: [nl_grid]
+    coverages: ['ams_detail']
+    levels:
+      from: 13
+      to: 14
+
 #  opdekaart_3857:
 #    caches: [topo_3857_cache]
 #    grids: [GLOBAL_WEBMERCATOR]
