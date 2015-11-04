@@ -29,6 +29,9 @@ layers:
 #  - name: topo_3857
 #    title: Topo 3857
 #    sources: [topo_3857_cache]
+  name: lki_kot_RD
+  title: LKI Kadastrale Objecten RD
+  sources: [lki_kot_rd_cache]
 
 caches:
   topo_rd_cache:
@@ -44,12 +47,26 @@ caches:
 #      type: file
 #      directory_layout: tms
 
+  lki_kot_rd_cache:
+    grids: [nl_grid]
+    sources: [lki_kot_wms]
+    max_scale: 2500
+    min_scale: 100
+    cache:
+      type: file
+      directory_layout: tms
+
 sources:
   topo_wms:
     type: wms
     req:
       url: http://www.diva.amsterdam.nl/cgi-bin/topografie
       layers: topovlakken,topolijnen,topoteksten
+  lki_kot_wms:
+    type: wms
+    req:
+      url: vps06.datalabamsterdam.nl/cgi-bin/mapserv?map=/srv/mapserver/lki.map
+      layers: kadastraal_object
 
 grids:
   nl_grid:
