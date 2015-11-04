@@ -29,9 +29,9 @@ layers:
 #  - name: topo_3857
 #    title: Topo 3857
 #    sources: [topo_3857_cache]
-  name: lki_kot_RD
-  title: LKI Kadastrale Objecten RD
-  sources: [lki_kot_rd_cache]
+  - name: lki_kot_RD
+    title: LKI Kadastrale Objecten RD
+    sources: [lki_kot_rd_cache]
 
 caches:
   topo_rd_cache:

@@ -39,13 +39,13 @@ coverages:
     bbox: [4.72876,52.2782,5.07916,52.4311]
     srs: 'EPSG:4326'
 
-cleanups:
-  remove_complete_levels_rd:
-    caches: [topo_rd_cache]
-    remove_all: true
-    levels:
-      from: 7
-      to: 16
+#cleanups:
+#  remove_complete_levels_rd:
+#    caches: [topo_rd_cache]
+#    remove_all: true
+#    levels:
+#      from: 7
+#      to: 16
 
 #  remove_complete_levels_3857:
 #    caches: [topo_3857_cache]
