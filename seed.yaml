@@ -5,6 +5,14 @@ seeds:
     coverages: ['ams']
     levels:
       from: 7
+      to: 11
+
+  opdekaart_rd_detail:
+    caches: [topo_rd_cache]
+    grids: [nl_grid]
+    coverages: ['ams_detail']
+    levels:
+      from: 12
       to: 14
 
 #  opdekaart_3857:
@@ -18,6 +26,9 @@ seeds:
 coverages:
   ams:
     bbox: [4.59803,52.2465,5.16755,52.4516]
+    srs: 'EPSG:4326'
+  ams_detail:
+    bbox: [4.72876,52.2782,5.07916,52.4311]
     srs: 'EPSG:4326'
 
 cleanups:
