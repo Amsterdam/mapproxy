@@ -78,8 +78,8 @@ grids:
 
 globals:
   cache:
-    base_dir: './cache_data'
-    lock_dir: './cache_data/locks'
+    base_dir: '/tiles/cache_data'
+    lock_dir: '/tiles/cache_data/locks'
     meta_size: [4, 4]
     meta_buffer: 128
 
