@@ -26,9 +26,9 @@ layers:
   - name: topo_RD
     title: Topo RD
     sources: [topo_rd_cache]
-#  - name: topo_3857
-#    title: Topo 3857
-#    sources: [topo_3857_cache]
+  - name: lufo2015_RD
+    title: Luchtfoto 2015 RD
+    sources: [lufo2015_rd_cache]
   - name: lki_kot_RD
     title: LKI Kadastrale Objecten RD
     sources: [lki_kot_rd_cache]
@@ -40,17 +40,18 @@ caches:
     cache:
       type: file
       directory_layout: tms
-#  topo_3857_cache:
-#    grids: [GLOBAL_WEBMERCATOR]
-#    sources: [topo_wms]
-#    cache:
-#      type: file
-#      directory_layout: tms
+      
+  lufo2015_rd_cache:
+    grids: [nl_grid]
+    sources: [lufo2015_wms]
+    cache:
+      type: file
+      directory_layout: tms
 
   lki_kot_rd_cache:
     grids: [nl_grid]
     sources: [lki_kot_wms]
-    max_scale: 2500
+    max_scale: 5000
     min_scale: 100
     cache:
       type: file
@@ -62,6 +63,11 @@ sources:
     req:
       url: http://www.diva.amsterdam.nl/cgi-bin/topografie
       layers: topovlakken,topolijnen,topoteksten
+  lufo2015_wms:
+    type: wms
+    req:
+      url: http://vps06.datalabamsterdam.nl/cgi-bin/mapserv?map=/srv/mapserver/lufo.map
+      layers: lufo2015
   lki_kot_wms:
     type: wms
     req:
