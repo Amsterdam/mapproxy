@@ -44,6 +44,7 @@ caches:
   lufo2015_rd_cache:
     grids: [nl_grid]
     sources: [lufo2015_wms]
+    format: image/jpeg
     cache:
       type: file
       directory_layout: tms
