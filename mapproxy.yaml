@@ -67,12 +67,12 @@ sources:
   lufo2015_wms:
     type: wms
     req:
-      url: http://vps06.datalabamsterdam.nl/cgi-bin/mapserv?map=/srv/mapserver/lufo.map
+      url: http://atlas_map.service.consul/cgi-bin/mapserv?map=/srv/mapserver/lufo.map
       layers: lufo2015
   lki_kot_wms:
     type: wms
     req:
-      url: http://vps06.datalabamsterdam.nl/cgi-bin/mapserv?map=/srv/mapserver/lki.map
+      url: http://atlas_map.service.consul/cgi-bin/mapserv?map=/srv/mapserver/lki.map
       layers: kadastraal_object
 
 grids:
