@@ -85,8 +85,8 @@ grids:
 
 globals:
   cache:
-    base_dir: '/tiles/cache_data'
-    lock_dir: '/tiles/cache_data/locks'
+    base_dir: '/srv/mapproxy/tiles/cache_data'
+    lock_dir: '/srv/mapproxy/tiles/cache_data/locks'
     meta_size: [4, 4]
     meta_buffer: 128
 
