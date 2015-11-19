@@ -4,7 +4,7 @@ seeds:
     grids: [nl_grid]
     coverages: ['ams']
     levels:
-      from: 7
+      from: 5
       to: 11
 
   topo_rd_detail:
@@ -20,7 +20,7 @@ seeds:
     grids: [nl_grid]
     coverages: ['ams']
     levels:
-      from: 7
+      from: 5
       to: 11
 
   lufo2015_rd_detail:
