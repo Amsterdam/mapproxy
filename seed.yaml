@@ -20,8 +20,8 @@ seeds:
     grids: [nl_grid]
     coverages: ['ams_detail']
     levels:
-      from: 15
-      to: 15
+      from: 16
+      to: 16
 
   lufo2015_rd:
     caches: [lufo2015_rd_cache]
