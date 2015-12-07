@@ -53,7 +53,15 @@ seeds:
     coverages: ['ams_detail']
     levels:
       from: 13
-      to: 14
+      to: 15
+
+  lki_kot_detail_plus:
+    caches: [lki_kot_rd_cache]
+    grids: [nl_grid]
+    coverages: ['ams_detail']
+    levels:
+      from: 16
+      to: 16
 
 coverages:
   ams:
