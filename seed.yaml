@@ -6,6 +6,8 @@ seeds:
     levels:
       from: 5
       to: 11
+    refresh_before:
+      weeks: 1
 
   topo_rd_detail:
     caches: [topo_rd_cache]
@@ -14,6 +16,8 @@ seeds:
     levels:
       from: 12
       to: 16
+    refresh_before:
+      weeks: 1
       
   lufo2015_rd:
     caches: [lufo2015_rd_cache]
