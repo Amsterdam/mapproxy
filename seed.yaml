@@ -13,16 +13,8 @@ seeds:
     coverages: ['ams_detail']
     levels:
       from: 12
-      to: 15
-      
-  topo_rd_detail_plus:
-    caches: [topo_rd_cache]
-    grids: [nl_grid]
-    coverages: ['ams_detail']
-    levels:
-      from: 16
       to: 16
-
+      
   lufo2015_rd:
     caches: [lufo2015_rd_cache]
     grids: [nl_grid]
@@ -37,30 +29,6 @@ seeds:
     coverages: ['ams_detail']
     levels:
       from: 12
-      to: 15
-
-  lufo2015_rd_detail_plus:
-    caches: [lufo2015_rd_cache]
-    grids: [nl_grid]
-    coverages: ['ams_detail']
-    levels:
-      from: 16
-      to: 16
-
-  lki_kot_detail:
-    caches: [lki_kot_rd_cache]
-    grids: [nl_grid]
-    coverages: ['ams_detail']
-    levels:
-      from: 13
-      to: 15
-
-  lki_kot_detail_plus:
-    caches: [lki_kot_rd_cache]
-    grids: [nl_grid]
-    coverages: ['ams_detail']
-    levels:
-      from: 16
       to: 16
 
 coverages:
