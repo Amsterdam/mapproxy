@@ -29,9 +29,12 @@ layers:
   - name: lufo2015_RD
     title: Luchtfoto 2015 RD
     sources: [lufo2015_rd_cache]
-  - name: lki_kot_RD
-    title: LKI Kadastrale Objecten RD
-    sources: [lki_kot_rd_cache]
+  - name: lufo2014_RD
+    title: Luchtfoto 2014 RD
+    sources: [lufo2014_rd_cache]
+  - name: lufo2013_RD
+    title: Luchtfoto 2013 RD
+    sources: [lufo2013_rd_cache]
 
 caches:
   topo_rd_cache:
@@ -65,15 +68,6 @@ caches:
       type: file
       directory_layout: tms
 
-  lki_kot_rd_cache:
-    grids: [nl_grid]
-    sources: [lki_kot_wms]
-    max_scale: 5000
-    min_scale: 100
-    cache:
-      type: file
-      directory_layout: tms
-
 sources:
   topo_wms:
     type: wms
@@ -95,11 +89,6 @@ sources:
     req:
       url: http://atlas_map.service.consul/cgi-bin/mapserv?map=/srv/mapserver/lufo.map
       layers: lufo2013
-  lki_kot_wms:
-    type: wms
-    req:
-      url: http://atlas_map.service.consul/cgi-bin/mapserv?map=/srv/mapserver/lki.map
-      layers: kadastraal_object
 
 grids:
   nl_grid:
