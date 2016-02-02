@@ -35,6 +35,12 @@ layers:
   - name: lufo2013_RD
     title: Luchtfoto 2013 RD
     sources: [lufo2013_rd_cache]
+  - name: lufo2012_RD
+    title: Luchtfoto 2012 RD
+    sources: [lufo2012_rd_cache]
+  - name: lufo2011_RD
+    title: Luchtfoto 2011 RD
+    sources: [lufo2011_rd_cache]
 
 caches:
   topo_rd_cache:
@@ -68,6 +74,22 @@ caches:
       type: file
       directory_layout: tms
 
+  lufo2012_rd_cache:
+    grids: [nl_grid]
+    sources: [lufo2012_wms]
+    format: image/jpeg
+    cache:
+      type: file
+      directory_layout: tms
+
+  lufo2011_rd_cache:
+    grids: [nl_grid]
+    sources: [lufo2011_wms]
+    format: image/jpeg
+    cache:
+      type: file
+      directory_layout: tms
+
 sources:
   topo_wms:
     type: wms
@@ -89,6 +111,16 @@ sources:
     req:
       url: http://atlas_map.service.consul/cgi-bin/mapserv?map=/srv/mapserver/lufo.map
       layers: lufo2013
+  lufo2012_wms:
+    type: wms
+    req:
+      url: http://atlas_map.service.consul/cgi-bin/mapserv?map=/srv/mapserver/lufo.map
+      layers: lufo2012
+  lufo2011_wms:
+    type: wms
+    req:
+      url: http://atlas_map.service.consul/cgi-bin/mapserv?map=/srv/mapserver/lufo.map
+      layers: lufo2011
 
 grids:
   nl_grid:
@@ -104,7 +136,6 @@ globals:
     lock_dir: '/srv/mapproxy/tiles/cache_data/locks'
     meta_size: [4, 4]
     meta_buffer: 128
-
 
   image:
       resampling_method: bicubic
