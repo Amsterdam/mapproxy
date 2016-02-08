@@ -6,6 +6,8 @@ seeds:
     levels:
       from: 5
       to: 11
+    refresh_before:
+      weeks: 1
 
   topo_rd_detail:
     caches: [topo_rd_cache]
@@ -13,16 +15,10 @@ seeds:
     coverages: ['ams_detail']
     levels:
       from: 12
-      to: 15
-      
-  topo_rd_detail_plus:
-    caches: [topo_rd_cache]
-    grids: [nl_grid]
-    coverages: ['ams_detail']
-    levels:
-      from: 16
       to: 16
-
+    refresh_before:
+      weeks: 1
+      
   lufo2015_rd:
     caches: [lufo2015_rd_cache]
     grids: [nl_grid]
@@ -37,30 +33,70 @@ seeds:
     coverages: ['ams_detail']
     levels:
       from: 12
-      to: 15
-
-  lufo2015_rd_detail_plus:
-    caches: [lufo2015_rd_cache]
-    grids: [nl_grid]
-    coverages: ['ams_detail']
-    levels:
-      from: 16
       to: 16
 
-  lki_kot_detail:
-    caches: [lki_kot_rd_cache]
+  lufo2014_rd:
+    caches: [lufo2014_rd_cache]
     grids: [nl_grid]
-    coverages: ['ams_detail']
+    coverages: ['ams']
     levels:
-      from: 13
-      to: 15
+      from: 5
+      to: 11
 
-  lki_kot_detail_plus:
-    caches: [lki_kot_rd_cache]
+  lufo2014_rd_detail:
+    caches: [lufo2014_rd_cache]
     grids: [nl_grid]
     coverages: ['ams_detail']
     levels:
-      from: 16
+      from: 12
+      to: 16
+
+  lufo2013_rd:
+    caches: [lufo2013_rd_cache]
+    grids: [nl_grid]
+    coverages: ['ams']
+    levels:
+      from: 5
+      to: 11
+
+  lufo2013_rd_detail:
+    caches: [lufo2013_rd_cache]
+    grids: [nl_grid]
+    coverages: ['ams_detail']
+    levels:
+      from: 12
+      to: 16
+
+  lufo2012_rd:
+    caches: [lufo2012_rd_cache]
+    grids: [nl_grid]
+    coverages: ['ams']
+    levels:
+      from: 5
+      to: 11
+
+  lufo2012_rd_detail:
+    caches: [lufo2012_rd_cache]
+    grids: [nl_grid]
+    coverages: ['ams_detail']
+    levels:
+      from: 12
+      to: 16
+
+  lufo2011_rd:
+    caches: [lufo2011_rd_cache]
+    grids: [nl_grid]
+    coverages: ['ams']
+    levels:
+      from: 5
+      to: 11
+
+  lufo2011_rd_detail:
+    caches: [lufo2011_rd_cache]
+    grids: [nl_grid]
+    coverages: ['ams_detail']
+    levels:
+      from: 12
       to: 16
 
 coverages:
