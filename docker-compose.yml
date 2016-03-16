@@ -1,0 +1,5 @@
+topo:
+  build: .
+  command: seed-topo.sh
+  volumes:
+    - "/mnt/tiles-acc/:/mnt/tiles/"

@@ -1,20 +1,23 @@
-# Mapserver for Docker
-FROM ubuntu:14.04.3
-MAINTAINER datapunt@amsterdam.nl
+FROM python:2.7
+MAINTAINER datapunt.ois@amsterdam.nl
 
-# Update and upgrade system
-RUN apt-get -qq update --fix-missing && apt-get -qq --yes upgrade
-# Install Python and uwsgi
-RUN apt-get install -y python-imaging python-yaml libproj0 libgeos-dev python-lxml python-shapely python-pip pwgen uwsgi uwsgi-plugin-python git
-RUN pip install MapProxy==1.8.0
+RUN apt-get update \
+	&& apt-get install -y \
+        python-imaging \
+        python-yaml \
+        libproj0 \
+        libgeos-dev \
+        python-lxml \
+        python-shapely \
+        python-pip \
+	&& apt-get clean \
+	&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
+    && pip install MapProxy==1.8.0 \
+    && mkdir /app
 
-# Mapproxy content and config
-RUN mkdir -p /app
-COPY docker_files/* /app/
 COPY *.yaml /app/
-WORKDIR /app/
-RUN mapproxy-util create -t wsgi-app --force -f mapproxy.yaml config.py
+COPY *.sh /usr/bin/
+RUN chmod 755 /usr/bin/*.sh
 
-EXPOSE 8080
+CMD echo 'Specify a seed command: seed-topo.sh, seed-lufo-<year>.sh'
 
-CMD /app/docker-entrypoint.sh
