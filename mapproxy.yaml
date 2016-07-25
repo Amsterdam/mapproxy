@@ -104,26 +104,26 @@ sources:
   diva_wms:
     type: wms
     req:
+#      url: http://www.diva.amsterdam.nl/cgi-bin/topografie?SLD=https://map-acc.datapunt.amsterdam.nl/topografie_sld.xml
       url: http://www.diva.amsterdam.nl/cgi-bin/topografie
       layers: topovlakken,topolijnen,topoteksten
-    max_res: 0.0525
-    min_res: 0.42
+    min_res: 0.84
   datapunt_wms_kbk10:
     type: wms
     req:
       url: http://map-acc.datapunt.amsterdam.nl/maps/kbk10
 #      url: http://mapserver.service.acc1.consul:8082/maps/kbk10
       layers: vlakken,lijnen,teksten
+    min_res: 3.36
     max_res: 0.84
-    min_res: 1.68
   datapunt_wms_kbk50:
     type: wms
     req:
       url: http://map-acc.datapunt.amsterdam.nl/maps/kbk50
 #      url: http://mapserver.service.acc1.consul:8082/maps/kbk50
       layers: vlakken,lijnen,teksten
-    max_res: 3.36
     min_res: 3440.64
+    max_res: 3.36
 #  datapunt_wms_bgt:
 #    type: wms
 #    req:
@@ -161,6 +161,7 @@ grids:
     srs: EPSG:28992
     tile_size: [256,256]
     res: [3440.64,1720.32,860.16,430.08,215.04,107.52,53.76,26.88,13.44,6.72,3.36,1.68,0.84,0.42,0.21,0.105,0.0525]
+    #     0       1       2      3      4      5      6     7     8     9    10   11   12   13   14   15    16
     bbox: [-285401.920,22598.080,595401.9199999999,903401.9199999999]
 
 globals:

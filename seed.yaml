@@ -42,90 +42,54 @@ seeds:
   lufo2015_rd:
     caches: [lufo2015_rd_cache]
     grids: [nl_grid]
-    coverages: ['kbk']
+    coverages: ['lufo']
     levels:
       from: 5
-      to: 11
-
-  lufo2015_rd_detail:
-    caches: [lufo2015_rd_cache]
-    grids: [nl_grid]
-    coverages: ['bgt']
-    levels:
-      from: 12
       to: 16
 
   lufo2014_rd:
     caches: [lufo2014_rd_cache]
     grids: [nl_grid]
-    coverages: ['kbk']
+    coverages: ['lufo']
     levels:
       from: 5
-      to: 11
-
-  lufo2014_rd_detail:
-    caches: [lufo2014_rd_cache]
-    grids: [nl_grid]
-    coverages: ['bgt']
-    levels:
-      from: 12
       to: 16
 
   lufo2013_rd:
     caches: [lufo2013_rd_cache]
     grids: [nl_grid]
-    coverages: ['kbk']
+    coverages: ['lufo']
     levels:
       from: 5
-      to: 11
-
-  lufo2013_rd_detail:
-    caches: [lufo2013_rd_cache]
-    grids: [nl_grid]
-    coverages: ['bgt']
-    levels:
-      from: 12
       to: 16
 
   lufo2012_rd:
     caches: [lufo2012_rd_cache]
     grids: [nl_grid]
-    coverages: ['kbk']
+    coverages: ['lufo']
     levels:
       from: 5
-      to: 11
-
-  lufo2012_rd_detail:
-    caches: [lufo2012_rd_cache]
-    grids: [nl_grid]
-    coverages: ['bgt']
-    levels:
-      from: 12
       to: 16
 
   lufo2011_rd:
     caches: [lufo2011_rd_cache]
     grids: [nl_grid]
-    coverages: ['kbk']
+    coverages: ['lufo']
     levels:
       from: 5
-      to: 11
-
-  lufo2011_rd_detail:
-    caches: [lufo2011_rd_cache]
-    grids: [nl_grid]
-    coverages: ['bgt']
-    levels:
-      from: 12
       to: 16
+
 
 coverages:
   kbk:
-    bbox: [94100,170000,464250,514160]
+    bbox: [94100,464250,170000,514160]
     srs: 'EPSG:28992'
   bgt:
     bbox: [104000,474000,136000,502100]
     srs: 'EPSG:28992'
+  lufo:
+    bbox: [4.59803,52.2465,5.16755,52.4516]
+    srs: 'EPSG:4326'
 
 #cleanups:
 #  remove_complete_levels_rd:
