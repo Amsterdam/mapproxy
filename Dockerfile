@@ -19,5 +19,5 @@ COPY *.yaml /app/
 COPY *.sh /usr/bin/
 RUN chmod 755 /usr/bin/*.sh
 
-CMD echo 'Specify a seed command: seed-topo.sh, seed-lufo-<year>.sh'
+CMD echo 'Specify a seed command: seed-topo-<rd|google>.sh, seed-lufo-<year>.sh'
 

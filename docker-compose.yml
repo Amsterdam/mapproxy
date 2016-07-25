@@ -1,5 +1,12 @@
-topo:
+topo_rd:
   build: .
-  command: seed-topo.sh
+  command: seed-topo-rd.sh
   volumes:
     - "/mnt/tiles:/mnt/tiles"
+
+topo_google:
+  build: .
+  command: seed-topo-google.sh
+  volumes:
+    - "/mnt/tiles:/mnt/tiles"
+
