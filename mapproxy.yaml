@@ -23,7 +23,7 @@ services:
       fees: 'None'
 
 layers:
-  - name: topo_RD
+  - name: topo_rd
     title: Topo RD
     sources: [topo_rd_cache]
   - name: topo_google
@@ -47,21 +47,21 @@ layers:
 
 caches:
   topo_rd_cache:
-    grids: [rd_grid]
+    grids: [nl_grid]
     sources: [diva_wms, datapunt_wms_kbk10, datapunt_wms_kbk50]
     cache:
       type: file
       directory_layout: tms
       
   topo_google_cache:
-    grids: [google_grid]
+    grids: [GLOBAL_MERCATOR]
     sources: [diva_wms, datapunt_wms_kbk10, datapunt_wms_kbk50]
     cache:
       type: file
       directory_layout: tms
       
   lufo2015_rd_cache:
-    grids: [rd_grid_kbk50,rd_grid_kbk10,rd_grid_bgt]
+    grids: [nl_grid]
     sources: [lufo2015_wms]
     format: image/jpeg
     cache:
@@ -69,7 +69,7 @@ caches:
       directory_layout: tms
 
   lufo2014_rd_cache:
-    grids: [rd_grid_kbk50,rd_grid_kbk10,rd_grid_bgt]
+    grids: [nl_grid]
     sources: [lufo2014_wms]
     format: image/jpeg
     cache:
@@ -77,7 +77,7 @@ caches:
       directory_layout: tms
 
   lufo2013_rd_cache:
-    grids: [rd_grid_kbk50,rd_grid_kbk10,rd_grid_bgt]
+    grids: [nl_grid]
     sources: [lufo2013_wms]
     format: image/jpeg
     cache:
@@ -85,7 +85,7 @@ caches:
       directory_layout: tms
 
   lufo2012_rd_cache:
-    grids: [rd_grid_kbk50,rd_grid_kbk10,rd_grid_bgt]
+    grids: [nl_grid]
     sources: [lufo2012_wms]
     format: image/jpeg
     cache:
@@ -93,7 +93,7 @@ caches:
       directory_layout: tms
 
   lufo2011_rd_cache:
-    grids: [rd_grid_kbk50,rd_grid_kbk10,rd_grid_bgt]
+    grids: [nl_grid]
     sources: [lufo2011_wms]
     format: image/jpeg
     cache:
@@ -154,7 +154,7 @@ sources:
       layers: lufo2011
 
 grids:
-  rd_grid:
+  nl_grid:
     srs: EPSG:28992
     tile_size: [256,256]
     res: [3440.64,1720.32,860.16,430.08,215.04,107.52,53.76,26.88,13.44,6.72,3.36,1.68,0.84,0.42,0.21,0.105,0.0525]
@@ -169,8 +169,8 @@ grids:
 
 globals:
   cache:
-    base_dir: '/mnt/tiles/cache_data'
-    lock_dir: '/mnt/tiles/cache_data/locks'
+    base_dir: '/mnt/tiles'
+    lock_dir: '/mnt/tiles/locks'
     meta_size: [4, 4]
     meta_buffer: 128
 

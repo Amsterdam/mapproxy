@@ -21,7 +21,7 @@ seeds:
       
   topo_google:
     caches: [topo_google_cache]
-    grids: [google_grid]
+    grids: [GLOBAL_MERCATOR]
     coverages: ['ams']
     levels:
       from: 5
@@ -31,7 +31,7 @@ seeds:
 
   topo_google_detail:
     caches: [topo_google_cache]
-    grids: [google_grid]
+    grids: [GLOBAL_MERCATOR]
     coverages: ['ams_detail']
     levels:
       from: 12
