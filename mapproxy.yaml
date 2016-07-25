@@ -112,7 +112,7 @@ sources:
     type: wms
     req:
 #      url: http://map-acc.datapunt.amsterdam.nl/maps/kbk10
-      url: http://mapserver.service.acc1.consul/maps/kbk10
+      url: http://mapserver.service.acc1.consul:8082/maps/kbk10
       layers: vlakken,lijnen,teksten
     max_res: 0.84
     min_res: 1.68
@@ -120,7 +120,7 @@ sources:
     type: wms
     req:
 #      url: http://map-acc.datapunt.amsterdam.nl/maps/kbk50
-      url: http://mapserver.service.acc1.consul/maps/kbk50
+      url: http://mapserver.service.acc1.consul:8082/maps/kbk50
       layers: vlakken,lijnen,teksten
     max_res: 3.36
     min_res: 3440.64
