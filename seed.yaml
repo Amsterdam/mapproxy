@@ -1,48 +1,48 @@
 seeds:
-  topo_rd:
+  topo_rd_kbk:
     caches: [topo_rd_cache]
     grids: [nl_grid]
-    coverages: ['ams']
+    coverages: ['kbk']
     levels:
       from: 5
       to: 11
     refresh_before:
       weeks: 1
 
-  topo_rd_detail:
+  topo_rd_bgt:
     caches: [topo_rd_cache]
     grids: [nl_grid]
-    coverages: ['ams_detail']
+    coverages: ['bgt']
     levels:
       from: 12
       to: 16
     refresh_before:
       weeks: 1
       
-  topo_google:
+  topo_google_kbk:
     caches: [topo_google_cache]
-    grids: [GLOBAL_MERCATOR]
-    coverages: ['ams']
+    grids: [GLOBAL_WEBMERCATOR]
+    coverages: ['kbk']
     levels:
-      from: 5
-      to: 11
+      from: 11
+      to: 16
     refresh_before:
       weeks: 1
 
-  topo_google_detail:
+  topo_google_bgt:
     caches: [topo_google_cache]
-    grids: [GLOBAL_MERCATOR]
-    coverages: ['ams_detail']
+    grids: [GLOBAL_WEBMERCATOR]
+    coverages: ['bgt']
     levels:
-      from: 12
-      to: 16
+      from: 17
+      to: 21
     refresh_before:
       weeks: 1
 
   lufo2015_rd:
     caches: [lufo2015_rd_cache]
     grids: [nl_grid]
-    coverages: ['ams']
+    coverages: ['kbk']
     levels:
       from: 5
       to: 11
@@ -50,7 +50,7 @@ seeds:
   lufo2015_rd_detail:
     caches: [lufo2015_rd_cache]
     grids: [nl_grid]
-    coverages: ['ams_detail']
+    coverages: ['bgt']
     levels:
       from: 12
       to: 16
@@ -58,7 +58,7 @@ seeds:
   lufo2014_rd:
     caches: [lufo2014_rd_cache]
     grids: [nl_grid]
-    coverages: ['ams']
+    coverages: ['kbk']
     levels:
       from: 5
       to: 11
@@ -66,7 +66,7 @@ seeds:
   lufo2014_rd_detail:
     caches: [lufo2014_rd_cache]
     grids: [nl_grid]
-    coverages: ['ams_detail']
+    coverages: ['bgt']
     levels:
       from: 12
       to: 16
@@ -74,7 +74,7 @@ seeds:
   lufo2013_rd:
     caches: [lufo2013_rd_cache]
     grids: [nl_grid]
-    coverages: ['ams']
+    coverages: ['kbk']
     levels:
       from: 5
       to: 11
@@ -82,7 +82,7 @@ seeds:
   lufo2013_rd_detail:
     caches: [lufo2013_rd_cache]
     grids: [nl_grid]
-    coverages: ['ams_detail']
+    coverages: ['bgt']
     levels:
       from: 12
       to: 16
@@ -90,7 +90,7 @@ seeds:
   lufo2012_rd:
     caches: [lufo2012_rd_cache]
     grids: [nl_grid]
-    coverages: ['ams']
+    coverages: ['kbk']
     levels:
       from: 5
       to: 11
@@ -98,7 +98,7 @@ seeds:
   lufo2012_rd_detail:
     caches: [lufo2012_rd_cache]
     grids: [nl_grid]
-    coverages: ['ams_detail']
+    coverages: ['bgt']
     levels:
       from: 12
       to: 16
@@ -106,7 +106,7 @@ seeds:
   lufo2011_rd:
     caches: [lufo2011_rd_cache]
     grids: [nl_grid]
-    coverages: ['ams']
+    coverages: ['kbk']
     levels:
       from: 5
       to: 11
@@ -114,18 +114,18 @@ seeds:
   lufo2011_rd_detail:
     caches: [lufo2011_rd_cache]
     grids: [nl_grid]
-    coverages: ['ams_detail']
+    coverages: ['bgt']
     levels:
       from: 12
       to: 16
 
 coverages:
-  ams:
-    bbox: [4.59803,52.2465,5.16755,52.4516]
-    srs: 'EPSG:4326'
-  ams_detail:
-    bbox: [4.72876,52.2782,5.07916,52.4311]
-    srs: 'EPSG:4326'
+  kbk:
+    bbox: [94100,170000,464250,514160]
+    srs: 'EPSG:28992'
+  bgt:
+    bbox: [104000,474000,136000,502100]
+    srs: 'EPSG:28992'
 
 #cleanups:
 #  remove_complete_levels_rd:
