@@ -2,9 +2,11 @@
 
 This project contains all the mapproxy files for the Atlas project.
 
-To Run this as DEPLOY user: 
+To Run this:
 
-    nohup mapproxy-seed /srv/mapproxy/seed.yaml -f /srv/mapproxy/mapproxy.yaml --seed={insert-seed-task-name} &
+    docker-compose build
+    
+    docker-compose run topo_rd
 
 seed.yaml - Caching configuratie
 mapproxy.yaml - Mapproxy server config
