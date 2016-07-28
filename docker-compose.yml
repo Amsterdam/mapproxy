@@ -1,12 +1,12 @@
-topo_rd:
+topo-kbk:
   build: .
-  command: seed-topo-rd.sh
+  command: seed-kbk.sh
   volumes:
     - "/mnt/tiles:/mnt/tiles"
 
-topo_google:
+topo-bgt:
   build: .
-  command: seed-topo-google.sh
+  command: seed-bgt.sh
   volumes:
     - "/mnt/tiles:/mnt/tiles"
 

@@ -85,8 +85,11 @@ coverages:
     bbox: [94100,464250,170000,514160]
     srs: 'EPSG:28992'
   bgt:
-    bbox: [104000,474000,136000,502100]
-    srs: 'EPSG:28992'
+# TODO Enable when BGT goes live at datapunt
+#    bbox: [104000,474000,136000,502100]
+#    srs: 'EPSG:28992'
+    bbox: [4.72876,52.2782,5.07916,52.4311]
+    srs: 'EPSG:4326'
   lufo:
     bbox: [4.59803,52.2465,5.16755,52.4516]
     srs: 'EPSG:4326'

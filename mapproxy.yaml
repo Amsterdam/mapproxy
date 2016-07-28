@@ -112,7 +112,6 @@ sources:
     type: wms
     req:
       url: http://map-acc.datapunt.amsterdam.nl/maps/kbk10
-#      url: http://mapserver.service.acc1.consul:8082/maps/kbk10
       layers: vlakken,lijnen,teksten
     min_res: 3.36
     max_res: 1.68
@@ -120,40 +119,39 @@ sources:
     type: wms
     req:
       url: http://map-acc.datapunt.amsterdam.nl/maps/kbk50
-#      url: http://mapserver.service.acc1.consul:8082/maps/kbk50
       layers: vlakken,lijnen,teksten
     min_res: 3440.64
     max_res: 6.72
 #  datapunt_wms_bgt:
 #    type: wms
 #    req:
-#      url: http://mapserver.service.acc1.consul/maps/bgt
+#      url: http://map-acc.datapunt.amsterdam.nl/maps/bgt
 #      layers: vlakken,lijnen,teksten
 
   lufo2015_wms:
     type: wms
     req:
-      url: http://mapserver.service.acc1.consul/maps/lufo
+      url: http://map-acc.datapunt.amsterdam.nl/maps/lufo
       layers: lufo2015
   lufo2014_wms:
     type: wms
     req:
-      url: http://mapserver.service.acc1.consul/maps/lufo
+      url: http://map-acc.datapunt.amsterdam.nl/maps/lufo
       layers: lufo2014
   lufo2013_wms:
     type: wms
     req:
-      url: http://mapserver.service.acc1.consul/maps/lufo
+      url: http://map-acc.datapunt.amsterdam.nl/maps/lufo
       layers: lufo2013
   lufo2012_wms:
     type: wms
     req:
-      url: http://mapserver.service.acc1.consul/maps/lufo
+      url: http://map-acc.datapunt.amsterdam.nl/maps/lufo
       layers: lufo2012
   lufo2011_wms:
     type: wms
     req:
-      url: http://mapserver.service.acc1.consul/maps/lufo
+      url: http://map-acc.datapunt.amsterdam.nl/maps/lufo
       layers: lufo2011
 
 grids:

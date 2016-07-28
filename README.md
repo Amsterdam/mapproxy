@@ -6,7 +6,7 @@ To Run this:
 
     docker-compose build
     
-    docker-compose run topo_rd
+    docker-compose run topo-kbk
 
 seed.yaml - Caching configuratie
 mapproxy.yaml - Mapproxy server config
