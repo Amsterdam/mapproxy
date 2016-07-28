@@ -12,12 +12,9 @@ RUN apt-get update \
         python-pip \
 	&& apt-get clean \
 	&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
-    && pip install MapProxy==1.9.0 \
+    && pip install MapProxy==1.8.0 \
     && mkdir /app
 
 COPY *.yaml /app/
 COPY *.sh /usr/bin/
 RUN chmod 755 /usr/bin/*.sh
-
-CMD echo 'Specify a seed command: seed-topo-<rd|google>.sh, seed-lufo-<year>.sh'
-

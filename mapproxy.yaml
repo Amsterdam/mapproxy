@@ -114,14 +114,14 @@ sources:
       url: http://map-acc.datapunt.amsterdam.nl/maps/kbk10
       layers: vlakken,lijnen,teksten
     min_res: 3.36
-    max_res: 1.68
+    max_res: 0.85
   datapunt_wms_kbk50:
     type: wms
     req:
       url: http://map-acc.datapunt.amsterdam.nl/maps/kbk50
       layers: vlakken,lijnen,teksten
     min_res: 3440.64
-    max_res: 6.72
+    max_res: 3.37
 #  datapunt_wms_bgt:
 #    type: wms
 #    req:
