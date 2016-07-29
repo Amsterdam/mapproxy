@@ -105,7 +105,8 @@ sources:
     type: wms
     req:
 #      url: http://www.diva.amsterdam.nl/cgi-bin/topografie?SLD=https://map-acc.datapunt.amsterdam.nl/topografie_sld.xml
-      url: http://www.diva.amsterdam.nl/cgi-bin/topografie
+      url: http://www.diva.amsterdam.nl/cgi-bin/topografie?SLD=http://www.diva.amsterdam.nl/topografie_sld.xml
+#      url: http://www.diva.amsterdam.nl/cgi-bin/topografie
       layers: topovlakken,topolijnen,topoteksten
     min_res: 0.84
   datapunt_wms_kbk10:

@@ -12,7 +12,7 @@ RUN apt-get update \
         python-pip \
 	&& apt-get clean \
 	&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
-    && pip install MapProxy==1.8.0 \
+    && pip install MapProxy==1.9.0 \
     && mkdir /app
 
 COPY *.yaml /app/
