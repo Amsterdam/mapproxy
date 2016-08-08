@@ -2,7 +2,8 @@ FROM python:2.7
 MAINTAINER datapunt.ois@amsterdam.nl
 
 RUN apt-get update \
-	&& apt-get install -y \
+    && ln -s /usr/local/bin/python /usr/bin/python \
+    && apt-get install -y \
         python-imaging \
         python-yaml \
         libproj0 \
@@ -10,8 +11,8 @@ RUN apt-get update \
         python-lxml \
         python-shapely \
         python-pip \
-	&& apt-get clean \
-	&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && pip install MapProxy==1.9.0 \
     && mkdir /app
 
