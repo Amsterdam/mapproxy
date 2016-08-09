@@ -10,3 +10,9 @@ topo-bgt:
   volumes:
     - "/mnt/tiles:/mnt/tiles"
 
+topo-google:
+  build: .
+  command: seed-google.sh
+  volumes:
+    - "/mnt/tiles:/mnt/tiles"
+

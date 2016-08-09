@@ -6,8 +6,8 @@ seeds:
     levels:
       from: 5
       to: 11
-#    refresh_before:
-#      weeks: 1
+    refresh_before:
+      weeks: 1
 
   topo_rd_bgt:
     caches: [topo_rd_cache]
@@ -16,28 +16,28 @@ seeds:
     levels:
       from: 12
       to: 16
-#    refresh_before:
-#      weeks: 1
+    refresh_before:
+      weeks: 1
       
   topo_google_kbk:
     caches: [topo_google_cache]
-    grids: [GLOBAL_WEBMERCATOR]
+    grids: [webmercator]
     coverages: ['kbk']
     levels:
       from: 11
       to: 16
-#    refresh_before:
-#      weeks: 1
+    refresh_before:
+      weeks: 1
 
   topo_google_bgt:
     caches: [topo_google_cache]
-    grids: [GLOBAL_WEBMERCATOR]
+    grids: [webmercator]
     coverages: ['bgt']
     levels:
       from: 17
       to: 21
-#    refresh_before:
-#      weeks: 1
+    refresh_before:
+      weeks: 1
 
   lufo2015_rd:
     caches: [lufo2015_rd_cache]
