@@ -2,7 +2,6 @@ FROM python:2.7
 MAINTAINER datapunt.ois@amsterdam.nl
 
 RUN apt-get update \
-    && ln -s /usr/local/bin/python /usr/bin/python \
     && apt-get install -y \
         python-imaging \
         python-yaml \
