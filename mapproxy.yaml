@@ -112,47 +112,47 @@ sources:
   datapunt_wms_kbk10:
     type: wms
     req:
-      url: http://map-acc.datapunt.amsterdam.nl/maps/kbk10
+      url: https://map-acc.datapunt.amsterdam.nl/maps/kbk10
       layers: vlakken,lijnen,teksten
     min_res: 3.36
     max_res: 0.85
   datapunt_wms_kbk50:
     type: wms
     req:
-      url: http://map-acc.datapunt.amsterdam.nl/maps/kbk50
+      url: https://map-acc.datapunt.amsterdam.nl/maps/kbk50
       layers: vlakken,lijnen,teksten
     min_res: 3440.64
     max_res: 3.37
 #  datapunt_wms_bgt:
 #    type: wms
 #    req:
-#      url: http://map-acc.datapunt.amsterdam.nl/maps/bgt
+#      url: https://map-acc.datapunt.amsterdam.nl/maps/bgt
 #      layers: vlakken,lijnen,teksten
 
   lufo2015_wms:
     type: wms
     req:
-      url: http://map-acc.datapunt.amsterdam.nl/maps/lufo
+      url: https://map-acc.datapunt.amsterdam.nl/maps/lufo
       layers: lufo2015
   lufo2014_wms:
     type: wms
     req:
-      url: http://map-acc.datapunt.amsterdam.nl/maps/lufo
+      url: https://map-acc.datapunt.amsterdam.nl/maps/lufo
       layers: lufo2014
   lufo2013_wms:
     type: wms
     req:
-      url: http://map-acc.datapunt.amsterdam.nl/maps/lufo
+      url: https://map-acc.datapunt.amsterdam.nl/maps/lufo
       layers: lufo2013
   lufo2012_wms:
     type: wms
     req:
-      url: http://map-acc.datapunt.amsterdam.nl/maps/lufo
+      url: https://map-acc.datapunt.amsterdam.nl/maps/lufo
       layers: lufo2012
   lufo2011_wms:
     type: wms
     req:
-      url: http://map-acc.datapunt.amsterdam.nl/maps/lufo
+      url: https://map-acc.datapunt.amsterdam.nl/maps/lufo
       layers: lufo2011
 
 grids:
@@ -170,9 +170,12 @@ grids:
 globals:
   cache:
     base_dir: '/mnt/tiles'
-    lock_dir: '/mnt/tiles/locks'
+    lock_dir: '/mnt/tiles'
+    tile_lock_dir: '/mnt/tiles'
     meta_size: [4, 4]
     meta_buffer: 128
+  http:
+    ssl_no_cert_checks: True
 
   image:
       resampling_method: bicubic
