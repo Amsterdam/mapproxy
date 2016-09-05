@@ -39,6 +39,14 @@ seeds:
     refresh_before:
       weeks: 1
 
+  lufo2016_rd:
+    caches: [lufo2016_rd_cache]
+    grids: [nl_grid]
+    coverages: ['lufo']
+    levels:
+      from: 5
+      to: 16
+
   lufo2015_rd:
     caches: [lufo2015_rd_cache]
     grids: [nl_grid]

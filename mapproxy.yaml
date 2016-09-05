@@ -29,6 +29,9 @@ layers:
   - name: topo_google
     title: Topo Google
     sources: [topo_google_cache]
+  - name: lufo2016_RD
+    title: Luchtfoto 2016 RD
+    sources: [lufo2016_rd_cache]
   - name: lufo2015_RD
     title: Luchtfoto 2015 RD
     sources: [lufo2015_rd_cache]
@@ -60,6 +63,14 @@ caches:
       type: file
       directory_layout: tms
       
+  lufo2016_rd_cache:
+    grids: [nl_grid]
+    sources: [lufo2016_wms]
+    format: image/jpeg
+    cache:
+      type: file
+      directory_layout: tms
+
   lufo2015_rd_cache:
     grids: [nl_grid]
     sources: [lufo2015_wms]
@@ -129,6 +140,11 @@ sources:
 #      url: https://map-acc.datapunt.amsterdam.nl/maps/bgt
 #      layers: vlakken,lijnen,teksten
 
+  lufo2016_wms:
+    type: wms
+    req:
+      url: https://map-acc.datapunt.amsterdam.nl/maps/lufo
+      layers: lufo2016
   lufo2015_wms:
     type: wms
     req:
