@@ -16,3 +16,9 @@ topo-google:
   volumes:
     - "/mnt/tiles:/mnt/tiles"
 
+topo-lufo:
+  build: .
+  command: seed-lufo.sh
+  volumes:
+    - "/mnt/tiles:/mnt/tiles"
+
