@@ -99,13 +99,6 @@ coverages:
     bbox: [4.72876,52.2782,5.07916,52.4311]
     srs: 'EPSG:4326'
   lufo:
-    bbox: [4.59803,52.2465,5.16755,52.4516]
+    bbox: [4.72876,52.2782,5.07916,52.4311]
+#    bbox: [4.59803,52.2465,5.16755,52.4516]
     srs: 'EPSG:4326'
-
-#cleanups:
-#  remove_complete_levels_rd:
-#    caches: [topo_rd_cache]
-#    remove_all: true
-#    levels:
-#      from: 7
-#      to: 16

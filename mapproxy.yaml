@@ -140,11 +140,13 @@ sources:
 #      url: https://map-acc.datapunt.amsterdam.nl/maps/bgt
 #      layers: vlakken,lijnen,teksten
 
+# Example to tile to locally with the mapserver docker also running:
   lufo2016_wms:
     type: wms
     req:
-      url: https://map-acc.datapunt.amsterdam.nl/maps/lufo
+      url: http://172.17.0.1:32770/maps/lufo
       layers: lufo2016
+# Example to tile again the Acceptance environment:
   lufo2015_wms:
     type: wms
     req:
