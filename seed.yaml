@@ -39,54 +39,13 @@ seeds:
     refresh_before:
       weeks: 1
 
-  lufo2016_rd:
-    caches: [lufo2016_rd_cache]
+  lufo_rd:
+    caches: [lufo_rd_cache]
     grids: [nl_grid]
     coverages: ['lufo']
     levels:
       from: 5
       to: 16
-
-  lufo2015_rd:
-    caches: [lufo2015_rd_cache]
-    grids: [nl_grid]
-    coverages: ['lufo']
-    levels:
-      from: 5
-      to: 16
-
-  lufo2014_rd:
-    caches: [lufo2014_rd_cache]
-    grids: [nl_grid]
-    coverages: ['lufo']
-    levels:
-      from: 5
-      to: 16
-
-  lufo2013_rd:
-    caches: [lufo2013_rd_cache]
-    grids: [nl_grid]
-    coverages: ['lufo']
-    levels:
-      from: 5
-      to: 16
-
-  lufo2012_rd:
-    caches: [lufo2012_rd_cache]
-    grids: [nl_grid]
-    coverages: ['lufo']
-    levels:
-      from: 5
-      to: 16
-
-  lufo2011_rd:
-    caches: [lufo2011_rd_cache]
-    grids: [nl_grid]
-    coverages: ['lufo']
-    levels:
-      from: 5
-      to: 16
-
 
 coverages:
   kbk:
