@@ -23,7 +23,7 @@ Creating a new Lufo year of tiles and service follow these steps:
 3. Start mapserver docker
 4. Run mapproxy docker:
 
-    docker-compose run topo-kbk
+    docker-compose run topo-lufo
 
 
 5. Copy generated tiles from /mnt/tiles/lufo_rd_cache_EPSG28992/ to: /mnt/tiles/lufo<YEAR>_rd_cache_EPSG28992/
