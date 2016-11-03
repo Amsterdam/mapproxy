@@ -89,7 +89,7 @@ sources:
   lufo_wms:
     type: wms
     req:
-      url: http://172.17.0.1:32771/maps/lufo
+      url: http://172.17.0.1:32773/maps/lufo
       layers: lufo-TILE
 # Example to tile again the Acceptance environment:
 
