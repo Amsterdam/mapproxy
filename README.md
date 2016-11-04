@@ -27,7 +27,7 @@ Creating a new Lufo year of tiles and service follow these steps:
     docker-compose run topo-lufo
 
 
-6. Copy generated tiles from /mnt/tiles/lufo_rd_cache_EPSG28992/ to: /mnt/tiles/lufo<YEAR>_rd_cache_EPSG28992/
+6. Move generated tiles from /mnt/tiles/lufo_rd_cache_EPSG28992/ to: /mnt/tiles/lufo<YEAR>_rd_cache_EPSG28992/
 7. Upload the tiles to the objectstore:
 
 
