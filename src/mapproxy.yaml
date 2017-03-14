@@ -44,11 +44,27 @@ caches:
   topo_google_cache:
     grids: [webmercator]
 #    sources: [diva_wms, datapunt_wms_kbk10, datapunt_wms_kbk50]
-    sources: [dp_basiskaart_bgt, dp_basiskaart_kbk10, dp_basiskaart_kbk50, dp_basiskaart_light_bgt, dp_basiskaart_light_kbk10, dp_basiskaart_light_kbk50, dp_basiskaart_zw_bgt, dp_basiskaart_zw_kbk10, dp_basiskaart_zw_kbk50]
-    cache:
+      sources: [dp_basiskaart_bgt, dp_basiskaart_kbk10, dp_basiskaart_kbk50]
+      cache:
       type: file
       directory_layout: tms
-      
+
+topo_google_cache:
+    grids: [webmercator]
+#    sources: [diva_wms, datapunt_wms_kbk10, datapunt_wms_kbk50]
+      sources: [dp_basiskaart_light_bgt, dp_basiskaart_light_kbk10, dp_basiskaart_light_kbk50]
+      cache:
+      type: file
+      directory_layout: tms
+
+topo_google_cache:
+    grids: [webmercator]
+#    sources: [diva_wms, datapunt_wms_kbk10, datapunt_wms_kbk50]
+     sources: [dp_basiskaart_zw_bgt, dp_basiskaart_zw_kbk10, dp_basiskaart_zw_kbk50]
+      cache:
+      type: file
+      directory_layout: tms
+
   lufo_rd_cache:
     grids: [nl_grid]
     sources: [lufo_wms]
