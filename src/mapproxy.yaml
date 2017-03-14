@@ -43,7 +43,8 @@ caches:
       
   topo_google_cache:
     grids: [webmercator]
-    sources: [diva_wms, datapunt_wms_kbk10, datapunt_wms_kbk50]
+#    sources: [diva_wms, datapunt_wms_kbk10, datapunt_wms_kbk50]
+    sources: [dp_basiskaart_bgt, dp_basiskaart_kbk10, dp_basiskaart_kbk50, dp_basiskaart_light_bgt, dp_basiskaart_light_kbk10, dp_basiskaart_light_kbk50, dp_basiskaart_zw_bgt, dp_basiskaart_zw_kbk10, dp_basiskaart_zw_kbk50]
     cache:
       type: file
       directory_layout: tms
@@ -57,28 +58,67 @@ caches:
       directory_layout: tms
 
 sources:
-  diva_wms:
+  dp_basiskaart_bgt:
     type: wms
     req:
-#      url: http://www.diva.amsterdam.nl/cgi-bin/topografie?SLD=https://map-acc.datapunt.amsterdam.nl/topografie_sld.xml
-      url: http://www.diva.amsterdam.nl/cgi-bin/topografie?SLD=http://www.diva.amsterdam.nl/topografie_sld.xml
-#      url: http://www.diva.amsterdam.nl/cgi-bin/topografie
-      layers: topovlakken,topolijnen,topoteksten
+      url: http://map-acc.data.amsterdam.nl/maps/topografie
+      layers: basiskaart
     min_res: 0.84
-  datapunt_wms_kbk10:
+  dp_basiskaart_kbk10:
+  type: wms
+     req:
+       url: https://map-acc.datapunt.amsterdam.nl/maps/kbk10
+       layers: basiskaart
+     min_res: 3.36
+     max_res: 0.85
+  dp_basiskaart_kbk50:
     type: wms
-    req:
-      url: https://map-acc.datapunt.amsterdam.nl/maps/kbk10
-      layers: vlakken,lijnen,teksten
-    min_res: 3.36
-    max_res: 0.85
-  datapunt_wms_kbk50:
-    type: wms
-    req:
-      url: https://map-acc.datapunt.amsterdam.nl/maps/kbk50
-      layers: vlakken,lijnen,teksten
-    min_res: 3440.64
-    max_res: 3.37
+      req:
+        url: https://map-acc.datapunt.amsterdam.nl/maps/kbk50
+        layers: basiskaart
+      min_res: 3440.64
+      max_res: 3.37
+  dp_basiskaart_light_bgt:
+  type: wms
+      req:
+        url: http://map-acc.data.amsterdam.nl/maps/topografie
+        layers: basiskaart-light
+      min_res: 0.84
+  dp_basiskaart_light_kbk10:
+   type: wms
+       req:
+         url: https://map-acc.datapunt.amsterdam.nl/maps/kbk10
+         layers: basiskaart-light
+       min_res: 3.36
+       max_res: 0.85
+  dp_basiskaart_light_kbk50:
+  type: wms
+        req:
+          url: https://map-acc.datapunt.amsterdam.nl/maps/kbk50
+          layers: basiskaart-light
+        min_res: 3440.64
+        max_res: 3.37
+  dp_basiskaart_zw_bgt:
+   type: wms
+       req:
+         url: http://map-acc.data.amsterdam.nl/maps/topografie
+         layers: basiskaart-zwartwit
+       min_res: 0.84
+  dp_basiskaart_zw_kbk10:
+  type: wms
+       req:
+         url: https://map-acc.datapunt.amsterdam.nl/maps/kbk10
+         layers: basiskaart-zwartwit
+       min_res: 3.36
+       max_res: 0.85
+  dp_basiskaart_zw_kbk50:
+type: wms
+      req:
+        url: https://map-acc.datapunt.amsterdam.nl/maps/kbk50
+        layers: basiskaart-zwartwit
+      min_res: 3440.64
+      max_res: 3.37
+
 #  datapunt_wms_bgt:
 #    type: wms
 #    req:
@@ -89,7 +129,7 @@ sources:
   lufo_wms:
     type: wms
     req:
-      url: http://172.17.0.1:32773/maps/lufo
+      url: http://172.17.0.1:32770/maps/lufo
       layers: lufo-TILE
 # Example to tile again the Acceptance environment:
 
