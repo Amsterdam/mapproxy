@@ -18,9 +18,39 @@ seeds:
       to: 16
     refresh_before:
       weeks: 1
-      
+
+  topo_google_bgt:
+     caches: [topo_google_cache]
+     grids: [webmercator]
+     coverages: ['bgt']
+     levels:
+       from: 17
+       to: 21
+     refresh_before:
+       weeks: 1
+
   topo_google_kbk:
-    caches: [topo_google_cache]
+      caches: [topo_google_cache]
+      grids: [webmercator]
+      coverages: ['kbk']
+      levels:
+        from: 11
+        to: 16
+      refresh_before:
+        weeks: 1
+
+  topo_google_light_bgt:
+    caches: [topo_google_light_cache]
+    grids: [webmercator]
+    coverages: ['bgt']
+    levels:
+      from: 17
+      to: 21
+    refresh_before:
+      weeks: 1
+
+  topo_google_light_kbk:
+    caches: [topo_google_light_cache]
     grids: [webmercator]
     coverages: ['kbk']
     levels:
@@ -29,13 +59,23 @@ seeds:
     refresh_before:
       weeks: 1
 
-  topo_google_bgt:
-    caches: [topo_google_cache]
+  topo_google_zw_bgt:
+    caches: [topo_google_zw_cache]
     grids: [webmercator]
     coverages: ['bgt']
     levels:
       from: 17
       to: 21
+    refresh_before:
+      weeks: 1
+
+  topo_google_zw_kbk:
+    caches: [topo_google_zw_cache]
+    grids: [webmercator]
+    coverages: ['kbk']
+    levels:
+      from: 11
+      to: 16
     refresh_before:
       weeks: 1
 
