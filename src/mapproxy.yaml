@@ -19,7 +19,7 @@ services:
         country: Netherlands
         phone: n/a
         fax: n/a
-        email: datapunt.ois@amsterdam.nl
+        email: data.ois@amsterdam.nl
       fees: 'None'
 
 layers:
@@ -43,25 +43,22 @@ caches:
       
   topo_google_cache:
     grids: [webmercator]
-#    sources: [diva_wms, datapunt_wms_kbk10, datapunt_wms_kbk50]
-      sources: [dp_basiskaart_bgt, dp_basiskaart_kbk10, dp_basiskaart_kbk50]
-      cache:
+    sources: [dp_basiskaart_bgt, dp_basiskaart_kbk10, dp_basiskaart_kbk50]
+    cache:
       type: file
       directory_layout: tms
 
-topo_google_cache:
+  topo_google_light_cache:
     grids: [webmercator]
-#    sources: [diva_wms, datapunt_wms_kbk10, datapunt_wms_kbk50]
-      sources: [dp_basiskaart_light_bgt, dp_basiskaart_light_kbk10, dp_basiskaart_light_kbk50]
-      cache:
+    sources: [dp_basiskaart_light_bgt, dp_basiskaart_light_kbk10, dp_basiskaart_light_kbk50]
+    cache:
       type: file
       directory_layout: tms
 
-topo_google_cache:
+  topo_google_zw_cache:
     grids: [webmercator]
-#    sources: [diva_wms, datapunt_wms_kbk10, datapunt_wms_kbk50]
-     sources: [dp_basiskaart_zw_bgt, dp_basiskaart_zw_kbk10, dp_basiskaart_zw_kbk50]
-      cache:
+    sources: [dp_basiskaart_zw_bgt, dp_basiskaart_zw_kbk10, dp_basiskaart_zw_kbk50]
+    cache:
       type: file
       directory_layout: tms
 
@@ -74,71 +71,91 @@ topo_google_cache:
       directory_layout: tms
 
 sources:
+  diva_wms:
+    type: wms
+    req:
+      url: http://www.diva.amsterdam.nl/cgi-bin/topografie?SLD=http://www.diva.amsterdam.nl/topografie_sld.xml
+      layers: topovlakken,topolijnen,topoteksten
+    min_res: 0.84
+  datapunt_wms_kbk10:
+    type: wms
+    req:
+      url: https://acc.map.data.amsterdam.nl/maps/kbk10
+      layers: vlakken,lijnen,teksten
+    min_res: 3.36
+    max_res: 0.85
+  datapunt_wms_kbk50:
+    type: wms
+    req:
+      url: https://acc.map.data.amsterdam.nl/maps/kbk50
+      layers: vlakken,lijnen,teksten
+    min_res: 3440.64
+    max_res: 3.37
   dp_basiskaart_bgt:
     type: wms
     req:
-      url: http://map-acc.data.amsterdam.nl/maps/topografie
+      url: http://acc.map.data.amsterdam.nl/maps/topografie
       layers: basiskaart
     min_res: 0.84
   dp_basiskaart_kbk10:
-  type: wms
-     req:
-       url: https://map-acc.datapunt.amsterdam.nl/maps/kbk10
-       layers: basiskaart
-     min_res: 3.36
-     max_res: 0.85
+    type: wms
+    req:
+      url: https://acc.map.data.amsterdam.nl/maps/kbk10
+      layers: basiskaart
+    min_res: 3.36
+    max_res: 0.85
   dp_basiskaart_kbk50:
     type: wms
-      req:
-        url: https://map-acc.datapunt.amsterdam.nl/maps/kbk50
-        layers: basiskaart
-      min_res: 3440.64
-      max_res: 3.37
+    req:
+      url: https://acc.map.data.amsterdam.nl/maps/kbk50
+      layers: basiskaart
+    min_res: 3440.64
+    max_res: 3.37
   dp_basiskaart_light_bgt:
-  type: wms
-      req:
-        url: http://map-acc.data.amsterdam.nl/maps/topografie
-        layers: basiskaart-light
-      min_res: 0.84
+    type: wms
+    req:
+      url: http://acc.map.data.amsterdam.nl/maps/topografie_google
+      layers: basiskaart-light
+    min_res: 0.84
   dp_basiskaart_light_kbk10:
-   type: wms
-       req:
-         url: https://map-acc.datapunt.amsterdam.nl/maps/kbk10
-         layers: basiskaart-light
-       min_res: 3.36
-       max_res: 0.85
+    type: wms
+    req:
+      url: https://acc.map.data.amsterdam.nl/maps/topografie_google
+      layers: basiskaart-light
+    min_res: 3.36
+    max_res: 0.85
   dp_basiskaart_light_kbk50:
-  type: wms
-        req:
-          url: https://map-acc.datapunt.amsterdam.nl/maps/kbk50
-          layers: basiskaart-light
-        min_res: 3440.64
-        max_res: 3.37
+    type: wms
+    req:
+      url: https://acc.map.data.amsterdam.nl/maps/topografie_google
+      layers: basiskaart-light
+    min_res: 3440.64
+    max_res: 3.37
   dp_basiskaart_zw_bgt:
-   type: wms
-       req:
-         url: http://map-acc.data.amsterdam.nl/maps/topografie
-         layers: basiskaart-zwartwit
-       min_res: 0.84
+    type: wms
+    req:
+      url: http://acc.map.data.amsterdam.nl/maps/topografie
+      layers: basiskaart-zwartwit
+    min_res: 0.84
   dp_basiskaart_zw_kbk10:
-  type: wms
-       req:
-         url: https://map-acc.datapunt.amsterdam.nl/maps/kbk10
-         layers: basiskaart-zwartwit
-       min_res: 3.36
-       max_res: 0.85
+    type: wms
+    req:
+      url: https://acc.map.data.amsterdam.nl/maps/kbk10
+      layers: basiskaart-zwartwit
+    min_res: 3.36
+    max_res: 0.85
   dp_basiskaart_zw_kbk50:
-type: wms
-      req:
-        url: https://map-acc.datapunt.amsterdam.nl/maps/kbk50
-        layers: basiskaart-zwartwit
-      min_res: 3440.64
-      max_res: 3.37
+    type: wms
+    req:
+      url: https://acc.map.data.amsterdam.nl/maps/kbk50
+      layers: basiskaart-zwartwit
+    min_res: 3440.64
+    max_res: 3.37
 
 #  datapunt_wms_bgt:
-#    type: wms
+#    type: wmsdata.
 #    req:
-#      url: https://map-acc.datapunt.amsterdam.nl/maps/bgt
+#      url: https://acc.map.data.amsterdam.nl/maps/bgt
 #      layers: vlakken,lijnen,teksten
 
 # Example to tile to locally with the mapserver docker also running:
