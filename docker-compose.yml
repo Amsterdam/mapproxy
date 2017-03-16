@@ -1,41 +1,24 @@
-version: '2.1'
-services:
-  topo-kbk:
-    build: src
-    command: ./seed-kbk.sh
-    volumes:
-      - "/mnt/tiles:/mnt/tiles"
+topo-kbk:
+  build: .
+  command: seed-kbk.sh
+  volumes:
+    - "/mnt/tiles:/mnt/tiles"
 
-  topo-bgt:
-    build: src
-    command: ./seed-bgt.sh
-    volumes:
-      - "/mnt/tiles:/mnt/tiles"
+topo-bgt:
+  build: .
+  command: seed-bgt.sh
+  volumes:
+    - "/mnt/tiles:/mnt/tiles"
 
-  topo-google:
-    build: src
-    command: ./seed-google.sh
-    volumes:
-      - "/mnt/tiles:/mnt/tiles"
+topo-google:
+  build: .
+  command: seed-google.sh
+  volumes:
+    - "/mnt/tiles:/mnt/tiles"
 
-  topo-lufo:
-    build: src
-    command: ./seed-lufo.sh
-    volumes:
-      - "/mnt/tiles:/mnt/tiles"
+topo-lufo:
+  build: .
+  command: seed-lufo.sh
+  volumes:
+    - "/mnt/tiles:/mnt/tiles"
 
-  upload:
-    build: src
-    volumes:
-      - ${TILES_SOURCE_PATH-/mnt/tiles}:/app/data
-    environment:
-      - TILES_OBJECTSTORE_PASSWORD=${TILES_OBJECTSTORE_PASSWORD}
-      - TILES_OBJECTSTORE_CONTAINER=${TILES_OBJECTSTORE_CONTAINER}
-      - TILES_OBJECTSTORE_USER=${TILES_OBJECTSTORE_USER}
-      - TILES_OBJECTSTORE_TENANT_NAME=${TILES_OBJECTSTORE_TENANT_NAME}
-      - TILES_OBJECTSTORE_TENANT_ID=${TILES_OBJECTSTORE_TENANT_ID}
-      - TILES_SOURCE_PATH=${TILES_SOURCE_PATH}
-      - TILES_PROGRESS=${TILES_PROGRESS}
-      - TILES_NR_OF_PROCESSES=${TILES_NR_OF_PROCESSES}
-    command: >
-      bash -c "python3 ./import_raket.py"
