@@ -1,0 +1,17 @@
+version: '2.1'
+services:
+  tests:
+    build: ../..
+    environment:
+      - TILES_OBJECTSTORE_PASSWORD=${TILES_OBJECTSTORE_PASSWORD}
+      - TILES_OBJECTSTORE_CONTAINER=${TILES_OBJECTSTORE_CONTAINER}
+      - TILES_OBJECTSTORE_USER=${TILES_OBJECTSTORE_USER}
+      - TILES_OBJECTSTORE_TENANT_NAME=${TILES_OBJECTSTORE_TENANT_NAME}
+      - TILES_OBJECTSTORE_TENANT_ID=${TILES_OBJECTSTORE_TENANT_ID}
+      - TILES_SOURCE_PATH=${TILES_SOURCE_PATH}
+      - TILES_PROGRESS=${TILES_PROGRESS}
+      - TILES_NR_OF_PROCESSES=${TILES_NR_OF_PROCESSES}
+    command: >
+      bash -c "cd /app/.jenkins/test/  \
+              && ./docker-code-check.sh \
+              && ./docker-test.sh"

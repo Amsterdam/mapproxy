@@ -1,0 +1,11 @@
+pytest==3.0.2
+pytest-mock==0.4.3
+pytest-pythonpath==0.7.1
+python_swiftclient==3.2.0
+python-keystoneclient==3.10.0
+Pillow==4.0.0
+flake8==3.3.0
+PyYAML==3.11
+shapely==1.5.17
+lxml==3.5.0
+MapProxy==1.9.1

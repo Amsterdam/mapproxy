@@ -1,0 +1,1 @@
+{'filter': {'bool': {'must': [{'term': {'is_hr_address': True}}]}}

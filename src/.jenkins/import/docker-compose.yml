@@ -2,32 +2,32 @@ version: '2.1'
 services:
   topo-kbk:
     build: src
-    command: ./seed-kbk.sh
+    command: seed-kbk.sh
     volumes:
       - "/mnt/tiles:/mnt/tiles"
 
   topo-bgt:
     build: src
-    command: ./seed-bgt.sh
+    command: seed-bgt.sh
     volumes:
       - "/mnt/tiles:/mnt/tiles"
 
   topo-google:
     build: src
-    command: ./seed-google.sh
+    command: seed-google.sh
     volumes:
       - "/mnt/tiles:/mnt/tiles"
 
   topo-lufo:
     build: src
-    command: ./seed-lufo.sh
+    command: seed-lufo.sh
     volumes:
       - "/mnt/tiles:/mnt/tiles"
 
   upload:
-    build: src
+    build: image: build.datapunt.amsterdam.nl:5000/datapunt/raket:${ENVIRONMENT}
     volumes:
-      - ${TILES_SOURCE_PATH-/mnt/tiles}:/app/data
+      - $TILES_SOURCE_PATH-/mnt/tiles/:/app/data
     environment:
       - TILES_OBJECTSTORE_PASSWORD=${TILES_OBJECTSTORE_PASSWORD}
       - TILES_OBJECTSTORE_CONTAINER=${TILES_OBJECTSTORE_CONTAINER}
