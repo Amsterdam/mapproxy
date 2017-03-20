@@ -34,30 +34,71 @@ layers:
     sources: [lufo_rd_cache]
 
 caches:
+#### TOPO RD - KBK & BGT - Standaard kleur
   topo_rd_cache:
     grids: [nl_grid]
-    sources: [diva_wms, datapunt_wms_kbk10, datapunt_wms_kbk50]
-    cache:
-      type: file
-      directory_layout: tms
-      
-  topo_google_cache:
-    grids: [webmercator]
-    sources: [dp_basiskaart_bgt, dp_basiskaart_kbk10, dp_basiskaart_kbk50]
+    sources: [basiskaart]
     cache:
       type: file
       directory_layout: tms
 
-  topo_google_light_cache:
-    grids: [webmercator]
-    sources: [dp_basiskaart_light_bgt, dp_basiskaart_light_kbk10, dp_basiskaart_light_kbk50]
+#### TOPO RD - KBK & BGT - Light kleur
+  topo_rd_light_cache:
+    grids: [nl_grid]
+    sources: [basiskaart_light]
     cache:
       type: file
       directory_layout: tms
 
-  topo_google_zw_cache:
+  #### TOPO RD - KBK & BGT - Zwartwit
+  topo_rd_zw_cache:
+    grids: [nl_grid]
+    sources: [basiskaart_zw]
+    cache:
+      type: file
+      directory_layout: tms
+
+#### TOPO Latlon - KBK & BGT - Standaard kleur
+  topo_Latlon_cache:
     grids: [webmercator]
-    sources: [dp_basiskaart_zw_bgt, dp_basiskaart_zw_kbk10, dp_basiskaart_zw_kbk50]
+    sources: [latlon]
+    cache:
+      type: file
+      directory_layout: tms
+
+  topo_Latlon_kbk_cache:
+    grids: [webmercator]
+    sources: [datapunt_basiskaart_kbk10, datapunt_basiskaart_kbk50]
+    cache:
+      type: file
+      directory_layout: tms
+
+#### TOPO Latlon - KBK & BGT - Light kleur
+ topo_Latlon_light_cache:
+    grids: [webmercator]
+    sources: [latlon_light]
+    cache:
+      type: file
+      directory_layout: tms
+
+  topo_Latlon_kbk_light_cache:
+    grids: [webmercator]
+    sources: [datapunt_basiskaart_kbk10, datapunt_basiskaart_kbk50]
+    cache:
+      type: file
+      directory_layout: tms
+
+ ### TOPO Latlon - KBK & BGT - Zwartwit
+  topo_latlon_zw_cache:
+    grids: [webmercator]
+    sources: [latlon_zw]
+    cache:
+      type: file
+      directory_layout: tms
+
+  topo_Latlon_kbk_zw_cache:
+    grids: [webmercator]
+    sources: [datapunt_basiskaart_kbk10, datapunt_basiskaart_kbk50]
     cache:
       type: file
       directory_layout: tms
@@ -71,80 +112,154 @@ caches:
       directory_layout: tms
 
 sources:
-  diva_wms:
+# basiskaart standaard kleur
+  basiskaart:
     type: wms
     req:
-      url: http://www.diva.amsterdam.nl/cgi-bin/topografie?SLD=http://www.diva.amsterdam.nl/topografie_sld.xml
-      layers: topovlakken,topolijnen,topoteksten
+      url: http://acc.map.data.amsterdam.nl/maps/topografie
+      layers: basiskaart
+  diva_basiskaart_bgt:
+    type: wms
+    req:
+#     url: http://www.diva.amsterdam.nl/cgi-bin/topografie?SLD=http://www.diva.amsterdam.nl/topografie_sld.xml
+      url: http://acc.map.data.amsterdam.nl/maps/topografie
+      layers: basiskaart
     min_res: 0.84
-  datapunt_wms_kbk10:
+  datapunt_basiskaart_kbk10:
     type: wms
     req:
-      url: https://acc.map.data.amsterdam.nl/maps/kbk10
-      layers: vlakken,lijnen,teksten
+      url: https://acc.map.data.amsterdam.nl/maps/topografie
+      layers: basiskaart
     min_res: 3.36
     max_res: 0.85
-  datapunt_wms_kbk50:
+  datapunt_basiskaart_kbk50:
     type: wms
     req:
-      url: https://acc.map.data.amsterdam.nl/maps/kbk50
-      layers: vlakken,lijnen,teksten
+      url: https://acc.map.data.amsterdam.nl/maps/topografie
+      layers: basiskaart
     min_res: 3440.64
     max_res: 3.37
-  dp_basiskaart_bgt:
+
+ # basiskaart ligh kleur
+  basiskaart_light:
+    type: wms
+    req:
+      url: http://acc.map.data.amsterdam.nl/maps/topografie
+      layers: basiskaart-light
+    min_res: 0.84
+  kbk10_light:
+    type: wms
+    req:
+      url: https://acc.map.data.amsterdam.nl/maps/topografie
+      layers: basiskaart-light
+    min_res: 3.36
+    max_res: 0.85
+  kbk50_light:
+    type: wms
+    req:
+      url: https://acc.map.data.amsterdam.nl/maps/topografie
+      layers: basiskaart-light
+    min_res: 3440.64
+    max_res: 3.37
+
+# basiskaart zwartwit
+  basiskaart_zw:
+    type: wms
+    req:
+      url: http://acc.map.data.amsterdam.nl/maps/topografie
+      layers: basiskaart-zwartwit
+    min_res: 0.84
+
+  kbk10_zw:
+    type: wms
+    req:
+      url: https://acc.map.data.amsterdam.nl/maps/topografie
+      layers: basiskaart-zwartwit
+    min_res: 3.36
+    max_res: 0.85
+  kbk50_zw:
+    type: wms
+    req:
+      url: https://acc.map.data.amsterdam.nl/maps/topografie
+      layers: basiskaart-zwartwit
+    min_res: 3440.64
+    max_res: 3.37
+
+# basiskaart latlon
+  latlon:
+    type: wms
+    req:
+      url: http://acc.map.data.amsterdam.nl/maps/topografie_google
+      layers: basiskaart
+
+  dp_goole_basiskaart_bgt:
     type: wms
     req:
       url: http://acc.map.data.amsterdam.nl/maps/topografie_google
       layers: basiskaart
     min_res: 0.84
-  dp_basiskaart_kbk10:
+  dp_google_basiskaart_kbk10:
     type: wms
     req:
       url: https://acc.map.data.amsterdam.nl/maps/topografie_google
       layers: basiskaart
     min_res: 3.36
     max_res: 0.85
-  dp_basiskaart_kbk50:
+  dp_google_basiskaart_kbk50:
     type: wms
     req:
       url: https://acc.map.data.amsterdam.nl/maps/topografie_google
       layers: basiskaart
     min_res: 3440.64
     max_res: 3.37
-  dp_basiskaart_light_bgt:
+# basiskaart latlon light
+  latlon_light:
+    type: wms
+    req:
+      url: http://acc.map.data.amsterdam.nl/maps/topografie_google
+      layers: basiskaart-light
+
+  dp_google_basiskaart_light_bgt:
     type: wms
     req:
       url: http://acc.map.data.amsterdam.nl/maps/topografie_google
       layers: basiskaart-light
     min_res: 0.84
-  dp_basiskaart_light_kbk10:
+  dp_googel_basiskaart_light_kbk10:
     type: wms
     req:
       url: https://acc.map.data.amsterdam.nl/maps/topografie_google
       layers: basiskaart-light
     min_res: 3.36
     max_res: 0.85
-  dp_basiskaart_light_kbk50:
+  dp_google_basiskaart_light_kbk50:
     type: wms
     req:
       url: https://acc.map.data.amsterdam.nl/maps/topografie_google
       layers: basiskaart-light
     min_res: 3440.64
     max_res: 3.37
-  dp_basiskaart_zw_bgt:
+# basiskaart latlon zwartwit
+ latlon_zw:
+    type: wms
+    req:
+      url: http://acc.map.data.amsterdam.nl/maps/topografie_google
+      layers: basiskaart-zwartwit
+
+  dp_google_basiskaart_zw_bgt:
     type: wms
     req:
       url: http://acc.map.data.amsterdam.nl/maps/topografie_google
       layers: basiskaart-zwartwit
     min_res: 0.84
-  dp_basiskaart_zw_kbk10:
+  dp_google_basiskaart_zw_kbk10:
     type: wms
     req:
       url: https://acc.map.data.amsterdam.nl/maps/topografie_google
       layers: basiskaart-zwartwit
     min_res: 3.36
     max_res: 0.85
-  dp_basiskaart_zw_kbk50:
+  dp_google_basiskaart_zw_kbk50:
     type: wms
     req:
       url: https://acc.map.data.amsterdam.nl/maps/topografie_google
