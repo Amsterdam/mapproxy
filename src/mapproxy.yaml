@@ -94,20 +94,20 @@ sources:
   dp_basiskaart_bgt:
     type: wms
     req:
-      url: http://acc.map.data.amsterdam.nl/maps/topografie
+      url: http://acc.map.data.amsterdam.nl/maps/topografie_google
       layers: basiskaart
     min_res: 0.84
   dp_basiskaart_kbk10:
     type: wms
     req:
-      url: https://acc.map.data.amsterdam.nl/maps/kbk10
+      url: https://acc.map.data.amsterdam.nl/maps/topografie_google
       layers: basiskaart
     min_res: 3.36
     max_res: 0.85
   dp_basiskaart_kbk50:
     type: wms
     req:
-      url: https://acc.map.data.amsterdam.nl/maps/kbk50
+      url: https://acc.map.data.amsterdam.nl/maps/topografie_google
       layers: basiskaart
     min_res: 3440.64
     max_res: 3.37
@@ -134,20 +134,20 @@ sources:
   dp_basiskaart_zw_bgt:
     type: wms
     req:
-      url: http://acc.map.data.amsterdam.nl/maps/topografie
+      url: http://acc.map.data.amsterdam.nl/maps/topografie_google
       layers: basiskaart-zwartwit
     min_res: 0.84
   dp_basiskaart_zw_kbk10:
     type: wms
     req:
-      url: https://acc.map.data.amsterdam.nl/maps/kbk10
+      url: https://acc.map.data.amsterdam.nl/maps/topografie_google
       layers: basiskaart-zwartwit
     min_res: 3.36
     max_res: 0.85
   dp_basiskaart_zw_kbk50:
     type: wms
     req:
-      url: https://acc.map.data.amsterdam.nl/maps/kbk50
+      url: https://acc.map.data.amsterdam.nl/maps/topografie_google
       layers: basiskaart-zwartwit
     min_res: 3440.64
     max_res: 3.37
