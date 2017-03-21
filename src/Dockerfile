@@ -10,13 +10,11 @@ RUN apt-get update \
 		postgresql-client \
 		netcat \
 	&& apt-get clean \
-	&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
-	&& adduser --system datapunt
+	&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 WORKDIR /app
+COPY requirements.txt /app/
+RUN pip3 install --no-cache-dir -r requirements.txt
 
 COPY . /app/
 COPY .jenkins/import /.jenkins-import/
-
-RUN pip3 install --no-cache-dir -r requirements.txt
-USER datapunt

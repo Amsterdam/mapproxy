@@ -1,29 +1,5 @@
 version: '2.1'
 services:
-  topo-kbk:
-    build: src
-    command: seed-kbk.sh
-    volumes:
-      - "/mnt/tiles:/mnt/tiles"
-
-  topo-bgt:
-    build: src
-    command: seed-bgt.sh
-    volumes:
-      - "/mnt/tiles:/mnt/tiles"
-
-  topo-google:
-    build: src
-    command: seed-google.sh
-    volumes:
-      - "/mnt/tiles:/mnt/tiles"
-
-  topo-lufo:
-    build: src
-    command: seed-lufo.sh
-    volumes:
-      - "/mnt/tiles:/mnt/tiles"
-
   upload:
     build: image: build.datapunt.amsterdam.nl:5000/datapunt/raket:${ENVIRONMENT}
     volumes:
