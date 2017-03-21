@@ -20,14 +20,14 @@ Creating a new Lufo year of tiles and service follow these steps:
 
 1. Copy the aerial pictures (tif) to localhost
 2. Run mapserver/lufopyramids.sh (see comments in file)
-3. Start mapserver docker
+3. doso
 4. Set the port in mapproxy.yaml to the port of the mapserver docker
 5. Run mapproxy docker:
 
     docker-compose run topo-lufo
+sudcd
 
-
-6. Move generated tiles from /mnt/tiles/lufo_rd_cache_EPSG28992/ to: /mnt/tiles/lufo<YEAR>_rd_cache_EPSG28992/
+6. Move generated tiles from cd  to: /mnt/tiles/lufo<YEAR>_rd_cache_EPSG28992/
 7. Upload the tiles to the objectstore:
 
 

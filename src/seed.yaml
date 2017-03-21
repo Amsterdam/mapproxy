@@ -1,4 +1,6 @@
 seeds:
+
+#### TOPO RD - KBK & BGT - Standaard kleur
   topo_rd_kbk:
     caches: [topo_rd_cache]
     grids: [nl_grid]
@@ -19,18 +21,51 @@ seeds:
     refresh_before:
       weeks: 1
 
-  topo_google_bgt:
-     caches: [topo_google_cache]
-     grids: [webmercator]
-     coverages: ['bgt']
-     levels:
-       from: 17
-       to: 21
-     refresh_before:
-       weeks: 1
+#### TOPO RD - KBK & BGT - Light kleur
+  topo_rd_light_kbk:
+    caches: [topo_rd_light_cache]
+    grids: [nl_grid]
+    coverages: ['kbk']
+    levels:
+      from: 5
+      to: 11
+    refresh_before:
+      weeks: 1
 
-  topo_google_kbk:
-      caches: [topo_google_cache]
+  topo_rd_light_bgt:
+    caches: [topo_rd_light_cache]
+    grids: [nl_grid]
+    coverages: ['bgt']
+    levels:
+      from: 12
+      to: 16
+    refresh_before:
+      weeks: 1
+
+#### TOPO RD - KBK & BGT - zwartwit
+  topo_rd_zw_kbk:
+    caches: [topo_rd_zw_cache]
+    grids: [nl_grid]
+    coverages: ['kbk']
+    levels:
+      from: 5
+      to: 11
+    refresh_before:
+      weeks: 1
+
+  topo_rd_zw_bgt:
+    caches: [topo_rd_zw_cache]
+    grids: [nl_grid]
+    coverages: ['bgt']
+    levels:
+      from: 12
+      to: 16
+    refresh_before:
+      weeks: 1
+
+#### TOPO wm - KBK & BGT - Standaard kleur
+  topo_wm_kbk:
+      caches: [topo_wm_cache]
       grids: [webmercator]
       coverages: ['kbk']
       levels:
@@ -39,18 +74,19 @@ seeds:
       refresh_before:
         weeks: 1
 
-  topo_google_light_bgt:
-    caches: [topo_google_light_cache]
-    grids: [webmercator]
-    coverages: ['bgt']
-    levels:
-      from: 17
-      to: 21
-    refresh_before:
-      weeks: 1
+  topo_wm_bgt:
+     caches: [topo_wm_cache]
+     grids: [webmercator]
+     coverages: ['bgt']
+     levels:
+       from: 17
+       to: 21
+     refresh_before:
+       weeks: 1
 
-  topo_google_light_kbk:
-    caches: [topo_google_light_cache]
+#### TOPO wm - KBK & BGT - Light kleur
+  topo_wm_light_kbk:
+    caches: [topo_wm_light_cache]
     grids: [webmercator]
     coverages: ['kbk']
     levels:
@@ -59,8 +95,8 @@ seeds:
     refresh_before:
       weeks: 1
 
-  topo_google_zw_bgt:
-    caches: [topo_google_zw_cache]
+  topo_wm_light_bgt:
+    caches: [topo_wm_light_cache]
     grids: [webmercator]
     coverages: ['bgt']
     levels:
@@ -69,13 +105,24 @@ seeds:
     refresh_before:
       weeks: 1
 
-  topo_google_zw_kbk:
-    caches: [topo_google_zw_cache]
+#### TOPO wm - KBK & BGT - Zwarwit
+  topo_wm_zw_kbk:
+    caches: [topo_wm_zw_cache]
     grids: [webmercator]
     coverages: ['kbk']
     levels:
       from: 11
       to: 16
+    refresh_before:
+      weeks: 1
+
+  topo_wm_zw_bgt:
+    caches: [topo_wm_zw_cache]
+    grids: [webmercator]
+    coverages: ['bgt']
+    levels:
+      from: 17
+      to: 21
     refresh_before:
       weeks: 1
 
