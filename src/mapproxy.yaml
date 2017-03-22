@@ -37,7 +37,7 @@ caches:
 #### TOPO RD - KBK & BGT - Standaard kleur
   topo_rd_cache:
     grids: [nl_grid]
-    sources: [basiskaart]
+    sources: [basiskaart,basiskaart_bgt]
     cache:
       type: file
       directory_layout: tms
@@ -45,7 +45,7 @@ caches:
 #### TOPO RD - KBK & BGT - Light kleur
   topo_rd_light_cache:
     grids: [nl_grid]
-    sources: [basiskaart_light]
+    sources: [basiskaart_light,basiskaart_light_bgt]
     cache:
       type: file
       directory_layout: tms
@@ -53,7 +53,7 @@ caches:
   #### TOPO RD - KBK & BGT - Zwartwit
   topo_rd_zw_cache:
     grids: [nl_grid]
-    sources: [basiskaart_zw]
+    sources: [basiskaart_zw,basiskaart_zw_bgt]
     cache:
       type: file
       directory_layout: tms
@@ -61,7 +61,7 @@ caches:
 #### TOPO Webmercator (wm) - KBK & BGT - Standaard kleur
   topo_wm_cache:
     grids: [webmercator]
-    sources: [wm]
+    sources: [basiskaart_wm,basiskaart_wm_bgt]
     cache:
       type: file
       directory_layout: tms
@@ -69,7 +69,7 @@ caches:
 #### TOPO wm - KBK & BGT - Light kleur
   topo_wm_light_cache:
     grids: [webmercator]
-    sources: [wm_light]
+    sources: [basiskaart_wm_light,basiskaart_wm_light_bgt]
     cache:
       type: file
       directory_layout: tms
@@ -77,7 +77,7 @@ caches:
  ### TOPO Webmercator (wm) - KBK & BGT - Zwartwit
   topo_wm_zw_cache:
     grids: [webmercator]
-    sources: [wm_zw]
+    sources: [basiskaart_wm_zw,basiskaart_wm_zw_bgt]
     cache:
       type: file
       directory_layout: tms
@@ -98,6 +98,16 @@ sources:
     req:
       url: https://acc.map.data.amsterdam.nl/maps/topografie
       layers: basiskaart
+    min_res: 3440.64
+    max_res: 1.68
+  basiskaart_bgt:
+    type: wms
+    req:
+      url: http://www.diva.amsterdam.nl/cgi-bin/topografie?SLD=http://www.diva.amsterdam.nl/topografie.xml
+#      url: https://acc.map.data.amsterdam.nl/maps/topografie
+      layers: topovlakken,topolijnen,topoteksten
+#      layers: basiskaart
+    min_res: 0.84
 
  # basiskaart ligh kleur
   basiskaart_light:
@@ -105,6 +115,16 @@ sources:
     req:
       url: https://acc.map.data.amsterdam.nl/maps/topografie
       layers: basiskaart-light
+    min_res: 3440.64
+    max_res: 1.68
+  basiskaart_light_bgt:
+    type: wms
+    req:
+      url: http://www.diva.amsterdam.nl/cgi-bin/topografie?SLD=http://www.diva.amsterdam.nl/topografie_light.xml
+#      url: https://acc.map.data.amsterdam.nl/maps/topografie
+      layers: topovlakken,topolijnen,topoteksten
+#      layers: basiskaart
+    min_res: 0.84
 
 # basiskaart zwartwit
   basiskaart_zw:
@@ -112,27 +132,67 @@ sources:
     req:
       url: https://acc.map.data.amsterdam.nl/maps/topografie
       layers: basiskaart-zwartwit
+    min_res: 3440.64
+    max_res: 1.68
+  basiskaart_zw_bgt:
+    type: wms
+    req:
+      url: http://www.diva.amsterdam.nl/cgi-bin/topografie?SLD=http://www.diva.amsterdam.nl/topografie_zw.xml
+#      url: https://acc.map.data.amsterdam.nl/maps/topografie
+      layers: topovlakken,topolijnen,topoteksten
+#      layers: basiskaart
+    min_res: 0.84
 
 # basiskaart webmercator (wm)
-  wm:
+  basiskaart_wm:
     type: wms
     req:
       url: https://acc.map.data.amsterdam.nl/maps/topografie_wm
       layers: basiskaart
+    min_res: 3440.64
+    max_res: 1.68
+  basiskaart_wm_bgt:
+    type: wms
+    req:
+      url: http://www.diva.amsterdam.nl/cgi-bin/topografie?SLD=http://www.diva.amsterdam.nl/topografie.xml
+#      url: https://acc.map.data.amsterdam.nl/maps/topografie
+      layers: topovlakken,topolijnen,topoteksten
+#      layers: basiskaart
+    min_res: 0.84
 
 # basiskaart wm light
-  wm_light:
+  basiskaart_wm_light:
     type: wms
     req:
       url: https://acc.map.data.amsterdam.nl/maps/topografie_wm
       layers: basiskaart-light
+    min_res: 3440.64
+    max_res: 1.68
+  basiskaart_wm_light_bgt:
+    type: wms
+    req:
+      url: http://www.diva.amsterdam.nl/cgi-bin/topografie?SLD=http://www.diva.amsterdam.nl/topografie_light.xml
+#      url: https://acc.map.data.amsterdam.nl/maps/topografie
+      layers: topovlakken,topolijnen,topoteksten
+#      layers: basiskaart
+    min_res: 0.84
 
 # basiskaart wm zwartwit
-  wm_zw:
+  basiskaart_wm_zw:
     type: wms
     req:
       url: https://acc.map.data.amsterdam.nl/maps/topografie_wm
       layers: basiskaart-zwartwit
+    min_res: 3440.64
+    max_res: 1.68
+  basiskaart_wm_zw_bgt:
+    type: wms
+    req:
+      url: http://www.diva.amsterdam.nl/cgi-bin/topografie?SLD=http://www.diva.amsterdam.nl/topografie_zw.xml
+#      url: https://acc.map.data.amsterdam.nl/maps/topografie
+      layers: topovlakken,topolijnen,topoteksten
+#      layers: basiskaart
+    min_res: 0.84
 
  #  datapunt_wms_bgt:
 #    type: wmsdata.
