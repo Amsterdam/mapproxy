@@ -96,42 +96,42 @@ sources:
   basiskaart:
     type: wms
     req:
-      url: http://acc.map.data.amsterdam.nl/maps/topografie
+      url: https://acc.map.data.amsterdam.nl/maps/topografie
       layers: basiskaart
 
  # basiskaart ligh kleur
   basiskaart_light:
     type: wms
     req:
-      url: http://acc.map.data.amsterdam.nl/maps/topografie
+      url: https://acc.map.data.amsterdam.nl/maps/topografie
       layers: basiskaart-light
 
 # basiskaart zwartwit
   basiskaart_zw:
     type: wms
     req:
-      url: http://acc.map.data.amsterdam.nl/maps/topografie
+      url: https://acc.map.data.amsterdam.nl/maps/topografie
       layers: basiskaart-zwartwit
 
 # basiskaart webmercator (wm)
   wm:
     type: wms
     req:
-      url: http://acc.map.data.amsterdam.nl/maps/topografie_wm
+      url: https://acc.map.data.amsterdam.nl/maps/topografie_wm
       layers: basiskaart
 
 # basiskaart wm light
   wm_light:
     type: wms
     req:
-      url: http://acc.map.data.amsterdam.nl/maps/topografie_wm
+      url: https://acc.map.data.amsterdam.nl/maps/topografie_wm
       layers: basiskaart-light
 
 # basiskaart wm zwartwit
   wm_zw:
     type: wms
     req:
-      url: http://acc.map.data.amsterdam.nl/maps/topografie_wm
+      url: https://acc.map.data.amsterdam.nl/maps/topografie_wm
       layers: basiskaart-zwartwit
 
  #  datapunt_wms_bgt:

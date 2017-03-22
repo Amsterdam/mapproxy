@@ -1,43 +1,67 @@
-topo-rd:
-  build: src
-  command: mapproxy-seed -c 6 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=topo_rd_kbk,topo_rd_bgt
-  volumes:
-    - "/mnt/tiles:/mnt/tiles"
+version: '2.1'
+services:
+#  database:
+#    image: build.datapunt.amsterdam.nl:5000/atlas/postgres
+#    environment:
+#      POSTGRES_PASSWORD: insecure
+#      POSTGRES_USER: basiskaart
+#
+#  mapserver:
+#    image: build.datapunt.amsterdam.nl:5000/datapunt/mapserver
+#    user: root
+#    environment:
+#      POSTGRES_PASSWORD: insecure
+#      POSTGRES_USER: basiskaart
 
-topo-rd-light:
-  build: src
-  command: mapproxy-seed -c 6 -s /app/seed.yaml -f /app/mapproxy.yaml --seed= topo_rd_light_kbk, topo_rd_light_bgt
-  volumes:
-    - "/mnt/tiles:/mnt/tiles"
+  topo-rd:
+    build: src
+#    links:
+#      - mapserver
+#      - database
+    command: mapproxy-seed -c 6 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=topo_rd_kbk,topo_rd_bgt
+    volumes:
+      - "/mnt/tiles:/mnt/tiles"
 
-topo-rd-zw:
-  build: src
-  command: mapproxy-seed -c 6 -s /app/seed.yaml -f /app/mapproxy.yaml --seed= topo_rd_zw_kbk, topo_rd_zw_bgt
-  volumes:
-    - "/mnt/tiles:/mnt/tiles"
+  topo-test:
+    build: src
+    command: mapproxy-seed -c 6 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=topo_rd_bgt
+    volumes:
+      - "/mnt/tiles:/mnt/tiles"
 
-topo-wm:
-  build: src
-  command: mapproxy-seed -c 10 -s /app/seed.yaml -f /app/mapproxy.yaml --seed= topo_wm_kbk, topo_wm_bgt
-  volumes:
-    - "/mnt/tiles:/mnt/tiles"
+  topo-rd-light:
+    build: src
+    command: mapproxy-seed -c 6 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=topo_rd_light_kbk, topo_rd_light_bgt
+    volumes:
+      - "/mnt/tiles:/mnt/tiles"
 
-topo-wm-light:
-  build: src
-  command: mapproxy-seed -c 10 -s /app/seed.yaml -f /app/mapproxy.yaml --seed= topo_wm_light_kbk, topo_wm_light_bgt
-  volumes:
-    - "/mnt/tiles:/mnt/tiles"
+  topo-rd-zw:
+    build: src
+    command: mapproxy-seed -c 6 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=topo_rd_zw_kbk, topo_rd_zw_bgt
+    volumes:
+      - "/mnt/tiles:/mnt/tiles"
 
-topo-wm-zw:
-  build: src
-  command: mapproxy-seed -c 10 -s /app/seed.yaml -f /app/mapproxy.yaml --seed= topo_wm_zw_kbk, topo_wm_zw_bgt
-  volumes:
-    - "/mnt/tiles:/mnt/tiles"
+  topo-wm:
+    build: src
+    command: mapproxy-seed -c 10 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=topo_wm_kbk, topo_wm_bgt
+    volumes:
+      - "/mnt/tiles:/mnt/tiles"
 
-topo-lufo:
-  build: src
-  command: seed-lufo.sh
-  volumes:
-    - "/mnt/tiles:/mnt/tiles"
+  topo-wm-light:
+    build: src
+    command: mapproxy-seed -c 10 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=topo_wm_light_kbk, topo_wm_light_bgt
+    volumes:
+      - "/mnt/tiles:/mnt/tiles"
+
+  topo-wm-zw:
+    build: src
+    command: mapproxy-seed -c 10 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=topo_wm_zw_kbk, topo_wm_zw_bgt
+    volumes:
+      - "/mnt/tiles:/mnt/tiles"
+
+  topo-lufo:
+    build: src
+    command: seed-lufo.sh
+    volumes:
+      - "/mnt/tiles:/mnt/tiles"
 
 
