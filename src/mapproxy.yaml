@@ -19,7 +19,7 @@ services:
         country: Netherlands
         phone: n/a
         fax: n/a
-        email: data.ois@amsterdam.nl
+        email: datapunt@amsterdam.nl
       fees: 'None'
 
 layers:
