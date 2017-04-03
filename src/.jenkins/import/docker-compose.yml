@@ -1,7 +1,8 @@
 version: '2.1'
 services:
   upload:
-    build: image: build.datapunt.amsterdam.nl:5000/datapunt/raket:${ENVIRONMENT}
+    build: ../../
+#    image: build.datapunt.amsterdam.nl:5000/datapunt/tileupload:${ENVIRONMENT}
     volumes:
       - $TILES_SOURCE_PATH-/mnt/tiles/:/app/data
     environment:

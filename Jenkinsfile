@@ -25,15 +25,15 @@ node {
 
     stage('Test') {
         tryStep "test", {
-            sh "docker-compose -p raket -f src/.jenkins/test/docker-compose.yml build"
+            sh "docker-compose -p tileupload -f src/.jenkins/test/docker-compose.yml build"
         }, {
-            sh "docker-compose -p raket -f src/.jenkins/test/docker-compose.yml down"
+            sh "docker-compose -p tileupload -f src/.jenkins/test/docker-compose.yml down"
         }
     }
 
     stage("Build acceptance image") {
         tryStep "build", {
-            def image = docker.build("build.datapunt.amsterdam.nl:5000/datapunt/raket:${env.BUILD_NUMBER}", "src")
+            def image = docker.build("build.datapunt.amsterdam.nl:5000/datapunt/tileupload:${env.BUILD_NUMBER}", "src")
             image.push()
             image.push("acceptance")
         }
@@ -41,14 +41,14 @@ node {
 }
 
 stage('Waiting for approval') {
-    slackSend channel: '#ci-channel', color: 'warning', message: 'raket is waiting for Production Release - please confirm'
+    slackSend channel: '#ci-channel', color: 'warning', message: 'Tileupload is waiting for Production Release - please confirm'
     input "Deploy to Production?"
 }
 
 node {
     stage('Push production image') {
     tryStep "image tagging", {
-        def image = docker.image("build.datapunt.amsterdam.nl:5000/datapunt/raket:${env.BUILD_NUMBER}")
+        def image = docker.image("build.datapunt.amsterdam.nl:5000/datapunt/tileupload:${env.BUILD_NUMBER}")
         image.pull()
 
             image.push("production")
