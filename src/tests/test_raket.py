@@ -3,13 +3,13 @@ import os
 from objectstore.objectstore import ObjectStore
 from raket import raket_setup, raket
 
-connected_obj_store = ObjectStore(raket_setup.TILES_OBJECTSTORE_CONTAINER)
-raket_setup.TILES_SOURCE_PATH_INTERNAL = os.path.dirname(
+connected_obj_store = ObjectStore(raket_setup.OBJECTSTORE_CONTAINER)
+raket_setup.SOURCE_PATH_INTERNAL = os.path.dirname(
     os.path.realpath(__file__)) + '/fixtures'
 
 
 def setUp():
-    raket_setup.TILES_OBJECTSTORE_CONTAINER = 'Test'
+    raket_setup.OBJECTSTORE_CONTAINER = 'Test'
     connected_obj_store.create_container('Test')
 
 

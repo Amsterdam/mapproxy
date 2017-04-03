@@ -38,60 +38,60 @@ def in_docker():
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-TILES_OBJECTSTORE_PASSWORD = None
-TILES_OBJECTSTORE_USER = None
-TILES_OBJECTSTORE_TENANT_NAME = None
-TILES_OBJECTSTORE_TENANT_ID = None
+OBJECTSTORE_PASSWORD = None
+OBJECTSTORE_USER = None
+OBJECTSTORE_TENANT_NAME = None
+OBJECTSTORE_TENANT_ID = None
 
 TEST_KEYS = os.path.expanduser('~/keys.env')
 if os.path.exists(TEST_KEYS):
     with open(TEST_KEYS, 'r') as testkeys:
         files = json.load(testkeys)
         if 'maptiles' in files:
-            TILES_OBJECTSTORE_PASSWORD = files['maptiles']
+            OBJECTSTORE_PASSWORD = files['maptiles']
         if 'maptiles_objectstore_user' in files:
-            TILES_OBJECTSTORE_USER = files['maptiles_objectstore_user']
+            OBJECTSTORE_USER = files['maptiles_objectstore_user']
         if 'maptiles_objectstore_tenant_name' in files:
-            TILES_OBJECTSTORE_TENANT_NAME = files[
+            OBJECTSTORE_TENANT_NAME = files[
                 'maptiles_objectstore_tenant_name']
         if 'maptiles_objectstore_tenant_id' in files:
-            TILES_OBJECTSTORE_TENANT_ID = files[
+            OBJECTSTORE_TENANT_ID = files[
                 'maptiles_objectstore_tenant_id']
 
-if not TILES_OBJECTSTORE_PASSWORD:
-    TILES_OBJECTSTORE_PASSWORD = os.getenv(
-        'TILES_OBJECTSTORE_PASSWORD', 'insecure')
-if not TILES_OBJECTSTORE_USER:
-    TILES_OBJECTSTORE_USER = os.getenv(
-        'TILES_OBJECTSTORE_USER', 'maptiles')
-    if not TILES_OBJECTSTORE_USER:
-        TILES_OBJECTSTORE_USER = 'maptiles'
-if not TILES_OBJECTSTORE_TENANT_NAME:
-    TILES_OBJECTSTORE_TENANT_NAME = os.getenv(
-        'TILES_OBJECTSTORE_TENANT_NAME', 'BGE000081_Maptiles')
-    if not TILES_OBJECTSTORE_TENANT_NAME:
-        TILES_OBJECTSTORE_TENANT_NAME = 'BGE000081_Maptiles'
-if not TILES_OBJECTSTORE_TENANT_ID:
-    TILES_OBJECTSTORE_TENANT_ID = os.getenv(
-        'TILES_OBJECTSTORE_TENANT_ID', 'a53b807905f74d39ae9745d6d003854a')
-    if not TILES_OBJECTSTORE_TENANT_ID:
-        TILES_OBJECTSTORE_TENANT_ID = 'a53b807905f74d39ae9745d6d003854a'
+if not OBJECTSTORE_PASSWORD:
+    OBJECTSTORE_PASSWORD = os.getenv(
+        'OBJECTSTORE_PASSWORD', 'insecure')
+if not OBJECTSTORE_USER:
+    OBJECTSTORE_USER = os.getenv(
+        'OBJECTSTORE_USER', 'maptiles')
+    if not OBJECTSTORE_USER:
+        OBJECTSTORE_USER = 'maptiles'
+if not OBJECTSTORE_TENANT_NAME:
+    OBJECTSTORE_TENANT_NAME = os.getenv(
+        'OBJECTSTORE_TENANT_NAME', 'BGE000081_Maptiles')
+    if not OBJECTSTORE_TENANT_NAME:
+        OBJECTSTORE_TENANT_NAME = 'BGE000081_Maptiles'
+if not OBJECTSTORE_TENANT_ID:
+    OBJECTSTORE_TENANT_ID = os.getenv(
+        'OBJECTSTORE_TENANT_ID', 'a53b807905f74d39ae9745d6d003854a')
+    if not OBJECTSTORE_TENANT_ID:
+        OBJECTSTORE_TENANT_ID = 'a53b807905f74d39ae9745d6d003854a'
 
 DEBUG = os.getenv('DEBUG', False) == '1'
 
-TILES_SOURCE_PATH_INTERNAL = os.getenv(
-    'TILES_SOURCE_PATH_INTERNAL', '/app/data')
-TILES_OBJECTSTORE_CONTAINER = os.getenv(
-    'TILES_OBJECTSTORE_CONTAINER', 'tiles')
-if not TILES_OBJECTSTORE_CONTAINER:
-    TILES_OBJECTSTORE_CONTAINER = 'tiles'
+SOURCE_PATH_INTERNAL = os.getenv(
+    'SOURCE_PATH_INTERNAL', '/app/data')
+OBJECTSTORE_CONTAINER = os.getenv(
+    'OBJECTSTORE_CONTAINER', 'tiles')
+if not OBJECTSTORE_CONTAINER:
+    OBJECTSTORE_CONTAINER = 'tiles'
 try:
-    TILES_PROGRESS = int(os.getenv(
-        'TILES_PROGRESS', '30'))
+    PROGRESS = int(os.getenv(
+        'PROGRESS', '30'))
 except ValueError:
-    TILES_PROGRESS = 30
+    PROGRESS = 30
 try:
-    TILES_NR_OF_PROCESSES = int(os.getenv(
-        'TILES_NR_OF_PROCESSES', '100'))
+    NR_OF_PROCESSES = int(os.getenv(
+        'NR_OF_PROCESSES', '100'))
 except ValueError:
-    TILES_NR_OF_PROCESSES = 100
+    NR_OF_PROCESSES = 100

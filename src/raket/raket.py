@@ -15,7 +15,7 @@ def logtimestamp():
 def upload(path_to_tile, nr_of_tiles, filequeue, countqueue):
     print('{} {} Tiles are to be written to container {} from {}'.
           format(logtimestamp(), nr_of_tiles,
-                 raket_setup.TILES_OBJECTSTORE_CONTAINER, path_to_tile))
+                 raket_setup.OBJECTSTORE_CONTAINER, path_to_tile))
     try:
         int_nr_of_tiles = int(nr_of_tiles)
     except ValueError:
@@ -54,7 +54,7 @@ def progress_bar(countqueue):
     totalcount = -1
     starttime = datetime.datetime.now()
     nexttime = starttime + \
-               datetime.timedelta(seconds=int(raket_setup.TILES_PROGRESS))
+               datetime.timedelta(seconds=int(raket_setup.PROGRESS))
     while True:
         try:
             parm = countqueue.get(timeout=timeout)
@@ -69,7 +69,7 @@ def progress_bar(countqueue):
                   '{} per second'.format(logtimestamp(), pct, counter,
                                          calc_per_sec(starttime, counter)))
             nexttime = datetime.datetime.now() + datetime.timedelta(
-                seconds=int(raket_setup.TILES_PROGRESS))
+                seconds=int(raket_setup.PROGRESS))
 
 
 def worker_actual_upload(filequeue, countqueue, container):
@@ -113,7 +113,7 @@ def process_raket(nr_of_tiles='all', nr_of_processes=2):
     countqueue = mp.Queue()
     starttime = datetime.datetime.now()
     processes = start_workers(nr_of_processes, filequeue, countqueue)
-    counter = upload(raket_setup.TILES_SOURCE_PATH_INTERNAL, nr_of_tiles,
+    counter = upload(raket_setup.SOURCE_PATH_INTERNAL + '/' + raket_setup.OBJECTSTORE_CONTAINER, nr_of_tiles,
                      filequeue,
                      countqueue)
 
@@ -130,7 +130,7 @@ def start_workers(nr_of_processes, filequeue, countqueue):
         processes.append(mp.Process(target=worker_actual_upload,
                                     args=(filequeue, countqueue,
                                           raket_setup.
-                                          TILES_OBJECTSTORE_CONTAINER)))
+                                          OBJECTSTORE_CONTAINER)))
         processes[-1].start()
     processes.append(mp.Process(target=progress_bar, args=(countqueue,)))
     processes[-1].start()

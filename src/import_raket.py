@@ -21,7 +21,7 @@ parser.add_argument(
 parser.add_argument(
     '--concurrent_nr',
     action='store',
-    default=raket_setup.TILES_NR_OF_PROCESSES,
+    default=raket_setup.NR_OF_PROCESSES,
     help='Select how many tiles to import')
 args = parser.parse_args()
 

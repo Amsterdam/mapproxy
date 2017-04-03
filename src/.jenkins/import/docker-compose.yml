@@ -1,18 +1,18 @@
 version: '2.1'
 services:
   upload:
-    build: ../../
-#    image: build.datapunt.amsterdam.nl:5000/datapunt/tileupload:${ENVIRONMENT}
+#    build: ../../
+    image: build.datapunt.amsterdam.nl:5000/datapunt/tileupload:${ENVIRONMENT}
     volumes:
-      - $TILES_SOURCE_PATH-/mnt/tiles/:/app/data
+      - ${SOURCE_PATH}:/app/data
     environment:
-      - TILES_OBJECTSTORE_PASSWORD=${TILES_OBJECTSTORE_PASSWORD}
-      - TILES_OBJECTSTORE_CONTAINER=${TILES_OBJECTSTORE_CONTAINER}
-      - TILES_OBJECTSTORE_USER=${TILES_OBJECTSTORE_USER}
-      - TILES_OBJECTSTORE_TENANT_NAME=${TILES_OBJECTSTORE_TENANT_NAME}
-      - TILES_OBJECTSTORE_TENANT_ID=${TILES_OBJECTSTORE_TENANT_ID}
-      - TILES_SOURCE_PATH=${TILES_SOURCE_PATH}
-      - TILES_PROGRESS=${TILES_PROGRESS}
-      - TILES_NR_OF_PROCESSES=${TILES_NR_OF_PROCESSES}
+      - OBJECTSTORE_PASSWORD=${OBJECTSTORE_PASSWORD}
+      - OBJECTSTORE_CONTAINER=${OBJECTSTORE_CONTAINER}
+      - OBJECTSTORE_USER=${OBJECTSTORE_USER}
+      - OBJECTSTORE_TENANT_NAME=${OBJECTSTORE_TENANT_NAME}
+      - OBJECTSTORE_TENANT_ID=${OBJECTSTORE_TENANT_ID}
+      - SOURCE_PATH=${SOURCE_PATH}
+      - PROGRESS=${PROGRESS}
+      - NR_OF_PROCESSES=${NR_OF_PROCESSES}
     command: >
       bash -c "python3 ./import_raket.py"

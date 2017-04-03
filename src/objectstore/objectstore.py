@@ -3,10 +3,10 @@ import logging
 from swiftclient.client import Connection
 from raket import raket_setup
 
-TILES_OBJECTSTORE_PASSWORD = raket_setup.TILES_OBJECTSTORE_PASSWORD
-TILES_OBJECTSTORE_USER = raket_setup.TILES_OBJECTSTORE_USER
-TILES_OBJECTSTORE_TENANT_NAME = raket_setup.TILES_OBJECTSTORE_TENANT_NAME
-TILES_OBJECTSTORE_TENANT_ID = raket_setup.TILES_OBJECTSTORE_TENANT_ID
+OBJECTSTORE_PASSWORD = raket_setup.OBJECTSTORE_PASSWORD
+OBJECTSTORE_USER = raket_setup.OBJECTSTORE_USER
+OBJECTSTORE_TENANT_NAME = raket_setup.OBJECTSTORE_TENANT_NAME
+OBJECTSTORE_TENANT_ID = raket_setup.OBJECTSTORE_TENANT_ID
 
 log = logging.getLogger(__name__)
 
@@ -17,12 +17,12 @@ logging.getLogger("swiftclient").setLevel(logging.WARNING)
 OBJECTSTORE = {
     'auth_version': '2.0',
     'authurl': 'https://identity.stack.cloudvps.com/v2.0',
-    'user': TILES_OBJECTSTORE_USER,
-    'key': TILES_OBJECTSTORE_PASSWORD,
-    'tenant_name': TILES_OBJECTSTORE_TENANT_NAME,
+    'user': OBJECTSTORE_USER,
+    'key': OBJECTSTORE_PASSWORD,
+    'tenant_name': OBJECTSTORE_TENANT_NAME,
     'retry_on_ratelimit': True,
     'os_options': {
-        'tenant_id': TILES_OBJECTSTORE_TENANT_ID,
+        'tenant_id': OBJECTSTORE_TENANT_ID,
         'region_name': 'NL'}
 }
 
