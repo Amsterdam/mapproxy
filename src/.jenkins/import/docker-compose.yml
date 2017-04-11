@@ -14,4 +14,4 @@ services:
       - OS_AUTH_URL=https://identity.stack.cloudvps.com/v2.0
       - OS_PASSWORD=${OS_PASSWORD}
     command: >
-      bash -c "cd /app/data/${OS_CONTAINER} && swift -s -v --info upload --object-threads 40 --changed ${OS_CONTAINER} ."
+      bash -c "cd /app/data/${OS_CONTAINER} && swift -s -v --info upload --object-threads 40 ${OS_CONTAINER} ."
