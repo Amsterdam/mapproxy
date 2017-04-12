@@ -13,5 +13,6 @@ services:
       - OS_AUTH_TYPE=password
       - OS_AUTH_URL=https://identity.stack.cloudvps.com/v2.0
       - OS_PASSWORD=${OS_PASSWORD}
+    mem_limit: 14g
     command: >
-      bash -c "cd /app/data/${OS_CONTAINER} && swift -s -v --info upload --object-threads 40 ${OS_CONTAINER} ."
+      bash -c "cd /app/data/${OS_CONTAINER} && swift -s -v --info upload --object-threads 10 ${OS_CONTAINER} ."
