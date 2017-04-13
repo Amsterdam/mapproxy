@@ -23,6 +23,14 @@ node {
         checkout scm
     }
 
+    stage('Test') {
+        tryStep "test", {
+            sh "docker-compose -p tileupload -f src/.jenkins/test/docker-compose.yml build"
+        }, {
+            sh "docker-compose -p tileupload -f src/.jenkins/test/docker-compose.yml down"
+        }
+    }
+
     stage("Build acceptance image") {
         tryStep "build", {
             def image = docker.build("build.datapunt.amsterdam.nl:5000/datapunt/tileupload:${env.BUILD_NUMBER}", "src")

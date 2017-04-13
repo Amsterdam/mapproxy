@@ -1,0 +1,27 @@
+ERROR  : 11:50:42: ERROR:  subquery in FROM must have an alias
+LINE 1:  SELECT max(hoogtelig) from (
+                                    ^
+HINT:  For example, FROM (SELECT ...) [AS] foo.
+ERROR  : 11:52:17: ERROR:  subquery in FROM must have an alias
+LINE 1: Select max(relatievehoogteligging) from (
+                                                ^
+HINT:  For example, FROM (SELECT ...) [AS] foo.
+ERROR  : 09:03:44: ERROR:  syntax error at or near "geometrie"
+LINE 1: select * geometrie FROM bgt.bgt_btrn_boomteelt USING srid=28...
+                 ^
+ERROR  : 09:03:53: ERROR:  syntax error at or near "USING"
+LINE 1: select * FROM bgt.bgt_btrn_boomteelt USING srid=28992 USING ...
+                                             ^
+ERROR  : 09:04:36: ERROR:  relation "bgt.bgt_btrn_boomteelt" does not exist
+LINE 1: select * FROM bgt.bgt_btrn_boomteelt 
+                      ^
+ERROR  : 09:05:22: ERROR:  relation "bgt.bgt_btrn_boomteelt" does not exist
+LINE 1: select * FROM bgt.BGT_BTRN_boomteelt
+                      ^
+ERROR  : 11:31:06: Error: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+ERROR  : 16:21:23: Error: ERROR:  database "test_monumenten" is being accessed by other users
+DETAIL:  There is 1 other session using the database.
+ERROR  : 16:21:47: Error: ERROR:  database "test_monumenten" is being accessed by other users
+DETAIL:  There is 1 other session using the database.
