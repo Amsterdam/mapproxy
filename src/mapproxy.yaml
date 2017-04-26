@@ -99,7 +99,7 @@ sources:
       url: https://acc.map.data.amsterdam.nl/maps/topografie
       layers: basiskaart
     min_res: 3440.64
-    max_res: 1.68
+    max_res: 0.84
   basiskaart_bgt:
     type: wms
     req:
@@ -116,7 +116,7 @@ sources:
       url: https://acc.map.data.amsterdam.nl/maps/topografie
       layers: basiskaart-light
     min_res: 3440.64
-    max_res: 1.68
+    max_res: 0.84
   basiskaart_light_bgt:
     type: wms
     req:
@@ -133,7 +133,7 @@ sources:
       url: https://acc.map.data.amsterdam.nl/maps/topografie
       layers: basiskaart-zwartwit
     min_res: 3440.64
-    max_res: 1.68
+    max_res: 0.84
   basiskaart_zw_bgt:
     type: wms
     req:
@@ -150,7 +150,7 @@ sources:
       url: https://acc.map.data.amsterdam.nl/maps/topografie_wm
       layers: basiskaart
     min_res: 3440.64
-    max_res: 1.68
+    max_res: 0.84
   basiskaart_wm_bgt:
     type: wms
     req:
@@ -167,7 +167,7 @@ sources:
       url: https://acc.map.data.amsterdam.nl/maps/topografie_wm
       layers: basiskaart-light
     min_res: 3440.64
-    max_res: 1.68
+    max_res: 0.84
   basiskaart_wm_light_bgt:
     type: wms
     req:
@@ -184,7 +184,7 @@ sources:
       url: https://acc.map.data.amsterdam.nl/maps/topografie_wm
       layers: basiskaart-zwartwit
     min_res: 3440.64
-    max_res: 1.68
+    max_res: 0.84
   basiskaart_wm_zw_bgt:
     type: wms
     req:
