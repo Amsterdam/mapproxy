@@ -1,7 +1,7 @@
 FROM amsterdam/docker_python:latest
 MAINTAINER datapunt@amsterdam.nl
 
-RUN && apt-get install -y \
+RUN apt-get install -y \
         python3-dev \
         python3-pip \
         libpq-dev \
