@@ -6,10 +6,10 @@ set -u
 DIR="$(dirname $0)"
 
 dc() {
-	docker-compose -p tiles -f ${DIR}/docker-compose.yml $*
+	docker-compose -p mapproxy -f ${DIR}/docker-compose.yml $*
 }
 
-trap 'dc kill ; dc rm -f' EXIT
+#trap 'dc kill ; dc rm -f' EXIT
 
 # start database
 dc up -d --build database
@@ -23,4 +23,5 @@ sudo chmod 755 /mnt/tiles
 dc exec database update-db.sh basiskaart
 
 # generate geojson
-dc run --rm importer
+#dc run --rm topo_rd
+dc run topo_rd
