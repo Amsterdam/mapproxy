@@ -4,15 +4,16 @@ services:
     image: build.datapunt.amsterdam.nl:5000/atlas/postgres
     environment:
       POSTGRES_PASSWORD: insecure
-      POSTGRES_USER: basiskaart
+      POSTGRES_USER: postgres
 
   mapserver:
-    image: build.datapunt.amsterdam.nl:5000/datapunt/mapserver
+    image: build.datapunt.amsterdam.nl:5000/datapunt/mapserver-private
     user: root
     environment:
       ATLAS_DB_NAME: atlas
       ATLAS_DB_USER: postgres
       ATLAS_DB_PASSWORD: insecure
+      ATLAS_DB_PORT_5432_TCP_ADDR: database
 
       NAP_DB_NAME: nap
       NAP_DB_USER: postgres
@@ -37,7 +38,7 @@ services:
       PREDICTIVEPARKING_DB_PASSWORD: insecure
 
       BASISKAART_DB_NAME: basiskaart
-      BASISKAART_DB_USER: basiskaart
+      BASISKAART_DB_USER: postgres
       BASISKAART_DB_PASSWORD: insecure
       BASISKAART_DB_PORT_5432_TCP_ADDR: database
 

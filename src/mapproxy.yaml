@@ -93,17 +93,17 @@ caches:
 
 sources:
 # basiskaart standaard kleur
-  basiskaart_kbk10:
-    type: wms
-    req:
-      url: http://mapserver/maps/kbk10
-      layers: vlakken,lijnen,teksten
-    min_res: 3440.64
-    max_res: 1.68
   basiskaart_kbk50:
     type: wms
     req:
       url: http://mapserver/maps/kbk50
+      layers: vlakken,lijnen,teksten
+    min_res: 3440.64
+    max_res: 1.68
+  basiskaart_kbk10:
+    type: wms
+    req:
+      url: http://mapserver/maps/kbk10
       layers: vlakken,lijnen,teksten
     min_res: 1.68
     max_res: 0.84
@@ -111,7 +111,7 @@ sources:
     type: wms
     req:
       url: http://mapserver/maps/bgt
-      layers: vlakken,lijnen,teksten
+      layers: hoogte0,hoogte1,hoogte2,hoogte3,hoogte4,hoogte_2,hoogte_1,teksten
     min_res: 0.84
 
  # basiskaart light kleur
