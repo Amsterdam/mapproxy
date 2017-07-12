@@ -35,16 +35,16 @@ layers:
         layers:
           - name: bgt
             title: bgt
-            source: [topo_rd_tiled]
+            sources: [topo_rd_tiled]
             min_res: 0.84
           - name: kbk10
             title: kbk10
-            source: [topo_rd_tiled]
+            sources: [topo_rd_tiled]
             min_res: 1.68
             max_res: 0.84
           - name: kbk50
             title: kbk50
-            source: [topo_rd_tiled]
+            sources: [topo_rd_tiled]
             min_res: 3440.64
             max_res: 1.68
       - name: basiskaart-light
@@ -54,16 +54,16 @@ layers:
         layers:
           - name: bgt-light
             title: bgt-light
-            source: [topo_rd_light_tiled]
+            sources: [topo_rd_light_tiled]
             min_res: 0.84
           - name: kbk10-light
             title: kbk10-light
-            source: [topo_rd_light_tiled]
+            sources: [topo_rd_light_tiled]
             min_res: 1.68
             max_res: 0.84
           - name: kbk50-light
             title: kbk50-light
-            source: [topo_rd_light_tiled]
+            sources: [topo_rd_light_tiled]
             min_res: 3440.64
             max_res: 1.68
       - name: basiskaart-zwartwit
@@ -73,16 +73,16 @@ layers:
         layers:
           - name: bgt-zwartwit
             title: bgt-zwartwit
-            source: [topo_rd_zw_tiled]
+            sources: [topo_rd_zw_tiled]
             min_res: 0.84
           - name: kbk10-zwartwit
             title: kbk10-zwartwit
-            source: [topo_rd_zw_tiled]
+            sources: [topo_rd_zw_tiled]
             min_res: 1.68
             max_res: 0.84
           - name: kbk50-zwartwit
             title: kbk50-zwartwit
-            source: [topo_rd_zw_tiled]
+            sources: [topo_rd_zw_tiled]
             min_res: 3440.64
             max_res: 1.68
   - name: topo_rd
