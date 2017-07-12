@@ -1,5 +1,16 @@
 version: '3.0'
 services:
+  mapproxy:
+#    image: build.datapunt.amsterdam.nl:5000/datapunt/mapproxy
+    build: src
+    ports:
+      - "8000:8000"
+    environment:
+      - UWSGI_HTTP=0.0.0.0:8000
+      - UWSGI_MODULE=mapproxy.wsgi
+      - UWSGI_CALLABLE=application
+      - UWSGI_MASTER=1
+
   database:
     image: build.datapunt.amsterdam.nl:5000/atlas/postgres
     environment:
@@ -13,7 +24,6 @@ services:
       ATLAS_DB_NAME: atlas
       ATLAS_DB_USER: postgres
       ATLAS_DB_PASSWORD: insecure
-      ATLAS_DB_PORT_5432_TCP_ADDR: database
 
       NAP_DB_NAME: nap
       NAP_DB_USER: postgres
@@ -24,34 +34,31 @@ services:
       MILIEUTHEMAS_DB_PASSWORD: insecure
 
       PANORAMA_DB_NAME: panorama
-      PANORAMA_DB_USER: panorama
+      PANORAMA_DB_USER: postgres
       PANORAMA_DB_PASSWORD: insecure
-      PANORAMA_DB_PORT_5432_TCP_PORT: 8080
-      PANORAMA_DB_PORT_5432_TCP_ADDR: 8080
 
       PARKEERVAKKEN_DB_NAME: parkeervakken
       PARKEERVAKKEN_DB_USER: postgres
       PARKEERVAKKEN_DB_PASSWORD: insecure
 
       PREDICTIVEPARKING_DB_NAME: predictiveparking
-      PREDICTIVEPARKING_DB_USER: predictiveparking
+      PREDICTIVEPARKING_DB_USER: postgres
       PREDICTIVEPARKING_DB_PASSWORD: insecure
 
       BASISKAART_DB_NAME: basiskaart
       BASISKAART_DB_USER: postgres
       BASISKAART_DB_PASSWORD: insecure
-      BASISKAART_DB_PORT_5432_TCP_ADDR: database
 
       HANDELSREGISTER_DB_NAME: handelsregister
       HANDELSREGISTER_DB_USER: postgres
       HANDELSREGISTER_DB_PASSWORD: insecure
 
       TELLUS_DB_NAME: tellus
-      TELLUS_DB_USER: tellus
+      TELLUS_DB_USER: postgres
       TELLUS_DB_PASSWORD: insecure
 
       MONUMENTEN_DB_NAME: monumenten
-      MONUMENTEN_DB_USER: monumenten
+      MONUMENTEN_DB_USER: postgres
       MONUMENTEN_DB_PASSWORD: insecure
 
   topo_rd:

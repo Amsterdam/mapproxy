@@ -1,21 +1,16 @@
 FROM amsterdam/docker_python:latest
 MAINTAINER datapunt@amsterdam.nl
 
-RUN apt-get install -y \
-        python3-dev \
-        python3-pip \
-        libpq-dev \
-        gdal-bin \
-	postgresql-client \
-	netcat \
-	&& apt-get clean \
-	&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+EXPOSE 8000
 
-RUN mkdir -p /app/data
+RUN adduser --system datapunt
 
 WORKDIR /app
-COPY requirements.txt /app/
-RUN pip3 install --no-cache-dir -r requirements.txt
 
 COPY . /app/
-COPY .jenkins/import /.jenkins-import/
+
+RUN pip install MapProxy==1.10.0
+USER datapunt
+
+CMD uwsgi
+
