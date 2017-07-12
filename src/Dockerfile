@@ -10,7 +10,8 @@ WORKDIR /app
 COPY . /app/
 
 RUN pip install MapProxy==1.10.0
+
+RUN mapproxy-util create -t wsgi-app -f /app/mapproxy.yaml /app/app.py
+
 USER datapunt
-
-CMD uwsgi
-
+CMD uwsgi --wsgi-file /app/app.py --master --enable-threads --processes 4 --threads 2
