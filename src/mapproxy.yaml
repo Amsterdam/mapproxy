@@ -23,6 +23,68 @@ services:
       fees: 'None'
 
 layers:
+  - name: topografie
+    title: topografie
+    md:
+      abstract: Basiskaart Amsterdam
+    layers:
+      - name: basiskaart
+        title: basiskaart
+        md:
+          abstract: Basiskaart Amsterdam
+        layers:
+          - name: bgt
+            title: bgt
+            source: [topo_rd_tiled]
+            min_res: 0.84
+          - name: kbk10
+            title: kbk10
+            source: [topo_rd_tiled]
+            min_res: 1.68
+            max_res: 0.84
+          - name: kbk50
+            title: kbk50
+            source: [topo_rd_tiled]
+            min_res: 3440.64
+            max_res: 1.68
+      - name: basiskaart-light
+        title: basiskaart-light
+        md:
+          abstract: Basiskaart Amsterdam - Light
+        layers:
+          - name: bgt-light
+            title: bgt-light
+            source: [topo_rd_light_tiled]
+            min_res: 0.84
+          - name: kbk10-light
+            title: kbk10-light
+            source: [topo_rd_light_tiled]
+            min_res: 1.68
+            max_res: 0.84
+          - name: kbk50-light
+            title: kbk50-light
+            source: [topo_rd_light_tiled]
+            min_res: 3440.64
+            max_res: 1.68
+      - name: basiskaart-zwartwit
+        title: basiskaart-zwartwit
+        md:
+          abstract: Basiskaart Amsterdam - ZW
+        layers:
+          - name: bgt-zwartwit
+            title: bgt-zwartwit
+            source: [topo_rd_zw_tiled]
+            min_res: 0.84
+          - name: kbk10-zwartwit
+            title: kbk10-zwartwit
+            source: [topo_rd_zw_tiled]
+            min_res: 1.68
+            max_res: 0.84
+          - name: kbk50-zwartwit
+            title: kbk50-zwartwit
+            source: [topo_rd_zw_tiled]
+            min_res: 3440.64
+            max_res: 1.68
   - name: topo_rd
     title: Topo RD
     sources: [topo_rd_cache]
@@ -41,6 +103,9 @@ caches:
     cache:
       type: file
       directory_layout: tms
+  topo_rd_tiled:
+    grids: [nl_grid]
+    sources: [basiskaart_rd_tiles]
 
 #### TOPO RD - KBK & BGT - Light kleur
   topo_rd_light_cache:
@@ -49,6 +114,9 @@ caches:
     cache:
       type: file
       directory_layout: tms
+  topo_rd_light_tiled:
+    grids: [nl_grid]
+    sources: [basiskaart_rd_light_tiles]
 
   #### TOPO RD - KBK & BGT - Zwartwit
   topo_rd_zw_cache:
@@ -57,6 +125,9 @@ caches:
     cache:
       type: file
       directory_layout: tms
+  topo_rd_zw_tiled:
+    grids: [nl_grid]
+    sources: [basiskaart_rd_zw_tiles]
 
 #### TOPO Webmercator (wm) - KBK & BGT - Standaard kleur
   topo_wm_cache:
@@ -100,6 +171,7 @@ sources:
       layers: vlakken,lijnen,teksten
     min_res: 3440.64
     max_res: 1.68
+    seed_only: true
   basiskaart_kbk10:
     type: wms
     req:
@@ -107,12 +179,14 @@ sources:
       layers: vlakken,lijnen,teksten
     min_res: 1.68
     max_res: 0.84
+    seed_only: true
   basiskaart_bgt:
     type: wms
     req:
       url: http://mapserver/maps/bgt
       layers: hoogte0,hoogte1,hoogte2,hoogte3,hoogte4,hoogte_2,hoogte_1,teksten
     min_res: 0.84
+    seed_only: true
 
  # basiskaart light kleur
   basiskaart_light:
@@ -122,6 +196,7 @@ sources:
       layers: basiskaart-light
     min_res: 3440.64
     max_res: 0.84
+    seed_only: true
   basiskaart_light_bgt:
     type: wms
     req:
@@ -130,6 +205,7 @@ sources:
       layers: topovlakken,topolijnen,topoteksten
 #      layers: basiskaart
     min_res: 0.84
+    seed_only: true
 
 # basiskaart zwartwit
   basiskaart_zw:
@@ -139,6 +215,7 @@ sources:
       layers: basiskaart-zwartwit
     min_res: 3440.64
     max_res: 0.84
+    seed_only: true
   basiskaart_zw_bgt:
     type: wms
     req:
@@ -147,6 +224,7 @@ sources:
       layers: topovlakken,topolijnen,topoteksten
 #      layers: basiskaart
     min_res: 0.84
+    seed_only: true
 
 # basiskaart webmercator (wm)
   basiskaart_wm:
@@ -156,6 +234,7 @@ sources:
       layers: basiskaart
     min_res: 3440.64
     max_res: 0.84
+    seed_only: true
   basiskaart_wm_bgt:
     type: wms
     req:
@@ -164,6 +243,7 @@ sources:
       layers: topovlakken,topolijnen,topoteksten
 #      layers: basiskaart
     min_res: 0.84
+    seed_only: true
 
 # basiskaart wm light
   basiskaart_wm_light:
@@ -173,6 +253,7 @@ sources:
       layers: basiskaart-light
     min_res: 3440.64
     max_res: 0.84
+    seed_only: true
   basiskaart_wm_light_bgt:
     type: wms
     req:
@@ -181,6 +262,7 @@ sources:
       layers: topovlakken,topolijnen,topoteksten
 #      layers: basiskaart
     min_res: 0.84
+    seed_only: true
 
 # basiskaart wm zwartwit
   basiskaart_wm_zw:
@@ -190,6 +272,7 @@ sources:
       layers: basiskaart-zwartwit
     min_res: 3440.64
     max_res: 0.84
+    seed_only: true
   basiskaart_wm_zw_bgt:
     type: wms
     req:
@@ -198,8 +281,23 @@ sources:
       layers: topovlakken,topolijnen,topoteksten
 #      layers: basiskaart
     min_res: 0.84
+    seed_only: true
 
- #  datapunt_wms_bgt:
+# Use tile cache as a source for WMS
+  basiskaart_rd_tiles:
+    type: tile
+    grid: nl_grid
+    url: http://a53b807905f74d39ae9745d6d003854a.internal.objectstore.eu/topo_rd_cache_EPSG28992/
+  basiskaart_rd_light_tiles:
+    type: tile
+    grid: nl_grid
+    url: http://a53b807905f74d39ae9745d6d003854a.internal.objectstore.eu/topo_rd_light_cache_EPSG28992/
+  basiskaart_rd_zw_tiles:
+    type: tile
+    grid: nl_grid
+    url: http://a53b807905f74d39ae9745d6d003854a.internal.objectstore.eu/topo_rd_zw_cache_EPSG28992/
+
+#  datapunt_wms_bgt:
 #    type: wmsdata.
 #    req:
 #      url: https://acc.map.data.amsterdam.nl/maps/bgt
