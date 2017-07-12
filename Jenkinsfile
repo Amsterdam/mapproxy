@@ -24,9 +24,7 @@ node {
 
     stage('Test') {
         tryStep "test", {
-            sh "docker-compose -p tileupload -f src/docker-compose.yml build"
-        }, {
-            sh "docker-compose -p tileupload -f src/docker-compose.yml down"
+            sh "docker-compose -p mapproxy -f docker-compose.yml build"
         }
     }
 
