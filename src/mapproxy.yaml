@@ -192,21 +192,27 @@ sources:
     seed_only: true
 
  # basiskaart light kleur
-  basiskaart_light:
+  basiskaart_light_kbk50:
     type: wms
     req:
-      url: https://acc.map.data.amsterdam.nl/maps/topografie
-      layers: basiskaart-light
+      url: http://mapserver/maps/kbk50?SLD=http://mapserver/kbk50_light.xml
+      layers: vlakken,lijnen,teksten
     min_res: 3440.64
+    max_res: 1.68
+    seed_only: true
+  basiskaart_light_kbk10:
+    type: wms
+    req:
+      url: http://mapserver/maps/kbk10?SLD=http://mapserver/kbk10_light.xml
+      layers: vlakken,lijnen,teksten
+    min_res: 1.68
     max_res: 0.84
     seed_only: true
   basiskaart_light_bgt:
     type: wms
     req:
-      url: http://www.diva.amsterdam.nl/cgi-bin/topografie?SLD=http://www.diva.amsterdam.nl/topografie_light.xml
-#      url: https://acc.map.data.amsterdam.nl/maps/topografie
-      layers: topovlakken,topolijnen,topoteksten
-#      layers: basiskaart
+      url: http://mapserver/maps/bgt?SLD=http://mapserver/bgt_light.xml
+      layers: hoogte0,hoogte1,hoogte2,hoogte3,hoogte4,hoogte_2,hoogte_1,teksten
     min_res: 0.84
     seed_only: true
 
