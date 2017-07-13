@@ -107,6 +107,8 @@ caches:
   topo_rd_tiled:
     grids: [nl_grid]
     sources: [basiskaart_rd_tiles]
+    lock_dir: '/app'
+    tile_lock_dir: '/app'
 
 #### TOPO RD - KBK & BGT - Light kleur
   topo_rd_light_cache:
@@ -296,15 +298,15 @@ sources:
   basiskaart_rd_tiles:
     type: tile
     grid: nl_grid
-    url: http://a53b807905f74d39ae9745d6d003854a.internal.objectstore.eu/topo_rd_cache_EPSG28992/
+    url: http://a53b807905f74d39ae9745d6d003854a.objectstore.eu/topo_rd_cache_EPSG28992/
   basiskaart_rd_light_tiles:
     type: tile
     grid: nl_grid
-    url: http://a53b807905f74d39ae9745d6d003854a.internal.objectstore.eu/topo_rd_light_cache_EPSG28992/
+    url: http://a53b807905f74d39ae9745d6d003854a.objectstore.eu/topo_rd_light_cache_EPSG28992/
   basiskaart_rd_zw_tiles:
     type: tile
     grid: nl_grid
-    url: http://a53b807905f74d39ae9745d6d003854a.internal.objectstore.eu/topo_rd_zw_cache_EPSG28992/
+    url: http://a53b807905f74d39ae9745d6d003854a.objectstore.eu/topo_rd_zw_cache_EPSG28992/
 
 #  datapunt_wms_bgt:
 #    type: wmsdata.

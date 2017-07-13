@@ -62,6 +62,7 @@ services:
 
   topo_rd:
     build: src
+    user: root
     links:
       - mapserver
       - database
@@ -72,6 +73,7 @@ services:
 
   topo_rd_light:
     build: src
+    user: root
     links:
       - mapserver
       - database
@@ -82,6 +84,7 @@ services:
 
   topo_rd_zw:
     build: src
+    user: root
     links:
       - mapserver
       - database
@@ -92,6 +95,7 @@ services:
 
   topo_wm:
     build: src
+    user: root
     links:
       - mapserver
       - database
@@ -102,6 +106,7 @@ services:
 
   topo_wm_light:
     build: src
+    user: root
     links:
       - mapserver
       - database
@@ -112,6 +117,7 @@ services:
 
   topo_wm_zw:
     build: src
+    user: root
     links:
       - mapserver
       - database
@@ -122,6 +128,7 @@ services:
 
   topo-lufo:
     build: src
+    user: root
     command: seed-lufo.sh
     volumes:
       - "/mnt/tiles:/mnt/tiles"
