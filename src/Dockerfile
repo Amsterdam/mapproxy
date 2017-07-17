@@ -5,6 +5,7 @@ EXPOSE 8000
 
 RUN adduser --system datapunt
 
+RUN chown datapunt -R /app
 WORKDIR /app
 
 COPY . /app/
