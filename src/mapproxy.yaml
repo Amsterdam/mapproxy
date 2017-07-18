@@ -27,6 +27,8 @@ layers:
     title: topografie
     md:
       abstract: Basiskaart Amsterdam
+    sources: [topo_rd_tiled]
+    min_res: 3440.64
     layers:
       - name: basiskaart
         title: basiskaart
@@ -100,6 +102,7 @@ caches:
   topo_rd_cache:
     grids: [nl_grid]
     sources: [basiskaart_kbk10,basiskaart_kbk50,basiskaart_bgt]
+    cache_dir: /mnt/tiles
     cache:
       type: file
       directory_layout: tms
@@ -107,13 +110,12 @@ caches:
   topo_rd_tiled:
     grids: [nl_grid]
     sources: [basiskaart_rd_tiles]
-    lock_dir: '/app'
-    tile_lock_dir: '/app'
 
 #### TOPO RD - KBK & BGT - Light kleur
   topo_rd_light_cache:
     grids: [nl_grid]
     sources: [basiskaart_light,basiskaart_light_bgt]
+    cache_dir: /mnt/tiles
     cache:
       type: file
       directory_layout: tms
@@ -126,6 +128,7 @@ caches:
   topo_rd_zw_cache:
     grids: [nl_grid]
     sources: [basiskaart_zw,basiskaart_zw_bgt]
+    cache_dir: /mnt/tiles
     cache:
       type: file
       directory_layout: tms
@@ -138,6 +141,7 @@ caches:
   topo_wm_cache:
     grids: [webmercator]
     sources: [basiskaart_wm,basiskaart_wm_bgt]
+    cache_dir: /mnt/tiles
     cache:
       type: file
       directory_layout: tms
@@ -146,6 +150,7 @@ caches:
   topo_wm_light_cache:
     grids: [webmercator]
     sources: [basiskaart_wm_light,basiskaart_wm_light_bgt]
+    cache_dir: /mnt/tiles
     cache:
       type: file
       directory_layout: tms
@@ -154,6 +159,7 @@ caches:
   topo_wm_zw_cache:
     grids: [webmercator]
     sources: [basiskaart_wm_zw,basiskaart_wm_zw_bgt]
+    cache_dir: /mnt/tiles
     cache:
       type: file
       directory_layout: tms
@@ -162,6 +168,7 @@ caches:
   lufo_rd_cache:
     grids: [nl_grid]
     sources: [lufo_wms]
+    cache_dir: /mnt/tiles
     format: image/jpeg
     cache:
       type: file
@@ -298,15 +305,15 @@ sources:
   basiskaart_rd_tiles:
     type: tile
     grid: nl_grid
-    url: http://a53b807905f74d39ae9745d6d003854a.objectstore.eu/topo_rd_cache_EPSG28992/
+    url: http://a53b807905f74d39ae9745d6d003854a.objectstore.eu/topo_rd_cache_EPSG28992/%(z)s/%(x)s/%(y)s.png
   basiskaart_rd_light_tiles:
     type: tile
     grid: nl_grid
-    url: http://a53b807905f74d39ae9745d6d003854a.objectstore.eu/topo_rd_light_cache_EPSG28992/
+    url: http://a53b807905f74d39ae9745d6d003854a.objectstore.eu/topo_rd_light_cache_EPSG28992/%(z)s/%(x)s/%(y)s.png
   basiskaart_rd_zw_tiles:
     type: tile
     grid: nl_grid
-    url: http://a53b807905f74d39ae9745d6d003854a.objectstore.eu/topo_rd_zw_cache_EPSG28992/
+    url: http://a53b807905f74d39ae9745d6d003854a.objectstore.eu/topo_rd_zw_cache_EPSG28992/%(z)s/%(x)s/%(y)s.png
 
 #  datapunt_wms_bgt:
 #    type: wmsdata.
@@ -336,9 +343,9 @@ grids:
 
 globals:
   cache:
-    base_dir: '/mnt/tiles'
-    lock_dir: '/mnt/tiles'
-    tile_lock_dir: '/mnt/tiles'
+    base_dir: '/app'
+    lock_dir: '/app'
+    tile_lock_dir: '/app'
     meta_size: [4, 4]
     meta_buffer: 128
   http:
@@ -346,4 +353,3 @@ globals:
 
   image:
       resampling_method: bicubic
-
