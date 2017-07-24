@@ -20,45 +20,11 @@ services:
     image: build.datapunt.amsterdam.nl:5000/datapunt/mapserver-private
     user: root
     environment:
-      ATLAS_DB_NAME: atlas
-      ATLAS_DB_USER: postgres
-      ATLAS_DB_PASSWORD: insecure
+      ATLAS_DB_HOST: database
+      ATLAS_DB_PORT: 5432
 
-      NAP_DB_NAME: nap
-      NAP_DB_USER: postgres
-      NAP_DB_PASSWORD: insecure
-
-      MILIEUTHEMAS_DB_NAME: milieuthemas
-      MILIEUTHEMAS_DB_USER: postgres
-      MILIEUTHEMAS_DB_PASSWORD: insecure
-
-      PANORAMA_DB_NAME: panorama
-      PANORAMA_DB_USER: postgres
-      PANORAMA_DB_PASSWORD: insecure
-
-      PARKEERVAKKEN_DB_NAME: parkeervakken
-      PARKEERVAKKEN_DB_USER: postgres
-      PARKEERVAKKEN_DB_PASSWORD: insecure
-
-      PREDICTIVEPARKING_DB_NAME: predictiveparking
-      PREDICTIVEPARKING_DB_USER: postgres
-      PREDICTIVEPARKING_DB_PASSWORD: insecure
-
-      BASISKAART_DB_NAME: basiskaart
-      BASISKAART_DB_USER: postgres
-      BASISKAART_DB_PASSWORD: insecure
-
-      HANDELSREGISTER_DB_NAME: handelsregister
-      HANDELSREGISTER_DB_USER: postgres
-      HANDELSREGISTER_DB_PASSWORD: insecure
-
-      TELLUS_DB_NAME: tellus
-      TELLUS_DB_USER: postgres
-      TELLUS_DB_PASSWORD: insecure
-
-      MONUMENTEN_DB_NAME: monumenten
-      MONUMENTEN_DB_USER: postgres
-      MONUMENTEN_DB_PASSWORD: insecure
+      BASISKAART_DB_HOST: database
+      BASISKAART_DB_PORT: 5432
 
   topo_rd:
     build: src
