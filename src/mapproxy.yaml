@@ -101,7 +101,7 @@ caches:
 #### TOPO RD - KBK & BGT - Standaard kleur
   topo_rd_cache:
     grids: [nl_grid]
-    sources: [basiskaart_kbk10,basiskaart_kbk50,basiskaart_bgt]
+    sources: [topografie]
     cache_dir: /mnt/tiles
     cache:
       type: file
@@ -176,28 +176,44 @@ caches:
 
 sources:
 # basiskaart standaard kleur
-  basiskaart_kbk50:
+  kbk50:
     type: wms
     req:
       url: http://mapserver/maps/kbk50
-      layers: vlakken,lijnen,teksten
+      layers: vlakken,lijnen
     min_res: 3440.64
     max_res: 1.68
     seed_only: true
-  basiskaart_kbk10:
+  kbk10:
     type: wms
     req:
       url: http://mapserver/maps/kbk10
-      layers: vlakken,lijnen,teksten
+      layers: vlakken,lijnen
     min_res: 1.68
     max_res: 0.84
     seed_only: true
-  basiskaart_bgt:
+  bgt:
     type: wms
     req:
       url: http://mapserver/maps/bgt
-      layers: hoogte0,hoogte1,hoogte2,hoogte3,hoogte4,hoogte_2,hoogte_1,teksten
+      layers: hoogte0,hoogte1,hoogte2,hoogte3,hoogte4,hoogte_2,hoogte_1
     min_res: 0.84
+    seed_only: true
+  tekst:
+    type: wms
+    req:
+      url: http://mapserver/maps/kaartteksten
+      layers: kbk50_label,kbk25_label,kbk10_label,bgt_label
+      transparent: true
+    image:
+      transparent_color: '#ffffff'
+      transparent_color_tolerance: 0
+    seed_only: true
+  topografie:
+    type: wms
+    req:
+      url: http://mapserver/maps/topografie
+      layers: basiskaart
     seed_only: true
 
  # basiskaart light kleur

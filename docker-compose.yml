@@ -21,10 +21,9 @@ services:
     user: root
     environment:
       ATLAS_DB_HOST: database
-      ATLAS_DB_PORT: 5432
-
+      ATLAS_DB_USER: postgres
       BASISKAART_DB_HOST: database
-      BASISKAART_DB_PORT: 5432
+      BASISKAART_DB_USER: postgres
 
   topo_rd:
     build: src
