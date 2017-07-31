@@ -109,7 +109,7 @@ caches:
 
   topo_rd_tiled:
     grids: [nl_grid]
-    sources: [basiskaart_rd_tiles]
+    sources: [topografie_rd_tiles]
 
 #### TOPO RD - KBK & BGT - Light kleur
   topo_rd_light_cache:
@@ -122,7 +122,7 @@ caches:
 
   topo_rd_light_tiled:
     grids: [nl_grid]
-    sources: [basiskaart_rd_light_tiles]
+    sources: [topografie_rd_light_tiles]
 
   #### TOPO RD - KBK & BGT - Zwartwit
   topo_rd_zw_cache:
@@ -135,7 +135,7 @@ caches:
 
   topo_rd_zw_tiled:
     grids: [nl_grid]
-    sources: [basiskaart_rd_zw_tiles]
+    sources: [topografie_rd_zw_tiles]
 
 #### TOPO Webmercator (wm) - KBK & BGT - Standaard kleur
   topo_wm_cache:
@@ -200,7 +200,7 @@ sources:
     seed_only: true
 
 # basiskaart webmercator (wm)
-  basiskaart_wm:
+  topografie_wm:
     type: wms
     req:
       url: http://mapserver/maps/topografie_wm
@@ -208,7 +208,7 @@ sources:
     seed_only: true
 
 # basiskaart wm light
-  basiskaart_wm_light:
+  topografie_wm_light:
     type: wms
     req:
       url: http://mapserver/maps/topografie_wm
@@ -216,7 +216,7 @@ sources:
     seed_only: true
 
 # basiskaart wm zwartwit
-  basiskaart_wm_zw:
+  topografie_wm_zw:
     type: wms
     req:
       url: http://mapserver/maps/topografie_wm
@@ -224,15 +224,15 @@ sources:
     seed_only: true
 
 # Use tile cache as a source for WMS
-  basiskaart_rd_tiles:
+  topografie_rd_tiles:
     type: tile
     grid: nl_grid
     url: http://a53b807905f74d39ae9745d6d003854a.objectstore.eu/topo_rd_cache_EPSG28992/%(z)s/%(x)s/%(y)s.png
-  basiskaart_rd_light_tiles:
+  topografie_rd_light_tiles:
     type: tile
     grid: nl_grid
     url: http://a53b807905f74d39ae9745d6d003854a.objectstore.eu/topo_rd_light_cache_EPSG28992/%(z)s/%(x)s/%(y)s.png
-  basiskaart_rd_zw_tiles:
+  topografie_rd_zw_tiles:
     type: tile
     grid: nl_grid
     url: http://a53b807905f74d39ae9745d6d003854a.objectstore.eu/topo_rd_zw_cache_EPSG28992/%(z)s/%(x)s/%(y)s.png
