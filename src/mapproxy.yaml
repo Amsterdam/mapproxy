@@ -192,7 +192,7 @@ sources:
     seed_only: true
 
 # basiskaart zwartwit kleur
-  topografie_zwartwit:
+  topografie_zw:
     type: wms
     req:
       url: http://mapserver/maps/topografie
