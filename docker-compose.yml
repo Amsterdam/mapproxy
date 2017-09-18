@@ -95,7 +95,8 @@ services:
   topo-lufo:
     build: src
     user: root
-    command: seed-lufo.sh
+    command: >
+      mapproxy-seed -c 6 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=lufo_rd
     volumes:
       - "/mnt/tiles:/mnt/tiles"
 

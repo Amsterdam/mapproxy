@@ -241,7 +241,7 @@ sources:
   lufo_wms:
     type: wms
     req:
-      url: http://172.17.0.1:32770/maps/lufo
+      url: http://172.17.0.1:32769/maps/lufo
       layers: lufo-TILE
 
 grids:
