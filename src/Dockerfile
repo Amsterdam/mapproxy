@@ -10,7 +10,7 @@ WORKDIR /app
 
 COPY . /app/
 
-RUN pip install MapProxy==1.10.0
+RUN pip install MapProxy==1.10.4
 
 RUN mapproxy-util create -t wsgi-app -f /app/mapproxy.yaml /app/app.py
 
