@@ -28,6 +28,3 @@ dc build
 dc run topo_rd
 dc run topo_rd_light
 dc run topo_rd_zw
-dc run topo_wm
-dc run topo_wm_light
-dc run topo_wm_zw
