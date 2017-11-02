@@ -1,16 +1,13 @@
 services:
   demo:
-  tms:
-    # needs no arguments
-  wms:
-    srs: ['EPSG:4326', 'EPSG:900913', 'EPSG:3857', 'EPSG:28992']
+  wmts:
     md:
       # metadata used in capabilities documents
-      title: MapProxy Amsterdam
-      abstract: MapProxy configuratie voor Amsterdam
-      online_resource: http://mapproxy.org/
+      title: City Data Amsterdam
+      abstract: Map tile service Gemeente Amsterdam
+      online_resource: https://data.amsterdam.nl/
       contact:
-        person: Datapunt
+        person: n/a
         position: n/a
         organization: Gemeente Amsterdam
         address: n/a
@@ -19,80 +16,42 @@ services:
         country: Netherlands
         phone: n/a
         fax: n/a
-        email: datapunt@amsterdam.nl
-      fees: 'None'
+        email: algemeen.ois@amsterdam.nl
+        fees: 'None'
+    restful: false
+    kvp: true
 
 layers:
-  - name: topografie
-    title: topografie
+  - name: topo_rd
+    title: Basiskaart Amsterdam
     md:
       abstract: Basiskaart Amsterdam
-    sources: [topo_rd_tiled]
-    min_res: 3440.64
-    layers:
-      - name: basiskaart
-        title: basiskaart
-        md:
-          abstract: Basiskaart Amsterdam
-        layers:
-          - name: bgt
-            title: bgt
-            sources: [topo_rd_tiled]
-            min_res: 0.84
-          - name: kbk10
-            title: kbk10
-            sources: [topo_rd_tiled]
-            min_res: 1.68
-            max_res: 0.84
-          - name: kbk50
-            title: kbk50
-            sources: [topo_rd_tiled]
-            min_res: 3440.64
-            max_res: 1.68
-      - name: basiskaart-light
-        title: basiskaart-light
-        md:
-          abstract: Basiskaart Amsterdam - Light
-        layers:
-          - name: bgt-light
-            title: bgt-light
-            sources: [topo_rd_light_tiled]
-            min_res: 0.84
-          - name: kbk10-light
-            title: kbk10-light
-            sources: [topo_rd_light_tiled]
-            min_res: 1.68
-            max_res: 0.84
-          - name: kbk50-light
-            title: kbk50-light
-            sources: [topo_rd_light_tiled]
-            min_res: 3440.64
-            max_res: 1.68
-      - name: basiskaart-zwartwit
-        title: basiskaart-zwartwit
-        md:
-          abstract: Basiskaart Amsterdam - ZW
-        layers:
-          - name: bgt-zwartwit
-            title: bgt-zwartwit
-            sources: [topo_rd_zw_tiled]
-            min_res: 0.84
-          - name: kbk10-zwartwit
-            title: kbk10-zwartwit
-            sources: [topo_rd_zw_tiled]
-            min_res: 1.68
-            max_res: 0.84
-          - name: kbk50-zwartwit
-            title: kbk50-zwartwit
-            sources: [topo_rd_zw_tiled]
-            min_res: 3440.64
-            max_res: 1.68
-  - name: topo_rd
-    title: Topo RD
     sources: [topo_rd_cache]
+  - name: topo_rd_light
+    title: Basiskaart Amsterdam - Light
+    md:
+      abstract: Basiskaart Amsterdam - Light
+    sources: [topo_rd_light_cache]
+  - name: topo_rd_zw
+    title: Basiskaart Amsterdam - ZW
+    md:
+      abstract: Basiskaart Amsterdam - ZW
+    sources: [topo_rd_zw_cache]
   - name: topo_wm
-    title: Topo Webmercator
+    title: Basiskaart Amsterdam (Web Mercator)
+    md:
+      abstract: Basiskaart Amsterdam in Web Mercator proojectie
     sources: [topo_wm_cache]
+  - name: topo_wm_light
+    title: Basiskaart Amsterdam - Light (Web Mercator)
+    md:
+      abstract: Basiskaart Amsterdam - Light in Web Mercator proojectie
+    sources: [topo_wm_light_cache]
+  - name: topo_wm_zw
+    title: Basiskaart Amsterdam - ZW (Web Mercator)
+    md:
+      abstract: Basiskaart Amsterdam - ZW in Web Mercator proojectie
+    sources: [topo_wm_zw_cache]
   - name: lufo_RD
     title: Luchtfoto RD
     sources: [lufo_rd_cache]
@@ -107,10 +66,6 @@ caches:
       type: file
       directory_layout: tms
 
-  topo_rd_tiled:
-    grids: [nl_grid]
-    sources: [topografie_rd_tiles]
-
 #### TOPO RD - KBK & BGT - Light kleur
   topo_rd_light_cache:
     grids: [nl_grid]
@@ -120,10 +75,6 @@ caches:
       type: file
       directory_layout: tms
 
-  topo_rd_light_tiled:
-    grids: [nl_grid]
-    sources: [topografie_rd_light_tiles]
-
   #### TOPO RD - KBK & BGT - Zwartwit
   topo_rd_zw_cache:
     grids: [nl_grid]
@@ -132,10 +83,6 @@ caches:
     cache:
       type: file
       directory_layout: tms
-
-  topo_rd_zw_tiled:
-    grids: [nl_grid]
-    sources: [topografie_rd_zw_tiles]
 
 #### TOPO Webmercator (wm) - KBK & BGT - Standaard kleur
   topo_wm_cache:
@@ -222,20 +169,6 @@ sources:
       url: http://mapserver/maps/topografie_wm
       layers: basiskaart-zwartwit
     seed_only: true
-
-# Use tile cache as a source for WMS
-  topografie_rd_tiles:
-    type: tile
-    grid: nl_grid
-    url: http://a53b807905f74d39ae9745d6d003854a.objectstore.eu/topo_rd_cache_EPSG28992/%(z)s/%(x)s/%(y)s.png
-  topografie_rd_light_tiles:
-    type: tile
-    grid: nl_grid
-    url: http://a53b807905f74d39ae9745d6d003854a.objectstore.eu/topo_rd_light_cache_EPSG28992/%(z)s/%(x)s/%(y)s.png
-  topografie_rd_zw_tiles:
-    type: tile
-    grid: nl_grid
-    url: http://a53b807905f74d39ae9745d6d003854a.objectstore.eu/topo_rd_zw_cache_EPSG28992/%(z)s/%(x)s/%(y)s.png
 
 # Example to tile to locally with the mapserver docker also running:
   lufo_wms:
