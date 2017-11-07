@@ -20,7 +20,7 @@ sudo mkdir -p /mnt/tiles
 sudo chmod 755 /mnt/tiles
 
 # import basiskaart db
-dc exec -T database update-db.sh basiskaart
+dc exec -T database update-db.sh basiskaart basiskaart
 dc exec -T database update-db.sh atlas
 
 # generate geojson
