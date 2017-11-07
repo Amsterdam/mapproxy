@@ -15,7 +15,6 @@ services:
     environment:
       POSTGRES_PASSWORD: insecure
       POSTGRES_USER: postgres
-      LOCAL: "yes"
     extra_hosts:
           admin.datapunt.amsterdam.nl: 10.99.157.24
 
