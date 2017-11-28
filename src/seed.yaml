@@ -9,7 +9,7 @@ seeds:
       from: 5
       to: 11
     refresh_before:
-      weeks: 2
+      days: 2
 
   topo_rd_bgt:
     caches: [topo_rd_cache]
@@ -19,7 +19,7 @@ seeds:
       from: 12
       to: 16
     refresh_before:
-      weeks: 2
+      days: 2
 
 #### TOPO RD - KBK & BGT - Light kleur
   topo_rd_light_kbk:
@@ -30,7 +30,7 @@ seeds:
       from: 5
       to: 11
     refresh_before:
-      weeks: 2
+      days: 2
 
   topo_rd_light_bgt:
     caches: [topo_rd_light_cache]
@@ -40,7 +40,7 @@ seeds:
       from: 12
       to: 16
     refresh_before:
-      weeks: 2
+      days: 2
 
 #### TOPO RD - KBK & BGT - zwartwit
   topo_rd_zw_kbk:
@@ -51,7 +51,7 @@ seeds:
       from: 5
       to: 11
     refresh_before:
-      weeks: 2
+      days: 2
 
   topo_rd_zw_bgt:
     caches: [topo_rd_zw_cache]
@@ -61,7 +61,7 @@ seeds:
       from: 12
       to: 16
     refresh_before:
-      weeks: 2
+      days: 2
 
 #### TOPO wm - KBK & BGT - Standaard kleur
   topo_wm_kbk:
@@ -72,7 +72,7 @@ seeds:
         from: 11
         to: 16
       refresh_before:
-        weeks: 2
+        days: 2
 
   topo_wm_bgt:
      caches: [topo_wm_cache]
@@ -82,7 +82,7 @@ seeds:
        from: 17
        to: 21
      refresh_before:
-       weeks: 2
+       days: 2
 
 #### TOPO wm - KBK & BGT - Light kleur
   topo_wm_light_kbk:
@@ -93,7 +93,7 @@ seeds:
       from: 11
       to: 16
     refresh_before:
-      weeks: 2
+      days: 2
 
   topo_wm_light_bgt:
     caches: [topo_wm_light_cache]
@@ -103,7 +103,7 @@ seeds:
       from: 17
       to: 21
     refresh_before:
-      weeks: 2
+      days: 2
 
 #### TOPO wm - KBK & BGT - Zwarwit
   topo_wm_zw_kbk:
@@ -114,7 +114,7 @@ seeds:
       from: 11
       to: 16
     refresh_before:
-      weeks: 2
+      days: 2
 
   topo_wm_zw_bgt:
     caches: [topo_wm_zw_cache]
@@ -124,7 +124,7 @@ seeds:
       from: 17
       to: 21
     refresh_before:
-      weeks: 2
+      days: 2
 
   lufo_rd:
     caches: [lufo_rd_cache]
