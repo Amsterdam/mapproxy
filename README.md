@@ -34,5 +34,3 @@ Creating a new Lufo year of tiles and service follow these steps:
     lftp -e 'mirror --ignore-time --no-perms --no-umask --only-missing -R -p -v -P 10 /mnt/tiles/lufo<YEAR>_rd_cache_EPSG28992/ /tiles/lufo<YEAR>_rd_cache_EPSG28992/' ftp.objectstore.eu    
     
 8. Upload pyramid directory to objectstore
-
-test
