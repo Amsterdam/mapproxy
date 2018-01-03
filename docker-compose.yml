@@ -1,7 +1,6 @@
 version: '3.0'
 services:
   mapproxy:
-#    image: build.datapunt.amsterdam.nl:5000/datapunt/mapproxy
     build: src
     ports:
       - "8000:8000"
@@ -11,7 +10,7 @@ services:
       - UWSGI_PROCESSES=4
 
   database:
-    image: build.datapunt.amsterdam.nl:5000/atlas/postgres
+    image: amsterdam/postgres
     environment:
       POSTGRES_PASSWORD: insecure
       POSTGRES_USER: postgres
