@@ -1,4 +1,4 @@
-# atlas_mapproxy
+# mapproxy
 
 This project contains all the mapproxy files for the Datapunt Map project.
 

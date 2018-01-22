@@ -21,8 +21,8 @@ services:
     image: build.datapunt.amsterdam.nl:5000/datapunt/mapserver-private
     user: root
     environment:
-      ATLAS_DB_HOST: database
-      ATLAS_DB_USER: postgres
+      BAG_DB_HOST: database
+      BAG_DB_USER: postgres
       BASISKAART_DB_HOST: database
       BASISKAART_DB_USER: postgres
       MAP_URL: "http://mapserver"
