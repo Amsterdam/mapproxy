@@ -25,6 +25,4 @@ dc exec -T database update-db.sh bag
 
 # generate geojson
 dc build
-dc run topo_wm
-dc run topo_wm_light
-dc run topo_wm_zw
+dc run topo_$1
