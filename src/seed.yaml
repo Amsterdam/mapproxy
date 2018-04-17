@@ -8,8 +8,9 @@ seeds:
     levels:
       from: 5
       to: 11
-#    refresh_before:
+    refresh_before:
 #      days: 7
+      minutes: 15
 
   topo_rd_bgt:
     caches: [topo_rd_cache]
@@ -18,8 +19,9 @@ seeds:
     levels:
       from: 12
       to: 16
-#    refresh_before:
+    refresh_before:
 #      days: 7
+      minutes: 15
 
 #### TOPO RD - KBK & BGT - Light kleur
   topo_rd_light_kbk:
@@ -29,8 +31,9 @@ seeds:
     levels:
       from: 5
       to: 11
-#    refresh_before:
+    refresh_before:
 #      days: 7
+      minutes: 15
 
   topo_rd_light_bgt:
     caches: [topo_rd_light_cache]
@@ -39,8 +42,9 @@ seeds:
     levels:
       from: 12
       to: 16
-#    refresh_before:
+    refresh_before:
 #      days: 7
+      minutes: 15
 
 #### TOPO RD - KBK & BGT - zwartwit
   topo_rd_zw_kbk:
@@ -50,8 +54,9 @@ seeds:
     levels:
       from: 5
       to: 11
-#    refresh_before:
+    refresh_before:
 #      days: 7
+      minutes: 15
 
   topo_rd_zw_bgt:
     caches: [topo_rd_zw_cache]
@@ -60,8 +65,9 @@ seeds:
     levels:
       from: 12
       to: 16
-#    refresh_before:
+    refresh_before:
 #      days: 7
+      minutes: 15
 
 #### TOPO wm - KBK & BGT - Standaard kleur
   topo_wm_kbk:
@@ -71,8 +77,9 @@ seeds:
     levels:
       from: 11
       to: 16
-#    refresh_before:
+    refresh_before:
 #      days: 7
+      minutes: 15
 
   topo_wm_bgt:
     caches: [topo_wm_cache]
@@ -92,8 +99,9 @@ seeds:
     levels:
       from: 11
       to: 16
-#    refresh_before:
+    refresh_before:
 #      days: 7
+      minutes: 15
 
   topo_wm_light_bgt:
     caches: [topo_wm_light_cache]
@@ -102,8 +110,9 @@ seeds:
     levels:
       from: 17
       to: 21
-#    refresh_before:
+    refresh_before:
 #      days: 7
+      minutes: 15
 
 #### TOPO wm - KBK & BGT - Zwarwit
   topo_wm_zw_kbk:
@@ -113,8 +122,9 @@ seeds:
     levels:
       from: 11
       to: 16
-#    refresh_before:
+    refresh_before:
 #      days: 7
+      minutes: 15
 
   topo_wm_zw_bgt:
     caches: [topo_wm_zw_cache]
@@ -123,8 +133,9 @@ seeds:
     levels:
       from: 17
       to: 21
-#    refresh_before:
+    refresh_before:
 #      days: 7
+      minutes: 15
 
   lufo_rd:
     caches: [lufo_rd_cache]
