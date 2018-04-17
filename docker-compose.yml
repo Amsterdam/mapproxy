@@ -16,6 +16,8 @@ services:
       POSTGRES_USER: postgres
     extra_hosts:
           admin.datapunt.amsterdam.nl: 10.99.157.24
+#    volumes:
+#     - "~/.ssh/datapunt.key:/root/.ssh/datapunt.key"
 
   mapserver:
     image: build.datapunt.amsterdam.nl:5000/datapunt/mapserver-private
