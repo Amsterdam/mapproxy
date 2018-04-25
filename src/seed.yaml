@@ -78,8 +78,8 @@ seeds:
       from: 11
       to: 16
     refresh_before:
-      days: 7
-#      minutes: 15
+#      days: 7
+      minutes: 15
 
   topo_wm_bgt:
     caches: [topo_wm_cache]
@@ -89,7 +89,8 @@ seeds:
      from: 17
      to: 21
     refresh_before:
-     days: 7
+#     days: 7
+     minutes: 15
 
 #### TOPO wm - KBK & BGT - Light kleur
   topo_wm_light_kbk:
