@@ -3,16 +3,19 @@ MAINTAINER datapunt@amsterdam.nl
 
 EXPOSE 8000
 
+ARG OS_URL
+ENV OS_URL=$OS_URL
+
 RUN adduser --system datapunt
 
 RUN chown datapunt -R /app
 WORKDIR /app
 
-COPY . /app/
+COPY src/* /app/
+COPY docker-entrypoint.sh /bin
 
 RUN pip install MapProxy==1.11.0
 
-RUN mapproxy-util create -t wsgi-app -f /app/mapproxy.yaml /app/app.py
-
 USER datapunt
-CMD uwsgi --wsgi-file /app/app.py --wsgi-disable-file-wrapper
+
+CMD /bin/docker-entrypoint.sh

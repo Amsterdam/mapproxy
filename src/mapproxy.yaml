@@ -162,7 +162,7 @@ sources:
   basiskaart_rd_tiles:
     type: tile
     grid: nl_grid
-    url: http://a53b807905f74d39ae9745d6d003854a.objectstore.eu/topo_rd_cache_EPSG28992/%(z)s/%(x)s/%(y)s.png
+    url: http://OS_URL_REPLACE/topo_rd_cache_EPSG28992/%(z)s/%(x)s/%(y)s.png
 
  # basiskaart light kleur
   topografie_light:
@@ -175,7 +175,7 @@ sources:
   basiskaart_rd_light_tiles:
     type: tile
     grid: nl_grid
-    url: http://a53b807905f74d39ae9745d6d003854a.objectstore.eu/topo_rd_light_cache_EPSG28992/%(z)s/%(x)s/%(y)s.png
+    url: http://OS_URL_REPLACE/topo_rd_light_cache_EPSG28992/%(z)s/%(x)s/%(y)s.png
 
 # basiskaart zwartwit kleur
   topografie_zw:
@@ -188,7 +188,7 @@ sources:
   basiskaart_rd_zw_tiles:
     type: tile
     grid: nl_grid
-    url: http://a53b807905f74d39ae9745d6d003854a.objectstore.eu/topo_rd_zw_cache_EPSG28992/%(z)s/%(x)s/%(y)s.png
+    url: http://OS_URL_REPLACE/topo_rd_zw_cache_EPSG28992/%(z)s/%(x)s/%(y)s.png
 
 # basiskaart webmercator (wm)
   topografie_wm:
@@ -201,7 +201,7 @@ sources:
   basiskaart_wm_tiles:
     type: tile
     grid: webmercator
-    url: http://a53b807905f74d39ae9745d6d003854a.objectstore.eu/topo_wm_cache_EPSG3857/%(z)s/%(x)s/%(y)s.png
+    url: http://OS_URL_REPLACE/topo_wm_cache_EPSG3857/%(z)s/%(x)s/%(y)s.png
 
 # basiskaart wm light
   topografie_wm_light:
@@ -214,7 +214,7 @@ sources:
   basiskaart_wm_light_tiles:
     type: tile
     grid: webmercator
-    url: http://a53b807905f74d39ae9745d6d003854a.objectstore.eu/topo_wm_light_cache_EPSG3857/%(z)s/%(x)s/%(y)s.png
+    url: http://OS_URL_REPLACE/topo_wm_light_cache_EPSG3857/%(z)s/%(x)s/%(y)s.png
 
 # basiskaart wm zwartwit
   topografie_wm_zw:
@@ -227,13 +227,13 @@ sources:
   basiskaart_wm_zw_tiles:
     type: tile
     grid: webmercator
-    url: http://a53b807905f74d39ae9745d6d003854a.objectstore.eu/topo_wm_zw_cache_EPSG3857/%(z)s/%(x)s/%(y)s.png
+    url: http://OS_URL_REPLACE/topo_wm_zw_cache_EPSG3857/%(z)s/%(x)s/%(y)s.png
 
 # Example to tile to locally with the mapserver docker also running:
   luchtfoto_rd_tiles:
     type: tile
     grid: nl_grid
-    url: http://a53b807905f74d39ae9745d6d003854a.objectstore.eu/lufo2017_rd_cache_EPSG28992/%(z)s/%(x)s/%(y)s.jpeg
+    url: http://OS_URL_REPLACE/lufo2017_rd_cache_EPSG28992/%(z)s/%(x)s/%(y)s.jpeg
 
   lufo_wms:
     type: wms
