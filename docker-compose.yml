@@ -104,4 +104,12 @@ services:
     volumes:
       - "/mnt/tiles:/mnt/tiles"
 
+  topo-infrarood:
+    build: .
+    user: root
+    command: >
+      mapproxy-seed -c 6 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=infrarood_rd
+    volumes:
+      - "/mnt/tiles:/mnt/tiles"
+
 

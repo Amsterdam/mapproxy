@@ -150,6 +150,21 @@ caches:
       type: file
       directory_layout: tms
 
+# Infrarood foto's
+  infrarood_rd_tiles:
+    grids: [nl_grid]
+    sources: [infrarood_rd_tiles]
+    format: image/jpeg
+
+  infrarood_rd_cache:
+    grids: [nl_grid]
+    sources: [infrarood_wms]
+    cache_dir: /mnt/tiles
+    format: image/jpeg
+    cache:
+      type: file
+      directory_layout: tms
+
 sources:
 # basiskaart standaard kleur
   topografie:
@@ -238,8 +253,14 @@ sources:
   lufo_wms:
     type: wms
     req:
-      url: http://172.17.0.1:32769/maps/lufo
+      url: http://<local ip>:80/maps/lufo
       layers: lufo-TILE
+
+  infrarood_wms:
+    type: wms
+    req:
+      url: http://192.168.1.27:80/maps/infrarood
+      layers: infrarood-TILE
 
 grids:
   nl_grid:
