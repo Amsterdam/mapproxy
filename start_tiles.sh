@@ -6,6 +6,7 @@ set -u
 DIR="$(dirname $0)"
 
 dc() {
+	docker-compose pull
 	docker-compose -p mapproxy -f ${DIR}/docker-compose.yml $*
 }
 
