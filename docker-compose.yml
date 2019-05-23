@@ -29,6 +29,7 @@ services:
       BASISKAART_DB_HOST: database
       BASISKAART_DB_USER: postgres
       MAP_URL: "http://mapserver"
+      LEGEND_URL: "http://mapserver"
 
   topo_rd:
     build: .
