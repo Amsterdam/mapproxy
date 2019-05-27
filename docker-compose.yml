@@ -21,7 +21,7 @@ services:
 #     - "~/.ssh/datapunt.key:/root/.ssh/datapunt.key"
 
   mapserver:
-    image: repo.data.amsterdam.nl/datapunt/mapserver-private
+    image: repo.data.amsterdam.nl/datapunt/mapserver-tiles:acceptance
     user: root
     environment:
       BAG_DB_HOST: database
