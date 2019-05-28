@@ -38,7 +38,7 @@ services:
       - mapserver
       - database
     command: >
-      mapproxy-seed -c 4 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=topo_rd_kbk,topo_rd_bgt
+      mapproxy-seed -c 3 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=topo_rd_kbk,topo_rd_bgt
     volumes:
       - "/mnt/tiles:/mnt/tiles"
 
@@ -49,7 +49,7 @@ services:
       - mapserver
       - database
     command: >
-      mapproxy-seed -c 4 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=topo_rd_light_kbk,topo_rd_light_bgt
+      mapproxy-seed -c 3 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=topo_rd_light_kbk,topo_rd_light_bgt
     volumes:
       - "/mnt/tiles:/mnt/tiles"
 
@@ -60,7 +60,7 @@ services:
       - mapserver
       - database
     command: >
-      mapproxy-seed -c 4 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=topo_rd_zw_kbk,topo_rd_zw_bgt
+      mapproxy-seed -c 3 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=topo_rd_zw_kbk,topo_rd_zw_bgt
     volumes:
       - "/mnt/tiles:/mnt/tiles"
 
@@ -71,7 +71,7 @@ services:
       - mapserver
       - database
     command: >
-      mapproxy-seed -c 4 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=topo_wm_kbk,topo_wm_bgt
+      mapproxy-seed -c 3 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=topo_wm_kbk,topo_wm_bgt
     volumes:
       - "/mnt/tiles:/mnt/tiles"
 
@@ -82,7 +82,7 @@ services:
       - mapserver
       - database
     command: >
-      mapproxy-seed -c 4 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=topo_wm_light_kbk,topo_wm_light_bgt
+      mapproxy-seed -c 3 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=topo_wm_light_kbk,topo_wm_light_bgt
     volumes:
       - "/mnt/tiles:/mnt/tiles"
 
@@ -93,7 +93,7 @@ services:
       - mapserver
       - database
     command: >
-      mapproxy-seed -c 4 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=topo_wm_zw_kbk,topo_wm_zw_bgt
+      mapproxy-seed -c 3 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=topo_wm_zw_kbk,topo_wm_zw_bgt
     volumes:
       - "/mnt/tiles:/mnt/tiles"
 
