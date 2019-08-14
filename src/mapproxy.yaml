@@ -173,6 +173,7 @@ sources:
       url: http://mapserver/maps/topografie
       layers: basiskaart
     seed_only: true
+    concurrent_requests: 300
 
   basiskaart_rd_tiles:
     type: tile
@@ -186,6 +187,7 @@ sources:
       url: http://mapserver/maps/topografie
       layers: basiskaart-light
     seed_only: true
+    concurrent_requests: 300
 
   basiskaart_rd_light_tiles:
     type: tile
@@ -199,6 +201,7 @@ sources:
       url: http://mapserver/maps/topografie
       layers: basiskaart-zwartwit
     seed_only: true
+    concurrent_requests: 300
 
   basiskaart_rd_zw_tiles:
     type: tile
@@ -212,6 +215,7 @@ sources:
       url: http://mapserver/maps/topografie_wm
       layers: basiskaart
     seed_only: true
+    concurrent_requests: 300
 
   basiskaart_wm_tiles:
     type: tile
@@ -225,6 +229,7 @@ sources:
       url: http://mapserver/maps/topografie_wm
       layers: basiskaart-light
     seed_only: true
+    concurrent_requests: 300
 
   basiskaart_wm_light_tiles:
     type: tile
@@ -238,6 +243,7 @@ sources:
       url: http://mapserver/maps/topografie_wm
       layers: basiskaart-zwartwit
     seed_only: true
+    concurrent_requests: 300
 
   basiskaart_wm_zw_tiles:
     type: tile
