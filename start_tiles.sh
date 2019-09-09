@@ -12,6 +12,9 @@ dc() {
 
 trap 'dc kill ; dc rm -f' EXIT
 
+# clean environment
+dc down
+
 # start database
 dc up -d --force-recreate database
 sleep 10
