@@ -254,12 +254,12 @@ sources:
   luchtfoto_rd_tiles:
     type: tile
     grid: nl_grid
-    url: http://OS_URL_REPLACE/lufo2017_rd_cache_EPSG28992/%(z)s/%(x)s/%(y)s.jpeg
+    url: http://OS_URL_REPLACE/lufo2019_rd_cache_EPSG28992/%(z)s/%(x)s/%(y)s.jpeg
 
   lufo_wms:
     type: wms
     req:
-      url: http://<local ip>:80/maps/lufo
+      url: http://host.docker.internal/maps/lufo
       layers: lufo-TILE
 
   infrarood_wms:
@@ -286,8 +286,8 @@ globals:
     base_dir: '/app'
     lock_dir: '/app'
     tile_lock_dir: '/app'
-    meta_size: [4, 4]
-    meta_buffer: 128
+    meta_size: [12, 12]
+    meta_buffer: 384
   http:
     ssl_no_cert_checks: True
 
