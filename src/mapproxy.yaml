@@ -290,6 +290,7 @@ globals:
     meta_buffer: 384
   http:
     ssl_no_cert_checks: True
+    client_timeout: 10
 
   image:
       resampling_method: bicubic
