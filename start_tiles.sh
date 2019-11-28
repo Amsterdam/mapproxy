@@ -25,7 +25,7 @@ sudo chmod 755 /mnt/tiles
 
 # import basiskaart db
 dc exec -T database update-db.sh basiskaart
-dc exec -T database update-db.sh bag
+dc exec -T database update-db.sh bag_v11
 
 # generate geojson
 dc build
