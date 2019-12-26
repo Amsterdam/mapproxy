@@ -286,8 +286,8 @@ globals:
     base_dir: '/app'
     lock_dir: '/app'
     tile_lock_dir: '/app'
-    meta_size: [12, 12]
-    meta_buffer: 384
+    meta_size: [4, 4]
+    meta_buffer: 254
   http:
     ssl_no_cert_checks: True
     client_timeout: 10
