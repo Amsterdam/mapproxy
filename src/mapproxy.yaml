@@ -290,7 +290,7 @@ globals:
     meta_buffer: 265
   http:
     ssl_no_cert_checks: True
-    client_timeout: 20
+    client_timeout: 60
     method: GET
 
   image:
