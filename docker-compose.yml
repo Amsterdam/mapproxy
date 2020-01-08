@@ -30,7 +30,7 @@ services:
 #     - "~/.ssh/datapunt.key:/root/.ssh/datapunt.key"
 
   mapserver:
-    image: repo.data.amsterdam.nl/datapunt/mapserver-tiles:acceptance
+    image: repo.data.amsterdam.nl/datapunt/mapserver-tiles:dev
     user: root
     ports:
      - 8080:8080
