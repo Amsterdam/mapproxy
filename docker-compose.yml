@@ -1,14 +1,5 @@
 version: '3.0'
 services:
-  reverse:
-    container_name: reverse
-    build: .
-    hostname: reverse
-    image: nginx
-    ports:
-      - 80:80
-    volumes:
-      - "./src/nginx:/etc/nginx"
   mapproxy:
     build: .
     ports:
