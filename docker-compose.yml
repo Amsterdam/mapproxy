@@ -23,8 +23,6 @@ services:
   mapserver:
     image: repo.data.amsterdam.nl/datapunt/mapserver-tiles:dev
     user: root
-    ports:
-     - 8080:8080
     environment:
       BAG_DB_HOST: database
       BAG_DB_USER: postgres
