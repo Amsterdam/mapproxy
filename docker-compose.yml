@@ -1,5 +1,14 @@
 version: '3.0'
 services:
+  reverse:
+    container_name: reverse
+    build: .
+    hostname: reverse
+    image: nginx
+    ports:
+      - 80:80
+    volumes:
+      - "./src/nginx:/etc/nginx"
   mapproxy:
     build: .
     ports:
@@ -21,8 +30,10 @@ services:
 #     - "~/.ssh/datapunt.key:/root/.ssh/datapunt.key"
 
   mapserver:
-    image: repo.data.amsterdam.nl/datapunt/mapserver-tiles:dev
+    image: repo.data.amsterdam.nl/datapunt/mapserver-tiles:acceptance
     user: root
+    ports:
+     - 8080:8080
     environment:
       BAG_DB_HOST: database
       BAG_DB_USER: postgres
@@ -113,5 +124,3 @@ services:
       mapproxy-seed -c 4 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=infrarood_rd
     volumes:
       - "/mnt/tiles:/mnt/tiles"
-
-
