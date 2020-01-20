@@ -14,7 +14,9 @@ mapproxy.yaml - Mapproxy server config
 ---------------------
 
 
-# Tiles Job https://ci.data.amsterdam.nl/job/Tiles/
+# Tiles Job
+
+Project location: https://ci.data.amsterdam.nl/job/Tiles/
 
 Do not change the following value 1, otherwise the mapserver will crash. ( apache2 - mapserver ) 
 The mapserver is tuned (project mapserver - branch basis) 
