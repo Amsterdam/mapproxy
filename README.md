@@ -27,10 +27,12 @@ You can start the following job
 
 This job is starting a internal webserver( apache2 > mapserver > and is generating on de build slaves the new images. The script is copying the tiles to /mnt/tiles. after the build process is done. The tiles will be uploaded to the objectstore in the next job. 
 
-Do not touch these settings only if you know what you are doing. 
+# Global settings
+
+meta_size: If you set this to a higher value for example 8 x 8 the internal mapserver is crashing. 
+mea_buffer: do not change this. 
 
 ```
-
 globals:
   cache:
     base_dir: '/app'
@@ -62,4 +64,11 @@ rclone sync lufo2018_rd_cache_EPSG28992 tilesacc:/ -vvv --transfers=20 --checker
 rclone sync lufo2018_rd_cache_EPSG28992 tiles:/ -vvv --transfers=20 --checkers=20
 ```
 - Upload pyramid directory to objectstore
+    
+ # Support
+ 
+ If we need help with the mapserver or mapproxy. We can contact the following person:
+ 
+Edward Mac Gillavry
+webmapper.net
 
