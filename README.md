@@ -29,6 +29,8 @@ This job is starting a internal webserver( apache2 > mapserver > and is generati
 
 Do not touch these settings only if you know what you are doing. 
 
+```
+
 globals:
   cache:
     base_dir: '/app'
@@ -39,6 +41,7 @@ globals:
   http:
     ssl_no_cert_checks: True
     client_timeout: 10
+```
 
 Luchtfoto tegels
 ----------------
