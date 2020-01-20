@@ -25,6 +25,19 @@ You can start the following job
 
 This job is starting a internal webserver( apache2 > mapserver > and is generating on de build slaves the new images. The script is copying the tiles to /mnt/tiles. after the build process is done. The tiles will be uploaded to the objectstore in the next job. 
 
+Do not touch these settings only if you know what you are doing. 
+
+globals:
+  cache:
+    base_dir: '/app'
+    lock_dir: '/app'
+    tile_lock_dir: '/app'
+    meta_size: [4, 4]
+    meta_buffer: 254
+  http:
+    ssl_no_cert_checks: True
+    client_timeout: 10
+
 Luchtfoto tegels
 ----------------
 
