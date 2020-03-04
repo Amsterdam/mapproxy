@@ -14,7 +14,7 @@ WORKDIR /app
 COPY src/* /app/
 COPY docker-entrypoint.sh /bin
 
-RUN pip install MapProxy==1.12.0
+RUN pip install MapProxy==1.11.0
 
 USER datapunt
 
