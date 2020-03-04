@@ -17,6 +17,8 @@ dc down
 
 # start database
 dc up -d --force-recreate database
+# Start mapserver
+dc up -d mapserver
 sleep 10
 
 # create dirs
