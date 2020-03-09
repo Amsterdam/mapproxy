@@ -217,30 +217,6 @@ CLUSTER waterdeel_lijn_2 USING index_waterdeel_lijn_2_geohash_idx;
 DROP INDEX index_waterdeel_lijn_2_geohash_idx;
 CREATE INDEX index_waterdeel_lijn_2_gist ON waterdeel_lijn_2 USING gist(geometrie);
 
-drop index if exists index_waterdeel_vlak0_gist;
-CREATE INDEX index_waterdeel_vlak0_geohash_idx ON waterdeel_vlak0 (ST_GeoHash(ST_Transform(ST_Envelope(geometrie),4326),10) COLLATE "C");
-CLUSTER waterdeel_vlak0 USING index_waterdeel_vlak0_geohash_idx;
-DROP INDEX index_waterdeel_vlak0_geohash_idx;
-CREATE INDEX index_waterdeel_vlak0_gist ON waterdeel_vlak0 USING gist(geometrie);
-
-drop index if exists index_waterdeel_vlak1_gist;
-CREATE INDEX index_waterdeel_vlak1_geohash_idx ON waterdeel_vlak1 (ST_GeoHash(ST_Transform(ST_Envelope(geometrie),4326),10) COLLATE "C");
-CLUSTER waterdeel_vlak1 USING index_waterdeel_vlak1_geohash_idx;
-DROP INDEX index_waterdeel_vlak1_geohash_idx;
-CREATE INDEX index_waterdeel_vlak1_gist ON waterdeel_vlak1 USING gist(geometrie);
-
-drop index if exists index_waterdeel_vlak_1_gist;
-CREATE INDEX index_waterdeel_vlak_1_geohash_idx ON waterdeel_vlak_1 (ST_GeoHash(ST_Transform(ST_Envelope(geometrie),4326),10) COLLATE "C");
-CLUSTER waterdeel_vlak_1 USING index_waterdeel_vlak_1_geohash_idx;
-DROP INDEX index_waterdeel_vlak_1_geohash_idx;
-CREATE INDEX index_waterdeel_vlak_1_gist ON waterdeel_vlak_1 USING gist(geometrie);
-
-drop index if exists index_waterdeel_vlak_2_gist;
-CREATE INDEX index_waterdeel_vlak_2_geohash_idx ON waterdeel_vlak_2 (ST_GeoHash(ST_Transform(ST_Envelope(geometrie),4326),10) COLLATE "C");
-CLUSTER waterdeel_vlak_2 USING index_waterdeel_vlak_2_geohash_idx;
-DROP INDEX index_waterdeel_vlak_2_geohash_idx;
-CREATE INDEX index_waterdeel_vlak_2_gist ON waterdeel_vlak_2 USING gist(geometrie);
-
 drop index if exists index_wegdeel_vlak0_gist;
 CREATE INDEX index_wegdeel_vlak0_geohash_idx ON wegdeel_vlak0 (ST_GeoHash(ST_Transform(ST_Envelope(geometrie),4326),10) COLLATE "C");
 CLUSTER wegdeel_vlak0 USING index_wegdeel_vlak0_geohash_idx;
@@ -279,55 +255,55 @@ CREATE INDEX index_wegdeel_vlak_2_gist ON wegdeel_vlak_2 USING gist(geometrie);
 
 
 
-create unique index if not exists index_gebouw_vlak0_idx on gebouw_vlak0(identificatie_lokaalid)
-create unique index if not exists index_gebouw_vlak1_idx on gebouw_vlak1(identificatie_lokaalid)
-create unique index if not exists index_gebouw_vlak2_idx on gebouw_vlak2(identificatie_lokaalid)
-create unique index if not exists index_gebouw_vlak3_idx on gebouw_vlak3(identificatie_lokaalid)
-create unique index if not exists index_gebouw_vlak4_idx on gebouw_vlak4(identificatie_lokaalid)
-create unique index if not exists index_gebouw_vlak5_idx on gebouw_vlak5(identificatie_lokaalid)
-create unique index if not exists index_gebouw_vlak_1_idx on gebouw_vlak_1(identificatie_lokaalid)
-create unique index if not exists index_gebouw_vlak_2_idx on gebouw_vlak_2(identificatie_lokaalid)
-create unique index if not exists index_inrichtingselement_lijn0_idx on inrichtingselement_lijn0(identificatie_lokaalid)
-create unique index if not exists index_inrichtingselement_lijn1_idx on inrichtingselement_lijn1(identificatie_lokaalid)
-create unique index if not exists index_inrichtingselement_lijn2_idx on inrichtingselement_lijn2(identificatie_lokaalid)
-create unique index if not exists index_inrichtingselement_lijn3_idx on inrichtingselement_lijn3(identificatie_lokaalid)
-create unique index if not exists index_inrichtingselement_lijn_1_idx on inrichtingselement_lijn_1(identificatie_lokaalid)
-create unique index if not exists index_inrichtingselement_lijn_2_idx on inrichtingselement_lijn_2(identificatie_lokaalid)
-create unique index if not exists index_inrichtingselement_punt0_idx on inrichtingselement_punt0(identificatie_lokaalid)
-create unique index if not exists index_inrichtingselement_punt1_idx on inrichtingselement_punt1(identificatie_lokaalid)
-create unique index if not exists index_inrichtingselement_punt2_idx on inrichtingselement_punt2(identificatie_lokaalid)
-create unique index if not exists index_inrichtingselement_punt_1_idx on inrichtingselement_punt_1(identificatie_lokaalid)
-create unique index if not exists index_inrichtingselement_vlak0_idx on inrichtingselement_vlak0(identificatie_lokaalid)
-create unique index if not exists index_inrichtingselement_vlak1_idx on inrichtingselement_vlak1(identificatie_lokaalid)
-create unique index if not exists index_inrichtingselement_vlak2_idx on inrichtingselement_vlak2(identificatie_lokaalid)
-create unique index if not exists index_inrichtingselement_vlak3_idx on inrichtingselement_vlak3(identificatie_lokaalid)
-create unique index if not exists index_inrichtingselement_vlak_1_idx on inrichtingselement_vlak_1(identificatie_lokaalid)
-create unique index if not exists index_inrichtingselement_vlak_2_idx on inrichtingselement_vlak_2(identificatie_lokaalid)
-create unique index if not exists index_inrichtingselement_vlak_3_idx on inrichtingselement_vlak_3(identificatie_lokaalid)
-create unique index if not exists index_spoor_lijn0_idx on spoor_lijn0(identificatie_lokaalid)
-create unique index if not exists index_spoor_lijn1_idx on spoor_lijn1(identificatie_lokaalid)
-create unique index if not exists index_spoor_lijn2_idx on spoor_lijn2(identificatie_lokaalid)
-create unique index if not exists index_spoor_lijn3_idx on spoor_lijn3(identificatie_lokaalid)
-create unique index if not exists index_spoor_lijn_1_idx on spoor_lijn_1(identificatie_lokaalid)
-create unique index if not exists index_spoor_lijn_2_idx on spoor_lijn_2(identificatie_lokaalid)
-create unique index if not exists index_spoor_lijn_3_idx on spoor_lijn_3(identificatie_lokaalid)
-create unique index if not exists index_terreindeel_vlak0_idx on terreindeel_vlak0(identificatie_lokaalid)
-create unique index if not exists index_terreindeel_vlak1_idx on terreindeel_vlak1(identificatie_lokaalid)
-create unique index if not exists index_terreindeel_vlak2_idx on terreindeel_vlak2(identificatie_lokaalid)
-create unique index if not exists index_terreindeel_vlak3_idx on terreindeel_vlak3(identificatie_lokaalid)
-create unique index if not exists index_terreindeel_vlak_1_idx on terreindeel_vlak_1(identificatie_lokaalid)
-create unique index if not exists index_terreindeel_vlak_2_idx on terreindeel_vlak_2(identificatie_lokaalid)
-create unique index if not exists index_terreindeel_vlak_3_idx on terreindeel_vlak_3(identificatie_lokaalid)
-create unique index if not exists index_waterdeel_lijn0_idx on waterdeel_lijn0(identificatie_lokaalid)
-create unique index if not exists index_waterdeel_lijn_1_idx on waterdeel_lijn_1(identificatie_lokaalid)
-create unique index if not exists index_waterdeel_lijn_2_idx on waterdeel_lijn_2(identificatie_lokaalid)
-create index if not exists index_waterdeel_vlak0_idx on waterdeel_vlak0(identificatie_lokaalid)
-create unique index if not exists index_waterdeel_vlak1_idx on waterdeel_vlak1(identificatie_lokaalid)
-create unique index if not exists index_waterdeel_vlak_1_idx on waterdeel_vlak_1(identificatie_lokaalid)
-create unique index if not exists index_waterdeel_vlak_2_idx on waterdeel_vlak_2(identificatie_lokaalid)
-create unique index if not exists index_wegdeel_vlak0_idx on wegdeel_vlak0(identificatie_lokaalid)
-create unique index if not exists index_wegdeel_vlak1_idx on wegdeel_vlak1(identificatie_lokaalid)
-create unique index if not exists index_wegdeel_vlak2_idx on wegdeel_vlak2(identificatie_lokaalid)
-create unique index if not exists index_wegdeel_vlak3_idx on wegdeel_vlak3(identificatie_lokaalid)
-create unique index if not exists index_wegdeel_vlak_1_idx on wegdeel_vlak_1(identificatie_lokaalid)
-create unique index if not exists index_wegdeel_vlak_2_idx on wegdeel_vlak_2(identificatie_lokaalid)
+create unique index if not exists index_gebouw_vlak0_idx on gebouw_vlak0(identificatie_lokaalid);
+create unique index if not exists index_gebouw_vlak1_idx on gebouw_vlak1(identificatie_lokaalid);
+create unique index if not exists index_gebouw_vlak2_idx on gebouw_vlak2(identificatie_lokaalid);
+create unique index if not exists index_gebouw_vlak3_idx on gebouw_vlak3(identificatie_lokaalid);
+create unique index if not exists index_gebouw_vlak4_idx on gebouw_vlak4(identificatie_lokaalid);
+create unique index if not exists index_gebouw_vlak5_idx on gebouw_vlak5(identificatie_lokaalid);
+create unique index if not exists index_gebouw_vlak_1_idx on gebouw_vlak_1(identificatie_lokaalid);
+create unique index if not exists index_gebouw_vlak_2_idx on gebouw_vlak_2(identificatie_lokaalid);
+create unique index if not exists index_inrichtingselement_lijn0_idx on inrichtingselement_lijn0(identificatie_lokaalid);
+create unique index if not exists index_inrichtingselement_lijn1_idx on inrichtingselement_lijn1(identificatie_lokaalid);
+create unique index if not exists index_inrichtingselement_lijn2_idx on inrichtingselement_lijn2(identificatie_lokaalid);
+create unique index if not exists index_inrichtingselement_lijn3_idx on inrichtingselement_lijn3(identificatie_lokaalid);
+create unique index if not exists index_inrichtingselement_lijn_1_idx on inrichtingselement_lijn_1(identificatie_lokaalid);
+create unique index if not exists index_inrichtingselement_lijn_2_idx on inrichtingselement_lijn_2(identificatie_lokaalid);
+create unique index if not exists index_inrichtingselement_punt0_idx on inrichtingselement_punt0(identificatie_lokaalid);
+create unique index if not exists index_inrichtingselement_punt1_idx on inrichtingselement_punt1(identificatie_lokaalid);
+create unique index if not exists index_inrichtingselement_punt2_idx on inrichtingselement_punt2(identificatie_lokaalid);
+create unique index if not exists index_inrichtingselement_punt_1_idx on inrichtingselement_punt_1(identificatie_lokaalid);
+create unique index if not exists index_inrichtingselement_vlak0_idx on inrichtingselement_vlak0(identificatie_lokaalid);
+create unique index if not exists index_inrichtingselement_vlak1_idx on inrichtingselement_vlak1(identificatie_lokaalid);
+create unique index if not exists index_inrichtingselement_vlak2_idx on inrichtingselement_vlak2(identificatie_lokaalid);
+create unique index if not exists index_inrichtingselement_vlak3_idx on inrichtingselement_vlak3(identificatie_lokaalid);
+create unique index if not exists index_inrichtingselement_vlak_1_idx on inrichtingselement_vlak_1(identificatie_lokaalid);
+create unique index if not exists index_inrichtingselement_vlak_2_idx on inrichtingselement_vlak_2(identificatie_lokaalid);
+create unique index if not exists index_inrichtingselement_vlak_3_idx on inrichtingselement_vlak_3(identificatie_lokaalid);
+create unique index if not exists index_spoor_lijn0_idx on spoor_lijn0(identificatie_lokaalid);
+create unique index if not exists index_spoor_lijn1_idx on spoor_lijn1(identificatie_lokaalid);
+create unique index if not exists index_spoor_lijn2_idx on spoor_lijn2(identificatie_lokaalid);
+create unique index if not exists index_spoor_lijn3_idx on spoor_lijn3(identificatie_lokaalid);
+create unique index if not exists index_spoor_lijn_1_idx on spoor_lijn_1(identificatie_lokaalid);
+create unique index if not exists index_spoor_lijn_2_idx on spoor_lijn_2(identificatie_lokaalid);
+create unique index if not exists index_spoor_lijn_3_idx on spoor_lijn_3(identificatie_lokaalid);
+create unique index if not exists index_terreindeel_vlak0_idx on terreindeel_vlak0(identificatie_lokaalid);
+create unique index if not exists index_terreindeel_vlak1_idx on terreindeel_vlak1(identificatie_lokaalid);
+create unique index if not exists index_terreindeel_vlak2_idx on terreindeel_vlak2(identificatie_lokaalid);
+create unique index if not exists index_terreindeel_vlak3_idx on terreindeel_vlak3(identificatie_lokaalid);
+create unique index if not exists index_terreindeel_vlak_1_idx on terreindeel_vlak_1(identificatie_lokaalid);
+create unique index if not exists index_terreindeel_vlak_2_idx on terreindeel_vlak_2(identificatie_lokaalid);
+create unique index if not exists index_terreindeel_vlak_3_idx on terreindeel_vlak_3(identificatie_lokaalid);
+create unique index if not exists index_waterdeel_lijn0_idx on waterdeel_lijn0(identificatie_lokaalid);
+create unique index if not exists index_waterdeel_lijn_1_idx on waterdeel_lijn_1(identificatie_lokaalid);
+create unique index if not exists index_waterdeel_lijn_2_idx on waterdeel_lijn_2(identificatie_lokaalid);
+create index if not exists index_waterdeel_vlak0_idx on waterdeel_vlak0(identificatie_lokaalid);
+create unique index if not exists index_waterdeel_vlak1_idx on waterdeel_vlak1(identificatie_lokaalid);
+create unique index if not exists index_waterdeel_vlak_1_idx on waterdeel_vlak_1(identificatie_lokaalid);
+create unique index if not exists index_waterdeel_vlak_2_idx on waterdeel_vlak_2(identificatie_lokaalid);
+create unique index if not exists index_wegdeel_vlak0_idx on wegdeel_vlak0(identificatie_lokaalid);
+create unique index if not exists index_wegdeel_vlak1_idx on wegdeel_vlak1(identificatie_lokaalid);
+create unique index if not exists index_wegdeel_vlak2_idx on wegdeel_vlak2(identificatie_lokaalid);
+create unique index if not exists index_wegdeel_vlak3_idx on wegdeel_vlak3(identificatie_lokaalid);
+create unique index if not exists index_wegdeel_vlak_1_idx on wegdeel_vlak_1(identificatie_lokaalid);
+create unique index if not exists index_wegdeel_vlak_2_idx on wegdeel_vlak_2(identificatie_lokaalid);
