@@ -15,6 +15,7 @@ services:
     environment:
       POSTGRES_PASSWORD: insecure
       POSTGRES_USER: postgres
+      PGPASSWORD: insecure
     extra_hosts:
           admin.datapunt.amsterdam.nl: 10.99.157.24
 #    volumes:
