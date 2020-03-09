@@ -29,6 +29,9 @@ sudo chmod 755 /mnt/tiles
 dc exec -T database update-db.sh basiskaart
 dc exec -T database update-db.sh bag_v11
 
+
 # generate geojson
 dc build
+docker cp src/indexes.sh "$(docker-compose ps -q database)":/tmp/indexes.sh
+docker-compose exec database psql -U basiskaart -d basiskaart -f /tmp/indexes.sh
 dc run topo_$1
