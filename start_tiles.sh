@@ -32,6 +32,8 @@ dc exec -T database update-db.sh bag_v11
 
 # generate geojson
 dc build
-docker cp src/indexes.sh "$(dc ps -q database)":/tmp/indexes.sh
-dc exec database psql -U basiskaart -d basiskaart -f /tmp/indexes.sh
+echo "Copy indexes.sh"
+docker cp ${DIR}/src/indexes.sh "$(dc ps -q database)":/tmp/indexes.sh
+echo "Update database indexes"
+dc exec database psql -U postgres -d basiskaart -f /tmp/indexes.sh
 dc run topo_$1
