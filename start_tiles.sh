@@ -35,5 +35,5 @@ dc build
 echo "Copy indexes.sh"
 docker cp ${DIR}/src/indexes.sh "$(dc ps -q database)":/tmp/indexes.sh
 echo "Update database indexes"
-dc exec database psql -U postgres -d basiskaart -f /tmp/indexes.sh
+dc exec -T database psql -U postgres -d basiskaart -f /tmp/indexes.sh
 dc run topo_$1
