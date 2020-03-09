@@ -36,4 +36,6 @@ echo "Copy indexes.sh"
 docker cp ${DIR}/src/indexes.sh "$(dc ps -q database)":/tmp/indexes.sh
 echo "Update database indexes"
 dc exec -T database psql -U postgres -d basiskaart -f /tmp/indexes.sh
+
+sudo rm -rf /mnt/tiles/topo_rd_cache_EPSG28992/
 dc run topo_$1
