@@ -36,7 +36,9 @@ services:
       LEGEND_URL: "http://mapserver"
 
   topo_rd:
-    build: .
+    build:
+      context: .
+      dockerfile: DockerfileTiles
     user: root
     links:
       - mapserver
@@ -47,7 +49,9 @@ services:
       - "/mnt/tiles:/mnt/tiles"
 
   topo_rd_light:
-    build: .
+    build:
+      context: .
+      dockerfile: DockerfileTiles
     user: root
     links:
       - mapserver
