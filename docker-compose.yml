@@ -41,7 +41,7 @@ services:
       dockerfile: DockerfileTiles
     user: root
     links:
-      - mapserver
+      # - mapserver
       - database
     command: >
       mapproxy-seed -c 1 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=topo_rd_kbk,topo_rd_bgt
