@@ -21,7 +21,7 @@ services:
 #     - "~/.ssh/datapunt.key:/root/.ssh/datapunt.key"
 
   mapserver:
-    image: docker-registry.data.amsterdam.nl/datapunt/mapserver-tiles:2
+    image: docker-registry.data.amsterdam.nl/datapunt/mapserver-tiles:dev
     user: root
     environment:
       BAG_DB_HOST: database
