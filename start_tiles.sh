@@ -13,7 +13,7 @@ dc() {
 trap 'dc kill ; dc rm -f' EXIT
 
 # clean environment
-dc down
+dc down --remove-orphans
 
 # start database
 # dc up -d --force-recreate database
