@@ -24,6 +24,7 @@ sleep 10
 # create dirs
 sudo mkdir -p /mnt/tiles
 sudo chmod 755 /mnt/tiles
+sudo rm -rf /mnt/tiles/*
 
 # import basiskaart db
 dc exec -T database update-db.sh basiskaart
