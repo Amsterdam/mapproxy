@@ -16,7 +16,7 @@ trap 'dc kill ; dc rm -f' EXIT
 dc down
 
 # start database
-dc up -d --force-recreate database
+# dc up -d --force-recreate database
 # Start mapserver
 # dc up -d mapserver
 sleep 10
@@ -27,8 +27,8 @@ sudo chmod 755 /mnt/tiles
 sudo rm -rf /mnt/tiles/*
 
 # import basiskaart db
-dc exec -T database update-db.sh basiskaart
-dc exec -T database update-db.sh bag_v11
+# dc exec -T database update-db.sh basiskaart
+# dc exec -T database update-db.sh bag_v11
 
 
 # generate geojson

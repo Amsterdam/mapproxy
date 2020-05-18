@@ -10,13 +10,13 @@ services:
       UWSGI_PROCESSES: 4
       OS_URL: "e4b811595a6f4b4aac96f600b037d3dd.objectstore.eu" # Acceptance Tiles as default
 
-  database:
-    image: amsterdam/postgres11
-    environment:
-      POSTGRES_PASSWORD: insecure
-      POSTGRES_USER: postgres
-    extra_hosts:
-          admin.datapunt.amsterdam.nl: 10.99.157.24
+  # database:
+  #   image: amsterdam/postgres11
+  #   environment:
+  #     POSTGRES_PASSWORD: insecure
+  #     POSTGRES_USER: postgres
+  #   extra_hosts:
+  #         admin.datapunt.amsterdam.nl: 10.99.157.24
 #    volumes:
 #     - "~/.ssh/datapunt.key:/root/.ssh/datapunt.key"
 
@@ -40,9 +40,6 @@ services:
       context: .
       dockerfile: DockerfileTiles
     user: root
-    links:
-      # - mapserver
-      - database
     command: >
       mapproxy-seed -c 1 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=topo_rd_kbk,topo_rd_bgt
     volumes:
@@ -53,9 +50,6 @@ services:
       context: .
       dockerfile: DockerfileTiles
     user: root
-    links:
-      # - mapserver
-      - database
     command: >
       mapproxy-seed -c 6 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=topo_rd_light_kbk,topo_rd_light_bgt
     volumes:
@@ -64,9 +58,6 @@ services:
   topo_rd_zw:
     build: .
     user: root
-    links:
-      # - mapserver
-      - database
     command: >
       mapproxy-seed -1 2 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=topo_rd_zw_kbk,topo_rd_zw_bgt
     volumes:
@@ -75,9 +66,6 @@ services:
   topo_wm:
     build: .
     user: root
-    links:
-      # - mapserver
-      - database
     command: >
       mapproxy-seed -c 1 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=topo_wm_kbk,topo_wm_bgt
     volumes:
@@ -86,9 +74,6 @@ services:
   topo_wm_light:
     build: .
     user: root
-    links:
-      # - mapserver
-      - database
     command: >
       mapproxy-seed -c 1 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=topo_wm_light_kbk,topo_wm_light_bgt
     volumes:
@@ -97,9 +82,6 @@ services:
   topo_wm_zw:
     build: .
     user: root
-    links:
-      # - mapserver
-      - database
     command: >
       mapproxy-seed -c 1 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=topo_wm_zw_kbk,topo_wm_zw_bgt
     volumes:
