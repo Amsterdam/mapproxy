@@ -12,6 +12,8 @@ dc() {
 
 trap 'dc kill ; dc rm -f' EXIT
 
+dc kill
+dc rm -f
 # clean environment
 dc down --remove-orphans
 
