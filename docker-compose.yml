@@ -20,20 +20,20 @@ services:
 #    volumes:
 #     - "~/.ssh/datapunt.key:/root/.ssh/datapunt.key"
 
-  mapserver:
-    image: docker-registry.data.amsterdam.nl/datapunt/mapserver-tiles:dev
-    user: root
-    environment:
-      BAG_DB_HOST: database
-      BAG_DB_USER: postgres
-      BASISKAART_DB_HOST: database
-      BASISKAART_DB_USER: postgres
-      BAG_V11_DB_NAME: bag_v11
-      BAG_V11_DB_USER: postgres
-      BAG_V11_DB_PASSWORD: insecure
-      BAG_V11_DB_HOST: database
-      MAP_URL: "http://mapserver"
-      LEGEND_URL: "http://mapserver"
+  # mapserver:
+  #   image: docker-registry.data.amsterdam.nl/datapunt/mapserver-tiles:dev
+  #   user: root
+  #   environment:
+  #     BAG_DB_HOST: database
+  #     BAG_DB_USER: postgres
+  #     BASISKAART_DB_HOST: database
+  #     BASISKAART_DB_USER: postgres
+  #     BAG_V11_DB_NAME: bag_v11
+  #     BAG_V11_DB_USER: postgres
+  #     BAG_V11_DB_PASSWORD: insecure
+  #     BAG_V11_DB_HOST: database
+  #     MAP_URL: "http://mapserver"
+  #     LEGEND_URL: "http://mapserver"
 
   topo_rd:
     build:
@@ -54,7 +54,7 @@ services:
       dockerfile: DockerfileTiles
     user: root
     links:
-      - mapserver
+      # - mapserver
       - database
     command: >
       mapproxy-seed -c 6 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=topo_rd_light_kbk,topo_rd_light_bgt
@@ -65,7 +65,7 @@ services:
     build: .
     user: root
     links:
-      - mapserver
+      # - mapserver
       - database
     command: >
       mapproxy-seed -1 2 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=topo_rd_zw_kbk,topo_rd_zw_bgt
@@ -76,7 +76,7 @@ services:
     build: .
     user: root
     links:
-      - mapserver
+      # - mapserver
       - database
     command: >
       mapproxy-seed -c 1 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=topo_wm_kbk,topo_wm_bgt
@@ -87,7 +87,7 @@ services:
     build: .
     user: root
     links:
-      - mapserver
+      # - mapserver
       - database
     command: >
       mapproxy-seed -c 1 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=topo_wm_light_kbk,topo_wm_light_bgt
@@ -98,7 +98,7 @@ services:
     build: .
     user: root
     links:
-      - mapserver
+      # - mapserver
       - database
     command: >
       mapproxy-seed -c 1 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=topo_wm_zw_kbk,topo_wm_zw_bgt
