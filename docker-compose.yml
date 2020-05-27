@@ -56,7 +56,9 @@ services:
       - "/mnt/tiles:/mnt/tiles"
 
   topo_rd_zw:
-    build: .
+    build:
+      context: .
+      dockerfile: DockerfileTiles
     user: root
     command: >
       mapproxy-seed -c 4 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=topo_rd_zw_kbk,topo_rd_zw_bgt
@@ -64,7 +66,9 @@ services:
       - "/mnt/tiles:/mnt/tiles"
 
   topo_wm:
-    build: .
+    build:
+      context: .
+      dockerfile: DockerfileTiles
     user: root
     command: >
       mapproxy-seed -c 4 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=topo_wm_kbk,topo_wm_bgt
