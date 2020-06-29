@@ -10,31 +10,6 @@ services:
       UWSGI_PROCESSES: 4
       OS_URL: "e4b811595a6f4b4aac96f600b037d3dd.objectstore.eu" # Acceptance Tiles as default
 
-  # database:
-  #   image: amsterdam/postgres11
-  #   environment:
-  #     POSTGRES_PASSWORD: insecure
-  #     POSTGRES_USER: postgres
-  #   extra_hosts:
-  #         admin.datapunt.amsterdam.nl: 10.99.157.24
-#    volumes:
-#     - "~/.ssh/datapunt.key:/root/.ssh/datapunt.key"
-
-  # mapserver:
-  #   image: docker-registry.data.amsterdam.nl/datapunt/mapserver-tiles:dev
-  #   user: root
-  #   environment:
-  #     BAG_DB_HOST: database
-  #     BAG_DB_USER: postgres
-  #     BASISKAART_DB_HOST: database
-  #     BASISKAART_DB_USER: postgres
-  #     BAG_V11_DB_NAME: bag_v11
-  #     BAG_V11_DB_USER: postgres
-  #     BAG_V11_DB_PASSWORD: insecure
-  #     BAG_V11_DB_HOST: database
-  #     MAP_URL: "http://mapserver"
-  #     LEGEND_URL: "http://mapserver"
-
   topo_rd:
     build:
       context: .

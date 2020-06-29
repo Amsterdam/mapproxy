@@ -7,7 +7,7 @@ DIR="$(dirname $0)"
 
 dc() {
 	# docker-compose pull
-	docker-compose -p mapproxy -f ${DIR}/docker-compose.yml $*
+	docker-compose -p mapproxy -f ${DIR}/docker-compose-tiles.yml $*
 }
 
 trap 'dc kill ; dc rm -f' EXIT
@@ -20,22 +20,12 @@ echo "Stop"
 # clean environment
 dc down --remove-orphans
 
-# start database
-# dc up -d --force-recreate database
-# Start mapserver
-# dc up -d mapserver
-# sleep 10
-
 # create dirs
 echo "Create dirs"
-sudo mkdir -p /mnt/tiles
-sudo chmod 755 /mnt/tiles
-sudo rm -rf /mnt/tiles/*
-
-# import basiskaart db
-# dc exec -T database update-db.sh basiskaart
-# dc exec -T database update-db.sh bag_v11
-
+sudo mkdir -p /mnt/tiles/
+sudo chmod 755 /mnt/tiles/
+echo "Cleanup old cache $1_cache_EPSG28992"
+sudo rm -rf "/mnt/tiles/topo_$1_cache_EPSG28992/"
 
 echo "Build"
 # generate geojson
