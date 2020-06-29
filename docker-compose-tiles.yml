@@ -22,7 +22,7 @@ services:
 
   topo_rd_light:
     build:
-      context: DockerfileTiles
+      context: .
       dockerfile: DockerfileTiles
     user: root
     command: >
