@@ -20,10 +20,10 @@ echo "Stop"
 dc down --remove-orphans
 
 # create dirs
-# echo "Create dirs"
-# mkdir -p /mnt/tiles/
-# chmod 755 /mnt/tiles/
-# echo "Cleanup old cache $1_cache_EPSG28992"
+echo "Create dirs"
+mkdir -p /mnt/tiles/
+chmod 755 /mnt/tiles/
+echo "Cleanup old cache $1_cache_EPSG28992"
 rm -rf "/mnt/tiles/topo_$1_cache_EPSG28992/"
 
 echo "Build"
