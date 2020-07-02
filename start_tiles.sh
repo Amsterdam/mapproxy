@@ -23,7 +23,7 @@ dc down --remove-orphans
 echo "Create dirs"
 sudo mkdir -p /mnt/tiles/
 sudo chmod 755 /mnt/tiles/
-echo "Cleanup old cache $1_cache_EPSG28992"
+echo "Cleanup old cache /mnt/tiles/topo_$1_cache_EPSG28992"
 sudo rm -rf "/mnt/tiles/topo_$1_cache_EPSG28992/"
 
 echo "Build"
