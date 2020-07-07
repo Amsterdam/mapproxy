@@ -15,6 +15,10 @@ COPY src/* /app/
 RUN sed -i 's#://mapserver#s://acc.map.data.amsterdam.nl#g' /app/mapproxy.yaml
 COPY docker-entrypoint.sh /bin
 
+RUN curl -i https://acc.map.data.amsterdam.nl/maps/topografie
+
+RUN cat /app/mapproxy.yaml
+
 RUN pip install MapProxy==1.11.0
 
 USER datapunt
