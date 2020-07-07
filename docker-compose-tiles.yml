@@ -19,6 +19,8 @@ services:
       mapproxy-seed -c 4 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=topo_rd_kbk,topo_rd_bgt
     volumes:
       - "/mnt/tiles:/mnt/tiles"
+    extra_hosts:
+      acc.map.data.amsterdam.nl: 10.243.15.201
 
   topo_rd_light:
     build:
