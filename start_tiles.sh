@@ -28,8 +28,6 @@ sudo rm -rf "/mnt/tiles/topo_$1_cache_EPSG28992/"
 
 echo "Build"
 
-curl -i https://acc.map.data.amsterdam.nl/maps/topografi
-cat /app/mapproxy.yaml
 # generate geojson
-# dc build
-# dc run topo_$1
+dc build
+dc run topo_$1
