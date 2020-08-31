@@ -250,7 +250,7 @@ sources:
     grid: webmercator
     url: http://OS_URL_REPLACE/topo_wm_zw_cache_EPSG3857/%(z)s/%(x)s/%(y)s.png
 
-# Example to tile to locally with the mapserver docker also running:
+# Example to tile locally with the mapserver docker also running:
   luchtfoto_rd_tiles:
     type: tile
     grid: nl_grid
@@ -259,13 +259,13 @@ sources:
   lufo_wms:
     type: wms
     req:
-      url: http://host.docker.internal/maps/lufo
+      url: http://172.17.0.1:8001/maps/lufo
       layers: lufo-TILE
 
   infrarood_wms:
     type: wms
     req:
-      url: http://192.168.1.27:80/maps/infrarood
+      url: http://172.17.0.1:8001/maps/infrarood
       layers: infrarood-TILE
 
 grids:
