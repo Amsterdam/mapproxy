@@ -109,12 +109,10 @@ services:
     volumes:
       - "/mnt/tiles:/mnt/tiles"
 
-  topo-infrarood:
+  topo-lufo-wm:
     build: .
     user: root
     command: >
-      mapproxy-seed -c 1 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=infrarood_rd
+      mapproxy-seed -c 4 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=lufo_wm
     volumes:
       - "/mnt/tiles:/mnt/tiles"
-
-

@@ -1,5 +1,5 @@
 FROM amsterdam/python3.6
-MAINTAINER datapunt@amsterdam.nl
+LABEL maintainer="datapunt@amsterdam.nl"
 
 EXPOSE 8000
 
@@ -14,7 +14,7 @@ WORKDIR /app
 COPY src/* /app/
 COPY docker-entrypoint.sh /bin
 
-RUN pip install MapProxy==1.12.0
+RUN pip install MapProxy==1.13.1
 
 USER datapunt
 
