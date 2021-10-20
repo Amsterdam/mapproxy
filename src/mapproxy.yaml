@@ -150,15 +150,9 @@ caches:
       type: file
       directory_layout: tms
 
-# Infrarood foto's
-  infrarood_rd_tiles:
-    grids: [nl_grid]
-    sources: [infrarood_rd_tiles]
-    format: image/jpeg
-
-  infrarood_rd_cache:
-    grids: [nl_grid]
-    sources: [infrarood_wms]
+  lufo_wm_cache:
+    grids: [webmercator]
+    sources: [lufo_wms]
     cache_dir: /mnt/tiles
     format: image/jpeg
     cache:
@@ -259,14 +253,8 @@ sources:
   lufo_wms:
     type: wms
     req:
-      url: http://172.17.0.1:8001/maps/lufo
+      url: http://172.17.0.1/maps/lufo
       layers: lufo-TILE
-
-  infrarood_wms:
-    type: wms
-    req:
-      url: http://172.17.0.1:8001/maps/infrarood
-      layers: infrarood-TILE
 
 grids:
   nl_grid:
@@ -290,7 +278,7 @@ globals:
     meta_buffer: 254
   http:
     ssl_no_cert_checks: True
-    client_timeout: 100
+    client_timeout: 600
 
   image:
       resampling_method: bicubic

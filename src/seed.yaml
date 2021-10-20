@@ -146,13 +146,13 @@ seeds:
       from: 5
       to: 16
 
-  infrarood_rd:
-    caches: [infrarood_rd_cache]
-    grids: [nl_grid]
-    coverages: ['infrarood']
+  lufo_wm:
+    caches: [lufo_wm_cache]
+    grids: [webmercator]
+    coverages: ['lufo']
     levels:
-      from: 5
-      to: 16
+      from: 11
+      to: 21
 
 coverages:
   kbk:
@@ -162,8 +162,5 @@ coverages:
     bbox: [104000,474000,136000,502100]
     srs: 'EPSG:28992'
   lufo:
-    bbox: [4.72876,52.2782,5.07916,52.4311]
-    srs: 'EPSG:4326'
-  infrarood:
     bbox: [4.72876,52.2782,5.07916,52.4311]
     srs: 'EPSG:4326'
