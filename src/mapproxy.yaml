@@ -23,17 +23,17 @@ services:
 
 layers:
   - name: topo_rd
-    title: Basiskaart Amsterdam
+    title: Basiskaart Amsterdam (Rijksdriehoek)
     md:
       abstract: Basiskaart Amsterdam
     sources: [topo_rd_tiles]
   - name: topo_rd_light
-    title: Basiskaart Amsterdam - Light
+    title: Basiskaart Amsterdam - Light (Rijksdriehoek)
     md:
       abstract: Basiskaart Amsterdam - Light
     sources: [topo_rd_light_tiles]
   - name: topo_rd_zw
-    title: Basiskaart Amsterdam - ZW
+    title: Basiskaart Amsterdam - ZW (Rijksdriehoek)
     md:
       abstract: Basiskaart Amsterdam - ZW
     sources: [topo_rd_zw_tiles]
@@ -53,8 +53,11 @@ layers:
       abstract: Basiskaart Amsterdam - ZW in Web Mercator projectie
     sources: [topo_wm_zw_tiles]
   - name: lufo_rd
-    title: Luchtfoto RD
+    title: Luchtfoto (Rijksdriehoek)
     sources: [lufo_rd_tiles]
+  - name: lufo_wm
+    title: Luchtfoto (Web Mercator)
+    sources: [lufo_wm_tiles]
 
 caches:
 #### TOPO RD - KBK & BGT - Standaard kleur
@@ -139,6 +142,11 @@ caches:
   lufo_rd_tiles:
     grids: [nl_grid]
     sources: [luchtfoto_rd_tiles]
+    format: image/jpeg
+
+  lufo_wm_tiles:
+    grids: [webmercator]
+    sources: [luchtfoto_wm_tiles]
     format: image/jpeg
 
   lufo_rd_cache:
@@ -248,7 +256,12 @@ sources:
   luchtfoto_rd_tiles:
     type: tile
     grid: nl_grid
-    url: http://OS_URL_REPLACE/lufo2019_rd_cache_EPSG28992/%(z)s/%(x)s/%(y)s.jpeg
+    url: http://OS_URL_REPLACE/lufo2021_rd_cache_EPSG28992/%(z)s/%(x)s/%(y)s.jpeg
+
+  luchtfoto_wm_tiles:
+    type: tile
+    grid: webmercator
+    url: http://OS_URL_REPLACE/lufo2021_wm_cache_EPSG3857/%(z)s/%(x)s/%(y)s.jpeg
 
   lufo_wms:
     type: wms
