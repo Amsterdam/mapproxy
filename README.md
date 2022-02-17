@@ -1,23 +1,28 @@
 # mapproxy
 
-This project contains all the mapproxy files for the Datapunt Map project.
+This repository contains a [MapProxy application](https://mapproxy.org/) for the Datapunt Map project. See [here](https://dev.azure.com/CloudCompetenceCenter/Data%20Diensten/_wiki/wikis/Data-Diensten.wiki/3030/Map-project) for a schematic overview of the current architecture.
+Within this project it serves multiple purposes:
 
-To Run this:
+    * provide configuration and shell-scripts to pre-generate tiles using the [Amsterdam mapserver](https://github.com/Amsterdam/mapserver) WMS as input
+    * provide a UWSGI-based WMTS server to serve these pre-generated tile-images from a storage backend (typically an objectstore)
+        * The WMTS server automatically uses all configured layers with a name and a single cached source
+
+`mapproxy.yaml` - Mapproxy generic config, this defines the services, sources, caches, layers and globals
+`seed.yaml` - Mapproxy cache configuration, this defines which sources should be used to pre-generate tiles and to what destinations these should be written.
+
+Running this for local development
 
 ```bash
-    docker-compose build
-    
-    docker-compose run topo-kbk
+    docker-compose up database mapproxy mapserver
 ```
 
-seed.yaml - Caching configuratie
-mapproxy.yaml - Mapproxy server config
+This will spawn a mapproxy that consumes WMS from the mapserver container and serves WMTS from the acceptance objectstore.
 
 ---------------------
 
-## Tiles Job
+## Tile pre-generation jobs
 
-Project location: <https://ci.data.amsterdam.nl/job/Tiles/>
+Project location: <https://ci.data.amsterdam.nl/job/DataServices/job/Tiles/>
 
 Do not change the following value 1, otherwise the mapserver will crash. ( apache2 - mapserver )
 The mapserver is tuned (project mapserver - branch basis)
