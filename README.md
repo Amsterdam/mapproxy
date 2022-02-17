@@ -5,8 +5,9 @@ Within this project it serves multiple purposes:
 
     * provide configuration and shell-scripts to pre-generate tiles using the [Amsterdam mapserver](https://github.com/Amsterdam/mapserver) WMS as input
     * provide a UWSGI-based WMTS server to serve these pre-generated tile-images from a storage backend (typically an objectstore)
+        * The WMTS server automatically uses all configured layers with a name and a single cached source
 
-`mapproxy.yaml` - Mapproxy generic config, this defines the services, sources, caches, layers and
+`mapproxy.yaml` - Mapproxy generic config, this defines the services, sources, caches, layers and globals
 `seed.yaml` - Mapproxy cache configuration, this defines which sources should be used to pre-generate tiles and to what destinations these should be written.
 
 Running this for local development
