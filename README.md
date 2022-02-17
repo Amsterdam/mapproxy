@@ -1,6 +1,6 @@
 # mapproxy
 
-This repository contains a [MapProxy application](https://mapproxy.org/) for the Datapunt Map project. See [here] for a schematic overview of the current architecture.
+This repository contains a [MapProxy application](https://mapproxy.org/) for the Datapunt Map project. See [here](https://dev.azure.com/CloudCompetenceCenter/Data%20Diensten/_wiki/wikis/Data-Diensten.wiki/3030/Map-project) for a schematic overview of the current architecture.
 Within this project it serves multiple purposes:
 
     * provide configuration and shell-scripts to pre-generate tiles using the [Amsterdam mapserver](https://github.com/Amsterdam/mapserver) WMS as input
