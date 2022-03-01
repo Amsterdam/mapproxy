@@ -1,22 +1,30 @@
-# mapproxy
+## Overview
 
 This repository contains a [MapProxy application](https://mapproxy.org/) for the Datapunt Map project. See [here](https://dev.azure.com/CloudCompetenceCenter/Data%20Diensten/_wiki/wikis/Data-Diensten.wiki/3030/Map-project) for a schematic overview of the current architecture.
 Within this project it serves multiple purposes:
 
-    * provide configuration and shell-scripts to pre-generate tiles using the [Amsterdam mapserver](https://github.com/Amsterdam/mapserver) WMS as input
-    * provide a UWSGI-based WMTS server to serve these pre-generated tile-images from a storage backend (typically an objectstore)
-        * The WMTS server automatically uses all configured layers with a name and a single cached source
+    1 provide configuration and shell-scripts to pre-generate tiles using the [Amsterdam mapserver](https://github.com/Amsterdam/mapserver) WMS as input
+    2 provide a UWSGI-based WMTS server to serve these pre-generated tile-images from a storage backend (typically an objectstore)
 
-`mapproxy.yaml` - Mapproxy generic config, this defines the services, sources, caches, layers and globals
-`seed.yaml` - Mapproxy cache configuration, this defines which sources should be used to pre-generate tiles and to what destinations these should be written.
+The WMTS server automatically uses all configured layers with a name and a single cached source
 
-Running this for local development
+## Config files
+
+`mapproxy-base.yaml` - Shared globals and grids for the WMTS server and seeding jobs
+`mapproxy.yaml` - MapProxy WMTS config, this defines the service, sources, caches, layers and globals for the WMTS server.
+`mapproxy-seed.yaml` - Defines the sources and caches used in seeding the basiskaarten and luchtfotos.
+`seed.yaml` - MapProxy cache configuration, this defines which sources should be used to pre-generate tiles and to what destinations these should be written.
+
+Run this for local development
 
 ```bash
-    docker-compose up database mapproxy mapserver
+  mapproxy-util serve-develop mapproxy-local.yaml
+
 ```
 
-This will spawn a mapproxy that consumes WMS from the mapserver container and serves WMTS from the acceptance objectstore.
+This will spawn a hot reloading wmts server which serves from the objectstore. Note that the demo project
+only only works from zoomlevel 5 but the generated OpenLayers client starts on 0, so you have to zoom to
+see the tiles appear.
 
 ---------------------
 
@@ -58,7 +66,7 @@ globals:
 Creating a new Lufo year of tiles and service follow these steps:
 
 - Copy the aerial pictures (tif) to localhost
-- Run mapserver/lufopyramids.sh (see comments in file)
+- Run [lufopyramids.sh in mapserver repo](https://github.com/Amsterdam/mapserver/blob/master/tools/lufopyramids.sh) (see comments in file)
 - Start mapserver docker
 - Run mapproxy docker:
 

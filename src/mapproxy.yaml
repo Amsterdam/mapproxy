@@ -1,3 +1,6 @@
+## Configuration for WMTS service
+
+base: [mapproxy-base.yaml]
 services:
   demo:
   wmts:
@@ -64,234 +67,68 @@ caches:
   topo_rd_tiles:
     grids: [nl_grid]
     sources: [basiskaart_rd_tiles]
-
-  topo_rd_cache:
-    grids: [nl_grid]
-    sources: [topografie]
-    cache_dir: /mnt/tiles
-    cache:
-      type: file
-      directory_layout: tms
-
 #### TOPO RD - KBK & BGT - Light kleur
   topo_rd_light_tiles:
     grids: [nl_grid]
     sources: [basiskaart_rd_light_tiles]
-
-  topo_rd_light_cache:
-    grids: [nl_grid]
-    sources: [topografie_light]
-    cache_dir: /mnt/tiles
-    cache:
-      type: file
-      directory_layout: tms
-
 #### TOPO RD - KBK & BGT - Zwartwit
   topo_rd_zw_tiles:
     grids: [nl_grid]
     sources: [basiskaart_rd_zw_tiles]
-
-  topo_rd_zw_cache:
-    grids: [nl_grid]
-    sources: [topografie_zw]
-    cache_dir: /mnt/tiles
-    cache:
-      type: file
-      directory_layout: tms
-
 #### TOPO Webmercator (wm) - KBK & BGT - Standaard kleur
   topo_wm_tiles:
     grids: [webmercator]
     sources: [basiskaart_wm_tiles]
-
-  topo_wm_cache:
-    grids: [webmercator]
-    sources: [topografie_wm]
-    cache_dir: /mnt/tiles
-    cache:
-      type: file
-      directory_layout: tms
-
 #### TOPO wm - KBK & BGT - Light kleur
   topo_wm_light_tiles:
     grids: [webmercator]
     sources: [basiskaart_wm_light_tiles]
-
-  topo_wm_light_cache:
-    grids: [webmercator]
-    sources: [topografie_wm_light]
-    cache_dir: /mnt/tiles
-    cache:
-      type: file
-      directory_layout: tms
-
  ### TOPO Webmercator (wm) - KBK & BGT - Zwartwit
   topo_wm_zw_tiles:
     grids: [webmercator]
     sources: [basiskaart_wm_zw_tiles]
-
-  topo_wm_zw_cache:
-    grids: [webmercator]
-    sources: [topografie_wm_zw]
-    cache_dir: /mnt/tiles
-    cache:
-      type: file
-      directory_layout: tms
-
 # Luchtfoto's
   lufo_rd_tiles:
     grids: [nl_grid]
     sources: [luchtfoto_rd_tiles]
     format: image/jpeg
-
   lufo_wm_tiles:
     grids: [webmercator]
     sources: [luchtfoto_wm_tiles]
     format: image/jpeg
 
-  lufo_rd_cache:
-    grids: [nl_grid]
-    sources: [lufo_wms]
-    cache_dir: /mnt/tiles
-    format: image/jpeg
-    cache:
-      type: file
-      directory_layout: tms
-
-  lufo_wm_cache:
-    grids: [webmercator]
-    sources: [lufo_wms]
-    cache_dir: /mnt/tiles
-    format: image/jpeg
-    cache:
-      type: file
-      directory_layout: tms
-
 sources:
 # basiskaart standaard kleur
-  topografie:
-    type: wms
-    req:
-      url: http://mapserver/maps/topografie
-      layers: basiskaart
-    seed_only: true
-    concurrent_requests: 10
-
   basiskaart_rd_tiles:
     type: tile
     grid: nl_grid
     url: http://OS_URL_REPLACE/topo_rd_cache_EPSG28992/%(z)s/%(x)s/%(y)s.png
-
- # basiskaart light kleur
-  topografie_light:
-    type: wms
-    req:
-      url: http://mapserver/maps/topografie
-      layers: basiskaart-light
-    seed_only: true
-    concurrent_requests: 10
-
   basiskaart_rd_light_tiles:
     type: tile
     grid: nl_grid
     url: http://OS_URL_REPLACE/topo_rd_light_cache_EPSG28992/%(z)s/%(x)s/%(y)s.png
-
-# basiskaart zwartwit kleur
-  topografie_zw:
-    type: wms
-    req:
-      url: http://mapserver/maps/topografie
-      layers: basiskaart-zwartwit
-    seed_only: true
-    concurrent_requests: 10
-
   basiskaart_rd_zw_tiles:
     type: tile
     grid: nl_grid
     url: http://OS_URL_REPLACE/topo_rd_zw_cache_EPSG28992/%(z)s/%(x)s/%(y)s.png
-
-# basiskaart webmercator (wm)
-  topografie_wm:
-    type: wms
-    req:
-      url: http://mapserver/maps/topografie_wm
-      layers: basiskaart
-    seed_only: true
-    concurrent_requests: 10
-
   basiskaart_wm_tiles:
     type: tile
     grid: webmercator
     url: http://OS_URL_REPLACE/topo_wm_cache_EPSG3857/%(z)s/%(x)s/%(y)s.png
-
-# basiskaart wm light
-  topografie_wm_light:
-    type: wms
-    req:
-      url: http://mapserver/maps/topografie_wm
-      layers: basiskaart-light
-    seed_only: true
-    concurrent_requests: 10
-
   basiskaart_wm_light_tiles:
     type: tile
     grid: webmercator
     url: http://OS_URL_REPLACE/topo_wm_light_cache_EPSG3857/%(z)s/%(x)s/%(y)s.png
-
 # basiskaart wm zwartwit
-  topografie_wm_zw:
-    type: wms
-    req:
-      url: http://mapserver/maps/topografie_wm
-      layers: basiskaart-zwartwit
-    seed_only: true
-    concurrent_requests: 10
-
   basiskaart_wm_zw_tiles:
     type: tile
     grid: webmercator
     url: http://OS_URL_REPLACE/topo_wm_zw_cache_EPSG3857/%(z)s/%(x)s/%(y)s.png
-
-# Example to tile locally with the mapserver docker also running:
   luchtfoto_rd_tiles:
     type: tile
     grid: nl_grid
     url: http://OS_URL_REPLACE/lufo2021_rd_cache_EPSG28992/%(z)s/%(x)s/%(y)s.jpeg
-
   luchtfoto_wm_tiles:
     type: tile
     grid: webmercator
     url: http://OS_URL_REPLACE/lufo2021_wm_cache_EPSG3857/%(z)s/%(x)s/%(y)s.jpeg
-
-  lufo_wms:
-    type: wms
-    req:
-      url: http://172.17.0.1/maps/lufo
-      layers: lufo-TILE
-
-grids:
-  nl_grid:
-    srs: EPSG:28992
-    tile_size: [256,256]
-    origin: sw
-    res: [3440.64,1720.32,860.16,430.08,215.04,107.52,53.76,26.88,13.44,6.72,3.36,1.68,0.84,0.42,0.21,0.105,0.0525]
-    #     0       1       2      3      4      5      6     7     8     9    10   11   12   13   14   15    16
-    bbox: [-285401.920,22598.080,595401.9199999999,903401.9199999999]
-
-  webmercator:
-    base: GLOBAL_WEBMERCATOR
-    num_levels: 22
-
-globals:
-  cache:
-    base_dir: '/app'
-    lock_dir: '/app'
-    tile_lock_dir: '/app'
-    meta_size: [4, 4]
-    meta_buffer: 254
-  http:
-    ssl_no_cert_checks: True
-    client_timeout: 600
-
-  image:
-      resampling_method: bicubic
