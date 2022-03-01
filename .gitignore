@@ -2,3 +2,4 @@
 .idea/
 *.iml
 mapproxy-local.yaml
+local

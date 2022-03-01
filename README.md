@@ -19,12 +19,13 @@ Run this for local development
 
 ```bash
   mapproxy-util serve-develop mapproxy-local.yaml
-
 ```
 
-This will spawn a hot reloading wmts server which serves from the objectstore. Note that the demo project
-only only works from zoomlevel 5 but the generated OpenLayers client starts on 0, so you have to zoom to
-see the tiles appear.
+This will spawn a hot reloading wmts server which serves from the objectstore. Note that the layers only work
+starting from zoomlevel 5 but the generated OpenLayers client does not take the constraints of the layers
+into account, so you have to zoom to see the tiles appear.
+
+In this local setup, tms tiles are cached in the `local` directory, which can grow to considerable size if all zoomlevels are requested.
 
 ---------------------
 
