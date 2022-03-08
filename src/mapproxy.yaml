@@ -21,7 +21,7 @@ services:
         fax: n/a
         email: datapunt@amsterdam.nl
         fees: 'None'
-    restful: false
+    restful: true
     kvp: true
 
 layers:
