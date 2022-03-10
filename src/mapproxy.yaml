@@ -102,33 +102,33 @@ sources:
   basiskaart_rd_tiles:
     type: tile
     grid: nl_grid
-    url: http://OS_URL_REPLACE/topo_rd_cache_EPSG28992/%(z)s/%(x)s/%(y)s.png
+    url: https://OS_URL_REPLACE/topo_rd_cache_EPSG28992/%(z)s/%(x)s/%(y)s.png
   basiskaart_rd_light_tiles:
     type: tile
     grid: nl_grid
-    url: http://OS_URL_REPLACE/topo_rd_light_cache_EPSG28992/%(z)s/%(x)s/%(y)s.png
+    url: https://OS_URL_REPLACE/topo_rd_light_cache_EPSG28992/%(z)s/%(x)s/%(y)s.png
   basiskaart_rd_zw_tiles:
     type: tile
     grid: nl_grid
-    url: http://OS_URL_REPLACE/topo_rd_zw_cache_EPSG28992/%(z)s/%(x)s/%(y)s.png
+    url: https://OS_URL_REPLACE/topo_rd_zw_cache_EPSG28992/%(z)s/%(x)s/%(y)s.png
   basiskaart_wm_tiles:
     type: tile
     grid: webmercator
-    url: http://OS_URL_REPLACE/topo_wm_cache_EPSG3857/%(z)s/%(x)s/%(y)s.png
+    url: https://OS_URL_REPLACE/topo_wm_cache_EPSG3857/%(z)s/%(x)s/%(y)s.png
   basiskaart_wm_light_tiles:
     type: tile
     grid: webmercator
-    url: http://OS_URL_REPLACE/topo_wm_light_cache_EPSG3857/%(z)s/%(x)s/%(y)s.png
+    url: https://OS_URL_REPLACE/topo_wm_light_cache_EPSG3857/%(z)s/%(x)s/%(y)s.png
 # basiskaart wm zwartwit
   basiskaart_wm_zw_tiles:
     type: tile
     grid: webmercator
-    url: http://OS_URL_REPLACE/topo_wm_zw_cache_EPSG3857/%(z)s/%(x)s/%(y)s.png
+    url: https://OS_URL_REPLACE/topo_wm_zw_cache_EPSG3857/%(z)s/%(x)s/%(y)s.png
   luchtfoto_rd_tiles:
     type: tile
     grid: nl_grid
-    url: http://OS_URL_REPLACE/lufo2021_rd_cache_EPSG28992/%(z)s/%(x)s/%(y)s.jpeg
+    url: https://OS_URL_REPLACE/lufo2021_rd_cache_EPSG28992/%(z)s/%(x)s/%(y)s.jpeg
   luchtfoto_wm_tiles:
     type: tile
     grid: webmercator
-    url: http://OS_URL_REPLACE/lufo2021_wm_cache_EPSG3857/%(z)s/%(x)s/%(y)s.jpeg
+    url: https://OS_URL_REPLACE/lufo2021_wm_cache_EPSG3857/%(z)s/%(x)s/%(y)s.jpeg
