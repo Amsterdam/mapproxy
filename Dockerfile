@@ -12,9 +12,10 @@ RUN chown datapunt -R /app
 WORKDIR /app
 
 COPY src/* /app/
+COPY log.ini /app/log.ini
 COPY docker-entrypoint.sh /bin
 
-RUN pip install MapProxy==1.13.1
+RUN pip install MapProxy==1.13.2
 
 USER datapunt
 

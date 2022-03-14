@@ -8,7 +8,7 @@ services:
       UWSGI_HTTP: "0.0.0.0:8000"
       UWSGI_MASTER: 1
       UWSGI_PROCESSES: 4
-      OS_URL: "e4b811595a6f4b4aac96f600b037d3dd.objectstore.eu" # Acceptance Tiles as default
+      OS_URL: "devbbn1mapssa.blob.core.windows.net/pyramid" # Devlopment tiles as default
 
   database:
     image: amsterdam/postgres11
@@ -21,7 +21,7 @@ services:
 #     - "~/.ssh/datapunt.key:/root/.ssh/datapunt.key"
 
   mapserver:
-    image: docker-registry.data.amsterdam.nl/datapunt/mapserver-tiles:2
+    image: mapserver_map
     user: root
     environment:
       BAG_DB_HOST: database
