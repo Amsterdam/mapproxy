@@ -27,6 +27,6 @@ echo "Cleanup old cache /mnt/tiles/topo_$1_cache_EPSG28992"
 sudo rm -rf "/mnt/tiles/topo_$1_cache_EPSG28992/"
 
 echo "Build"
-# generate geojson
-dc build
-dc run topo_$1
+# generate tiles
+dc build topo_$1
+dc run topo_$1 --memory="8g" --memory-swap="32g"
