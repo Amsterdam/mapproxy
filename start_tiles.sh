@@ -29,4 +29,4 @@ sudo rm -rf "/mnt/tiles/topo_$1_cache_EPSG28992/"
 echo "Build"
 # generate tiles
 dc build topo_$1
-dc run topo_$1 --memory="8g" --memory-swap="32g"
+dc run topo_$1
