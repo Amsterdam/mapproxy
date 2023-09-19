@@ -14,6 +14,11 @@ services:
     build:
       context: .
       dockerfile: DockerfileTiles
+    memswap_limit: 32g
+    deploy:
+      resources:
+        limits:
+          memory: 10g
     user: root
     command: >
       mapproxy-seed -c 4 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=topo_rd_kbk,topo_rd_bgt
@@ -24,6 +29,11 @@ services:
     build:
       context: .
       dockerfile: DockerfileTiles
+    memswap_limit: 32g
+    deploy:
+      resources:
+        limits:
+          memory: 10g
     user: root
     command: >
       mapproxy-seed -c 4 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=topo_rd_light_kbk,topo_rd_light_bgt
@@ -34,6 +44,11 @@ services:
     build:
       context: .
       dockerfile: DockerfileTiles
+    memswap_limit: 32g
+    deploy:
+      resources:
+        limits:
+          memory: 10g
     user: root
     command: >
       mapproxy-seed -c 4 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=topo_rd_zw_kbk,topo_rd_zw_bgt
@@ -44,6 +59,11 @@ services:
     build:
       context: .
       dockerfile: DockerfileTiles
+    memswap_limit: 32g
+    deploy:
+      resources:
+        limits:
+          memory: 10g
     user: root
     command: >
       mapproxy-seed -c 4 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=topo_wm_kbk,topo_wm_bgt
@@ -54,6 +74,11 @@ services:
     build:
       context: .
       dockerfile: DockerfileTiles
+    memswap_limit: 32g
+    deploy:
+      resources:
+        limits:
+          memory: 10g
     user: root
     command: >
       mapproxy-seed -c 4 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=topo_wm_light_kbk,topo_wm_light_bgt
@@ -64,6 +89,11 @@ services:
     build:
       context: .
       dockerfile: DockerfileTiles
+    memswap_limit: 32g
+    deploy:
+      resources:
+        limits:
+          memory: 10g
     user: root
     command: >
       mapproxy-seed -c 4 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=topo_wm_zw_kbk,topo_wm_zw_bgt
@@ -74,6 +104,11 @@ services:
     build:
       context: .
       dockerfile: DockerfileTiles
+    memswap_limit: 32g
+    deploy:
+      resources:
+        limits:
+          memory: 10g
     user: root
     command: >
       mapproxy-seed -c 4 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=lufo_rd
@@ -84,6 +119,11 @@ services:
     build:
       context: .
       dockerfile: DockerfileTiles
+    memswap_limit: 32g
+    deploy:
+      resources:
+        limits:
+          memory: 10g
     user: root
     command: >
       mapproxy-seed -c 4 -s /app/seed.yaml -f /app/mapproxy.yaml --seed=infrarood_rd
