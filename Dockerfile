@@ -1,4 +1,4 @@
-FROM amsterdam/python3.6
+FROM python:3.7-bullseye
 LABEL maintainer="datapunt@amsterdam.nl"
 
 EXPOSE 8000
@@ -7,9 +7,12 @@ ARG OS_URL
 ENV OS_URL=$OS_URL
 
 RUN adduser --system datapunt
+WORKDIR /app
 
 RUN chown datapunt -R /app
-WORKDIR /app
+
+COPY requirements.txt /app/
+RUN pip install -r requirements.txt
 
 COPY src/* /app/
 COPY docker-entrypoint.sh /bin
