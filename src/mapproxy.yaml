@@ -256,12 +256,12 @@ sources:
   luchtfoto_rd_tiles:
     type: tile
     grid: nl_grid
-    url: http://OS_URL_REPLACE/lufo2021_rd_cache_EPSG28992/%(z)s/%(x)s/%(y)s.jpeg
+    url: http://OS_URL_REPLACE/lufo2022_rd_cache_EPSG28992/%(z)s/%(x)s/%(y)s.jpeg
 
   luchtfoto_wm_tiles:
     type: tile
     grid: webmercator
-    url: http://OS_URL_REPLACE/lufo2021_wm_cache_EPSG3857/%(z)s/%(x)s/%(y)s.jpeg
+    url: http://OS_URL_REPLACE/lufo2022_wm_cache_EPSG3857/%(z)s/%(x)s/%(y)s.jpeg
 
   lufo_wms:
     type: wms
