@@ -41,6 +41,11 @@ services:
     kvp: true
 
 layers:
+  - name: topografie
+    title: Basiskaart Amsterdam (Rijksdriehoeksstelsel)
+    md:
+      abstract: Basiskaart Amsterdam
+    sources: [topo_rd_tiles]
   - name: topo_rd
     title: Basiskaart Amsterdam (Rijksdriehoeksstelsel)
     md:
@@ -56,6 +61,11 @@ layers:
     md:
       abstract: Basiskaart Amsterdam - ZW
     sources: [topo_rd_zw_tiles]
+  - name: topografie_wm
+    title: Basiskaart Amsterdam (Web Mercator)
+    md:
+      abstract: Basiskaart Amsterdam in Web Mercator projectie
+    sources: [topo_wm_tiles]
   - name: topo_wm
     title: Basiskaart Amsterdam (Web Mercator)
     md:
