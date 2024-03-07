@@ -1,5 +1,24 @@
 services:
   demo:
+  wms:
+    md:
+      # metadata used in capabilities documents
+      title: Data en Informatie Amsterdam
+      abstract: Map service Gemeente Amsterdam
+      online_resource: https://data.amsterdam.nl/
+      contact:
+        person: n/a
+        position: n/a
+        organization: Gemeente Amsterdam
+        address: n/a
+        city: Amsterdam
+        postcode: n/a
+        country: Netherlands
+        phone: n/a
+        fax: n/a
+        email: datapunt@amsterdam.nl
+        fees: 'None'
+    srs: ['28992']
   wmts:
     md:
       # metadata used in capabilities documents
@@ -22,21 +41,31 @@ services:
     kvp: true
 
 layers:
+  - name: topografie
+    title: Basiskaart Amsterdam (Rijksdriehoeksstelsel)
+    md:
+      abstract: Basiskaart Amsterdam
+    sources: [topo_rd_tiles]
   - name: topo_rd
-    title: Basiskaart Amsterdam (Rijksdriehoek)
+    title: Basiskaart Amsterdam (Rijksdriehoeksstelsel)
     md:
       abstract: Basiskaart Amsterdam
     sources: [topo_rd_tiles]
   - name: topo_rd_light
-    title: Basiskaart Amsterdam - Light (Rijksdriehoek)
+    title: Basiskaart Amsterdam - Light (Rijksdriehoeksstelsel)
     md:
       abstract: Basiskaart Amsterdam - Light
     sources: [topo_rd_light_tiles]
   - name: topo_rd_zw
-    title: Basiskaart Amsterdam - ZW (Rijksdriehoek)
+    title: Basiskaart Amsterdam - ZW (Rijksdriehoeksstelsel)
     md:
       abstract: Basiskaart Amsterdam - ZW
     sources: [topo_rd_zw_tiles]
+  - name: topografie_wm
+    title: Basiskaart Amsterdam (Web Mercator)
+    md:
+      abstract: Basiskaart Amsterdam in Web Mercator projectie
+    sources: [topo_wm_tiles]
   - name: topo_wm
     title: Basiskaart Amsterdam (Web Mercator)
     md:
@@ -53,11 +82,145 @@ layers:
       abstract: Basiskaart Amsterdam - ZW in Web Mercator projectie
     sources: [topo_wm_zw_tiles]
   - name: lufo_rd
-    title: Luchtfoto (Rijksdriehoek)
-    sources: [lufo_rd_tiles]
+    title: Luchtfoto's (Rijksdriehoeksstelsel)
+    sources: [lufo2023_rd_tiles]
+    md:
+      abstract: "Luchtfoto's van 2023 van het grondgebied van de gemeente Amsterdam"
+  - name: lufo2023
+    title: Luchtfoto's 2023 (Rijksdriehoeksstelsel)
+    sources: [lufo2023_rd_tiles]
+    md:
+      abstract: "Luchtfoto's van 2023 van het grondgebied van de gemeente Amsterdam"
+  - name: lufo2022
+    title: Luchtfoto's 2022 (Rijksdriehoeksstelsel)
+    sources: [lufo2022_rd_tiles]
+    md:
+      abstract: "Luchtfoto's van 2022 van het grondgebied van de gemeente Amsterdam"    
+  - name: lufo2021
+    title: Luchtfoto's 2021 (Rijksdriehoeksstelsel)
+    sources: [lufo2021_rd_tiles]
+    md:
+      abstract: "Luchtfoto's van 2021 van het grondgebied van de gemeente Amsterdam"
+  - name: lufo2020
+    title: Luchtfoto's 2020 (Rijksdriehoeksstelsel)
+    sources: [lufo2020_rd_tiles]
+    md:
+      abstract: "Luchtfoto's van 2020 van het grondgebied van de gemeente Amsterdam"
+  - name: lufo2019
+    title: Luchtfoto's 2019 (Rijksdriehoeksstelsel)
+    sources: [lufo2019_rd_tiles]
+    md:
+      abstract: "Luchtfoto's van 2019 van het grondgebied van de gemeente Amsterdam"
+  - name: lufo2018
+    title: Luchtfoto's 2018 (Rijksdriehoeksstelsel)
+    sources: [lufo2018_rd_tiles]
+    md:
+      abstract: "Luchtfoto's van 2018 van het grondgebied van de gemeente Amsterdam"
+  - name: lufo2017
+    title: Luchtfoto's 2017 (Rijksdriehoeksstelsel)
+    sources: [lufo2017_rd_tiles]
+    md:
+      abstract: "Luchtfoto's van 2017 van het grondgebied van de gemeente Amsterdam"
+  - name: lufo2016
+    title: Luchtfoto's 2016 (Rijksdriehoeksstelsel)
+    sources: [lufo2016_rd_tiles]
+    md:
+      abstract: "Luchtfoto's van 2016 van het grondgebied van de gemeente Amsterdam"    
+  - name: lufo2015
+    title: Luchtfoto's 2015 (Rijksdriehoeksstelsel)
+    sources: [lufo2015_rd_tiles]
+    md:
+      abstract: "Luchtfoto's van 2015 van het grondgebied van de gemeente Amsterdam"
+  - name: lufo2014
+    title: Luchtfoto's 2014 (Rijksdriehoeksstelsel)
+    sources: [lufo2014_rd_tiles]
+    md:
+      abstract: "Luchtfoto's van 2014 van het grondgebied van de gemeente Amsterdam"    
+  - name: lufo2013
+    title: Luchtfoto's 2013 (Rijksdriehoeksstelsel)
+    sources: [lufo2013_rd_tiles]
+    md:
+      abstract: "Luchtfoto's van 2013 van het grondgebied van de gemeente Amsterdam"
+  - name: lufo2012
+    title: Luchtfoto's 2012 (Rijksdriehoeksstelsel)
+    sources: [lufo2012_rd_tiles]
+    md:
+      abstract: "Luchtfoto's van 2012 van het grondgebied van de gemeente Amsterdam"
+  - name: lufo2011
+    title: Luchtfoto's 2011 (Rijksdriehoeksstelsel)
+    sources: [lufo2011_rd_tiles]
+    md:
+      abstract: "Luchtfoto's van 2011 van het grondgebied van de gemeente Amsterdam"    
+  - name: lufo2010
+    title: Luchtfoto's 2010 (Rijksdriehoeksstelsel)
+    sources: [lufo2010_rd_tiles]
+    md:
+      abstract: "Luchtfoto's van 2010 van het grondgebied van de gemeente Amsterdam"
+  - name: lufo2009
+    title: Luchtfoto's 2009 (Rijksdriehoeksstelsel)
+    sources: [lufo2009_rd_tiles]
+    md:
+      abstract: "Luchtfoto's van 2009 van het grondgebied van de gemeente Amsterdam"
+  - name: lufo2008
+    title: Luchtfoto's 2008 (Rijksdriehoeksstelsel)
+    sources: [lufo2008_rd_tiles]
+    md:
+      abstract: "Luchtfoto's van 2008 van het grondgebied van de gemeente Amsterdam"
+  - name: lufo2007
+    title: Luchtfoto's 2007 (Rijksdriehoeksstelsel)
+    sources: [lufo2007_rd_tiles]
+    md:
+      abstract: "Luchtfoto's van 2007 van het grondgebied van de gemeente Amsterdam"
+  - name: lufo2006
+    title: Luchtfoto's 2006 (Rijksdriehoeksstelsel)
+    sources: [lufo2006_rd_tiles]
+    md:
+      abstract: "Luchtfoto's van 2006 van het grondgebied van de gemeente Amsterdam"
+  - name: lufo2005
+    title: Luchtfoto's 2005 (Rijksdriehoeksstelsel)
+    sources: [lufo2005_rd_tiles]
+    md:
+      abstract: "Luchtfoto's van 2005 van het grondgebied van de gemeente Amsterdam"
+  - name: lufo2004
+    title: Luchtfoto's 2004 (Rijksdriehoeksstelsel)
+    sources: [lufo2004_rd_tiles]
+    md:
+      abstract: "Luchtfoto's van 2004 van het grondgebied van de gemeente Amsterdam"
+  - name: lufo2003
+    title: Luchtfoto's 2003 (Rijksdriehoeksstelsel)
+    sources: [lufo2003_rd_tiles]
+    md:
+      abstract: "Luchtfoto's van 2003 van het grondgebied van de gemeente Amsterdam"
   - name: lufo_wm
-    title: Luchtfoto (Web Mercator)
-    sources: [lufo_wm_tiles]
+    title: Luchtfoto's (Web Mercator)
+    sources: [lufo2023_wm_tiles]
+    md:
+      abstract: "Luchtfoto's van 2023 van het grondgebied van de gemeente Amsterdam"
+  - name: infrarood2023
+    title: Infraroodbeelden 2023 (Rijksdriehoeksstelsel)
+    sources: [infrarood2023_rd_tiles]
+    md:
+      abstract: "Infraroodbeelden van 2023 van het grondgebied van de gemeente Amsterdam"
+  - name: infrarood2022
+    title: Infraroodbeelden 2022 (Rijksdriehoeksstelsel)
+    sources: [infrarood2022_rd_tiles]
+    md:
+      abstract: "Luchtfoto's van 2022 van het grondgebied van de gemeente Amsterdam"    
+  - name: infrarood2021
+    title: Infraroodbeelden 2021 (Rijksdriehoeksstelsel)
+    sources: [infrarood2021_rd_tiles]
+    md:
+      abstract: "Infraroodbeelden van 2021 van het grondgebied van de gemeente Amsterdam"
+  - name: infrarood2020
+    title: Infraroodbeelden 2020 (Rijksdriehoeksstelsel)
+    sources: [infrarood2020_rd_tiles]
+    md:
+      abstract: "Luchtfoto's van 2020 van het grondgebied van de gemeente Amsterdam"
+  - name: infrarood2018
+    title: Infraroodbeelden 2018 (Rijksdriehoeksstelsel)
+    sources: [infrarood2018_rd_tiles]
+    md:
+      abstract: "Infraroodbeelden van 2018 van het grondgebied van de gemeente Amsterdam"      
 
 caches:
 #### TOPO RD - KBK & BGT - Standaard kleur
@@ -65,209 +228,368 @@ caches:
     grids: [nl_grid]
     sources: [basiskaart_rd_tiles]
 
-  topo_rd_cache:
-    grids: [nl_grid]
-    sources: [topografie]
-    cache_dir: /mnt/tiles
-    cache:
-      type: file
-      directory_layout: tms
-
 #### TOPO RD - KBK & BGT - Light kleur
   topo_rd_light_tiles:
     grids: [nl_grid]
     sources: [basiskaart_rd_light_tiles]
-
-  topo_rd_light_cache:
-    grids: [nl_grid]
-    sources: [topografie_light]
-    cache_dir: /mnt/tiles
-    cache:
-      type: file
-      directory_layout: tms
 
 #### TOPO RD - KBK & BGT - Zwartwit
   topo_rd_zw_tiles:
     grids: [nl_grid]
     sources: [basiskaart_rd_zw_tiles]
 
-  topo_rd_zw_cache:
-    grids: [nl_grid]
-    sources: [topografie_zw]
-    cache_dir: /mnt/tiles
-    cache:
-      type: file
-      directory_layout: tms
-
 #### TOPO Webmercator (wm) - KBK & BGT - Standaard kleur
   topo_wm_tiles:
     grids: [webmercator]
     sources: [basiskaart_wm_tiles]
-
-  topo_wm_cache:
-    grids: [webmercator]
-    sources: [topografie_wm]
-    cache_dir: /mnt/tiles
-    cache:
-      type: file
-      directory_layout: tms
 
 #### TOPO wm - KBK & BGT - Light kleur
   topo_wm_light_tiles:
     grids: [webmercator]
     sources: [basiskaart_wm_light_tiles]
 
-  topo_wm_light_cache:
-    grids: [webmercator]
-    sources: [topografie_wm_light]
-    cache_dir: /mnt/tiles
-    cache:
-      type: file
-      directory_layout: tms
-
- ### TOPO Webmercator (wm) - KBK & BGT - Zwartwit
+### TOPO Webmercator (wm) - KBK & BGT - Zwartwit
   topo_wm_zw_tiles:
     grids: [webmercator]
     sources: [basiskaart_wm_zw_tiles]
 
-  topo_wm_zw_cache:
-    grids: [webmercator]
-    sources: [topografie_wm_zw]
-    cache_dir: /mnt/tiles
-    cache:
-      type: file
-      directory_layout: tms
-
 # Luchtfoto's
-  lufo_rd_tiles:
+  lufo2023_rd_tiles:
     grids: [nl_grid]
-    sources: [luchtfoto_rd_tiles]
+    sources: [luchtfoto2023_rd_tiles]
     format: image/jpeg
 
-  lufo_wm_tiles:
-    grids: [webmercator]
-    sources: [luchtfoto_wm_tiles]
-    format: image/jpeg
-
-  lufo_rd_cache:
+  lufo2022_rd_tiles:
     grids: [nl_grid]
-    sources: [lufo_wms]
-    cache_dir: /mnt/tiles
+    sources: [luchtfoto2022_rd_tiles]
     format: image/jpeg
-    cache:
-      type: file
-      directory_layout: tms
 
-  lufo_wm_cache:
-    grids: [webmercator]
-    sources: [lufo_wms]
-    cache_dir: /mnt/tiles
+  lufo2021_rd_tiles:
+    grids: [nl_grid]
+    sources: [luchtfoto2021_rd_tiles]
     format: image/jpeg
-    cache:
-      type: file
-      directory_layout: tms
+
+  lufo2020_rd_tiles:
+    grids: [nl_grid]
+    sources: [luchtfoto2020_rd_tiles]
+    format: image/jpeg
+
+  lufo2019_rd_tiles:
+    grids: [nl_grid]
+    sources: [luchtfoto2019_rd_tiles]
+    format: image/jpeg
+
+  lufo2018_rd_tiles:
+    grids: [nl_grid]
+    sources: [luchtfoto2018_rd_tiles]
+    format: image/jpeg
+
+  lufo2017_rd_tiles:
+    grids: [nl_grid]
+    sources: [luchtfoto2017_rd_tiles]
+    format: image/jpeg
+
+  lufo2016_rd_tiles:
+    grids: [nl_grid]
+    sources: [luchtfoto2016_rd_tiles]
+    format: image/jpeg
+
+  lufo2015_rd_tiles:
+    grids: [nl_grid]
+    sources: [luchtfoto2015_rd_tiles]
+    format: image/jpeg
+
+  lufo2014_rd_tiles:
+    grids: [nl_grid]
+    sources: [luchtfoto2014_rd_tiles]
+    format: image/jpeg
+
+  lufo2013_rd_tiles:
+    grids: [nl_grid]
+    sources: [luchtfoto2013_rd_tiles]
+    format: image/jpeg
+
+  lufo2012_rd_tiles:
+    grids: [nl_grid]
+    sources: [luchtfoto2012_rd_tiles]
+    format: image/jpeg
+
+  lufo2011_rd_tiles:
+    grids: [nl_grid]
+    sources: [luchtfoto2011_rd_tiles]
+    format: image/jpeg
+
+  lufo2010_rd_tiles:
+    grids: [nl_grid]
+    sources: [luchtfoto2010_rd_tiles]
+    format: image/jpeg
+
+  lufo2009_rd_tiles:
+    grids: [nl_grid]
+    sources: [luchtfoto2009_rd_tiles]
+    format: image/jpeg
+
+  lufo2008_rd_tiles:
+    grids: [nl_grid]
+    sources: [luchtfoto2008_rd_tiles]
+    format: image/jpeg
+
+  lufo2007_rd_tiles:
+    grids: [nl_grid]
+    sources: [luchtfoto2007_rd_tiles]
+    format: image/jpeg
+
+  lufo2006_rd_tiles:
+    grids: [nl_grid]
+    sources: [luchtfoto2006_rd_tiles]
+    format: image/jpeg
+
+  lufo2005_rd_tiles:
+    grids: [nl_grid]
+    sources: [luchtfoto2005_rd_tiles]
+    format: image/jpeg
+
+  lufo2004_rd_tiles:
+    grids: [nl_grid]
+    sources: [luchtfoto2004_rd_tiles]
+    format: image/jpeg
+
+  lufo2003_rd_tiles:
+    grids: [nl_grid]
+    sources: [luchtfoto2003_rd_tiles]
+    format: image/jpeg
+
+  lufo2023_wm_tiles:
+    grids: [webmercator]
+    sources: [luchtfoto2023_wm_tiles]
+    format: image/jpeg
+
+# Infrarood
+
+  infrarood2023_rd_tiles:
+    grids: [nl_grid]
+    sources: [infrarood2023_rd_tiles]
+    format: image/jpeg
+
+  infrarood2022_rd_tiles:
+    grids: [nl_grid]
+    sources: [infrarood2022_rd_tiles]
+    format: image/jpeg
+
+  infrarood2021_rd_tiles:
+    grids: [nl_grid]
+    sources: [infrarood2021_rd_tiles]
+    format: image/jpeg
+
+  infrarood2020_rd_tiles:
+    grids: [nl_grid]
+    sources: [infrarood2020_rd_tiles]
+    format: image/jpeg
+
+  infrarood2018_rd_tiles:
+    grids: [nl_grid]
+    sources: [infrarood2018_rd_tiles]
+    format: image/jpeg
 
 sources:
 # basiskaart standaard kleur
-  topografie:
-    type: wms
-    req:
-      url: http://mapserver/maps/topografie
-      layers: basiskaart
-    seed_only: true
-    concurrent_requests: 10
-
   basiskaart_rd_tiles:
     type: tile
     grid: nl_grid
-    url: http://OS_URL_REPLACE/topo_rd_cache_EPSG28992/%(z)s/%(x)s/%(y)s.png
+    url: https://OS_URL_REPLACE/topo_rd/%(z)s/%(x)s/%(y)s.png
 
  # basiskaart light kleur
-  topografie_light:
-    type: wms
-    req:
-      url: http://mapserver/maps/topografie
-      layers: basiskaart-light
-    seed_only: true
-    concurrent_requests: 10
-
   basiskaart_rd_light_tiles:
     type: tile
     grid: nl_grid
-    url: http://OS_URL_REPLACE/topo_rd_light_cache_EPSG28992/%(z)s/%(x)s/%(y)s.png
+    url: https://OS_URL_REPLACE/topo_rd_light/%(z)s/%(x)s/%(y)s.png
 
 # basiskaart zwartwit kleur
-  topografie_zw:
-    type: wms
-    req:
-      url: http://mapserver/maps/topografie
-      layers: basiskaart-zwartwit
-    seed_only: true
-    concurrent_requests: 10
-
   basiskaart_rd_zw_tiles:
     type: tile
     grid: nl_grid
-    url: http://OS_URL_REPLACE/topo_rd_zw_cache_EPSG28992/%(z)s/%(x)s/%(y)s.png
+    url: https://OS_URL_REPLACE/topo_rd_zw/%(z)s/%(x)s/%(y)s.png
 
 # basiskaart webmercator (wm)
-  topografie_wm:
-    type: wms
-    req:
-      url: http://mapserver/maps/topografie_wm
-      layers: basiskaart
-    seed_only: true
-    concurrent_requests: 10
-
   basiskaart_wm_tiles:
     type: tile
     grid: webmercator
-    url: http://OS_URL_REPLACE/topo_wm_cache_EPSG3857/%(z)s/%(x)s/%(y)s.png
+    url: https://OS_URL_REPLACE/topo_wm/%(z)s/%(x)s/%(y)s.png
 
 # basiskaart wm light
-  topografie_wm_light:
-    type: wms
-    req:
-      url: http://mapserver/maps/topografie_wm
-      layers: basiskaart-light
-    seed_only: true
-    concurrent_requests: 10
-
   basiskaart_wm_light_tiles:
     type: tile
     grid: webmercator
-    url: http://OS_URL_REPLACE/topo_wm_light_cache_EPSG3857/%(z)s/%(x)s/%(y)s.png
+    url: https://OS_URL_REPLACE/topo_wm_light/%(z)s/%(x)s/%(y)s.png
 
 # basiskaart wm zwartwit
-  topografie_wm_zw:
-    type: wms
-    req:
-      url: http://mapserver/maps/topografie_wm
-      layers: basiskaart-zwartwit
-    seed_only: true
-    concurrent_requests: 10
-
   basiskaart_wm_zw_tiles:
     type: tile
     grid: webmercator
-    url: http://OS_URL_REPLACE/topo_wm_zw_cache_EPSG3857/%(z)s/%(x)s/%(y)s.png
+    url: https://OS_URL_REPLACE/topo_wm_zw/%(z)s/%(x)s/%(y)s.png
 
-# Example to tile locally with the mapserver docker also running:
-  luchtfoto_rd_tiles:
+# luchtfoto's van 2023 rd
+  luchtfoto2023_rd_tiles:
     type: tile
     grid: nl_grid
-    url: http://OS_URL_REPLACE/lufo2023_rd_cache_EPSG28992/%(z)s/%(x)s/%(y)s.jpeg
+    url: https://OS_URL_REPLACE/lufo2023_rd/%(z)s/%(x)s/%(y)s.jpeg
 
-  luchtfoto_wm_tiles:
+# luchtfoto's van 2022 rd
+  luchtfoto2022_rd_tiles:
+    type: tile
+    grid: nl_grid
+    url: https://OS_URL_REPLACE/lufo2022_rd/%(z)s/%(x)s/%(y)s.jpeg
+   
+# luchtfoto's van 2021 rd
+  luchtfoto2021_rd_tiles:
+    type: tile
+    grid: nl_grid
+    url: https://OS_URL_REPLACE/lufo2021_rd/%(z)s/%(x)s/%(y)s.jpeg
+
+# luchtfoto's van 2020 rd
+  luchtfoto2020_rd_tiles:
+    type: tile
+    grid: nl_grid
+    url: https://OS_URL_REPLACE/lufo2020_rd/%(z)s/%(x)s/%(y)s.jpeg
+
+# luchtfoto's van 2019 rd
+  luchtfoto2019_rd_tiles:
+    type: tile
+    grid: nl_grid
+    url: https://OS_URL_REPLACE/lufo2019_rd/%(z)s/%(x)s/%(y)s.jpeg
+
+# luchtfoto's van 2018 rd
+  luchtfoto2018_rd_tiles:
+    type: tile
+    grid: nl_grid
+    url: https://OS_URL_REPLACE/lufo2018_rd/%(z)s/%(x)s/%(y)s.jpeg
+
+# luchtfoto's van 2017 rd
+  luchtfoto2017_rd_tiles:
+    type: tile
+    grid: nl_grid
+    url: https://OS_URL_REPLACE/lufo2017_rd/%(z)s/%(x)s/%(y)s.jpeg
+
+# luchtfoto's van 2016 rd
+  luchtfoto2016_rd_tiles:
+    type: tile
+    grid: nl_grid
+    url: https://OS_URL_REPLACE/lufo2016_rd/%(z)s/%(x)s/%(y)s.jpeg
+
+# luchtfoto's van 2015 rd
+  luchtfoto2015_rd_tiles:
+    type: tile
+    grid: nl_grid
+    url: https://OS_URL_REPLACE/lufo2015_rd/%(z)s/%(x)s/%(y)s.jpeg
+
+# luchtfoto's van 2014 rd
+  luchtfoto2014_rd_tiles:
+    type: tile
+    grid: nl_grid
+    url: https://OS_URL_REPLACE/lufo2014_rd/%(z)s/%(x)s/%(y)s.jpeg
+
+# luchtfoto's van 2013 rd
+  luchtfoto2013_rd_tiles:
+    type: tile
+    grid: nl_grid
+    url: https://OS_URL_REPLACE/lufo2013_rd/%(z)s/%(x)s/%(y)s.jpeg
+
+# luchtfoto's van 2012 rd
+  luchtfoto2012_rd_tiles:
+    type: tile
+    grid: nl_grid
+    url: https://OS_URL_REPLACE/lufo2012_rd/%(z)s/%(x)s/%(y)s.jpeg
+
+# luchtfoto's van 2011 rd
+  luchtfoto2011_rd_tiles:
+    type: tile
+    grid: nl_grid
+    url: https://OS_URL_REPLACE/lufo2011_rd/%(z)s/%(x)s/%(y)s.jpeg
+
+# luchtfoto's van 2010 rd
+  luchtfoto2010_rd_tiles:
+    type: tile
+    grid: nl_grid
+    url: https://OS_URL_REPLACE/lufo2010_rd/%(z)s/%(x)s/%(y)s.jpeg
+
+# luchtfoto's van 2009 rd
+  luchtfoto2009_rd_tiles:
+    type: tile
+    grid: nl_grid
+    url: https://OS_URL_REPLACE/lufo2009_rd/%(z)s/%(x)s/%(y)s.jpeg
+
+# luchtfoto's van 2008 rd
+  luchtfoto2008_rd_tiles:
+    type: tile
+    grid: nl_grid
+    url: https://OS_URL_REPLACE/lufo2008_rd/%(z)s/%(x)s/%(y)s.jpeg
+
+# luchtfoto's van 2007 rd
+  luchtfoto2007_rd_tiles:
+    type: tile
+    grid: nl_grid
+    url: https://OS_URL_REPLACE/lufo2007_rd/%(z)s/%(x)s/%(y)s.jpeg
+
+# luchtfoto's van 2006 rd
+  luchtfoto2006_rd_tiles:
+    type: tile
+    grid: nl_grid
+    url: https://OS_URL_REPLACE/lufo2006_rd/%(z)s/%(x)s/%(y)s.jpeg
+
+# luchtfoto's van 2005 rd
+  luchtfoto2005_rd_tiles:
+    type: tile
+    grid: nl_grid
+    url: https://OS_URL_REPLACE/lufo2005_rd/%(z)s/%(x)s/%(y)s.jpeg
+
+# luchtfoto's van 2004 rd
+  luchtfoto2004_rd_tiles:
+    type: tile
+    grid: nl_grid
+    url: https://OS_URL_REPLACE/lufo2004_rd/%(z)s/%(x)s/%(y)s.jpeg
+
+# luchtfoto's van 2003 rd
+  luchtfoto2003_rd_tiles:
+    type: tile
+    grid: nl_grid
+    url: https://OS_URL_REPLACE/lufo2003_rd/%(z)s/%(x)s/%(y)s.jpeg
+
+# luchtfoto wm
+  luchtfoto2023_wm_tiles:
     type: tile
     grid: webmercator
-    url: http://OS_URL_REPLACE/lufo2023_wm_cache_EPSG3857/%(z)s/%(x)s/%(y)s.jpeg
+    url: https://OS_URL_REPLACE/lufo2023_wm/%(z)s/%(x)s/%(y)s.jpeg
 
-  lufo_wms:
-    type: wms
-    req:
-      url: http://172.17.0.1/maps/lufo
-      layers: lufo-TILE
+# infraroodbeelden van 2023 rd
+  infrarood2023_rd_tiles:
+    type: tile
+    grid: nl_grid
+    url: https://OS_URL_REPLACE/infrarood2023_rd/%(z)s/%(x)s/%(y)s.jpeg
+
+# infraroodbeelden van 2022 rd
+  infrarood2022_rd_tiles:
+    type: tile
+    grid: nl_grid
+    url: https://OS_URL_REPLACE/infrarood2022_rd/%(z)s/%(x)s/%(y)s.jpeg
+   
+# infraroodbeelden van 2021 rd
+  infrarood2021_rd_tiles:
+    type: tile
+    grid: nl_grid
+    url: https://OS_URL_REPLACE/infrarood2021_rd/%(z)s/%(x)s/%(y)s.jpeg
+
+# infraroodbeelden van 2020 rd
+  infrarood2020_rd_tiles:
+    type: tile
+    grid: nl_grid
+    url: https://OS_URL_REPLACE/infrarood2020_rd/%(z)s/%(x)s/%(y)s.jpeg
+
+# infraroodbeelden van 2018 rd
+  infrarood2018_rd_tiles:
+    type: tile
+    grid: nl_grid
+    url: https://OS_URL_REPLACE/infrarood2018_rd/%(z)s/%(x)s/%(y)s.jpeg
+
 
 grids:
   nl_grid:
