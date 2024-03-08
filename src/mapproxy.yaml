@@ -227,77 +227,92 @@ caches:
   topo_rd_tiles:
     grids: [nl_grid]
     sources: [basiskaart_rd_tiles]
+    disable_storage: true
 
 #### TOPO RD - KBK & BGT - Light kleur
   topo_rd_light_tiles:
     grids: [nl_grid]
     sources: [basiskaart_rd_light_tiles]
+    disable_storage: true
 
 #### TOPO RD - KBK & BGT - Zwartwit
   topo_rd_zw_tiles:
     grids: [nl_grid]
     sources: [basiskaart_rd_zw_tiles]
+    disable_storage: true
 
 #### TOPO Webmercator (wm) - KBK & BGT - Standaard kleur
   topo_wm_tiles:
     grids: [webmercator]
     sources: [basiskaart_wm_tiles]
+    disable_storage: true
 
 #### TOPO wm - KBK & BGT - Light kleur
   topo_wm_light_tiles:
     grids: [webmercator]
     sources: [basiskaart_wm_light_tiles]
+    disable_storage: true
 
 ### TOPO Webmercator (wm) - KBK & BGT - Zwartwit
   topo_wm_zw_tiles:
     grids: [webmercator]
     sources: [basiskaart_wm_zw_tiles]
+    disable_storage: true
 
 # Luchtfoto's
   lufo2023_rd_tiles:
     grids: [nl_grid]
     sources: [luchtfoto2023_rd_tiles]
     format: image/jpeg
+    disable_storage: trues
 
   lufo2022_rd_tiles:
     grids: [nl_grid]
     sources: [luchtfoto2022_rd_tiles]
     format: image/jpeg
+    disable_storage: true
 
   lufo2021_rd_tiles:
     grids: [nl_grid]
     sources: [luchtfoto2021_rd_tiles]
     format: image/jpeg
+    disable_storage: true
 
   lufo2020_rd_tiles:
     grids: [nl_grid]
     sources: [luchtfoto2020_rd_tiles]
     format: image/jpeg
+    disable_storage: true
 
   lufo2019_rd_tiles:
     grids: [nl_grid]
     sources: [luchtfoto2019_rd_tiles]
     format: image/jpeg
+    disable_storage: true
 
   lufo2018_rd_tiles:
     grids: [nl_grid]
     sources: [luchtfoto2018_rd_tiles]
     format: image/jpeg
+    disable_storage: true
 
   lufo2017_rd_tiles:
     grids: [nl_grid]
     sources: [luchtfoto2017_rd_tiles]
     format: image/jpeg
+    disable_storage: true
 
   lufo2016_rd_tiles:
     grids: [nl_grid]
     sources: [luchtfoto2016_rd_tiles]
     format: image/jpeg
+    disable_storage: true
 
   lufo2015_rd_tiles:
     grids: [nl_grid]
     sources: [luchtfoto2015_rd_tiles]
     format: image/jpeg
+    disable_storage: true
 
   lufo2014_rd_tiles:
     grids: [nl_grid]
@@ -308,61 +323,73 @@ caches:
     grids: [nl_grid]
     sources: [luchtfoto2013_rd_tiles]
     format: image/jpeg
+    disable_storage: true
 
   lufo2012_rd_tiles:
     grids: [nl_grid]
     sources: [luchtfoto2012_rd_tiles]
     format: image/jpeg
+    disable_storage: true
 
   lufo2011_rd_tiles:
     grids: [nl_grid]
     sources: [luchtfoto2011_rd_tiles]
     format: image/jpeg
+    disable_storage: true
 
   lufo2010_rd_tiles:
     grids: [nl_grid]
     sources: [luchtfoto2010_rd_tiles]
     format: image/jpeg
+    disable_storage: true
 
   lufo2009_rd_tiles:
     grids: [nl_grid]
     sources: [luchtfoto2009_rd_tiles]
     format: image/jpeg
+    disable_storage: true
 
   lufo2008_rd_tiles:
     grids: [nl_grid]
     sources: [luchtfoto2008_rd_tiles]
     format: image/jpeg
+    disable_storage: true
 
   lufo2007_rd_tiles:
     grids: [nl_grid]
     sources: [luchtfoto2007_rd_tiles]
     format: image/jpeg
+    disable_storage: true
 
   lufo2006_rd_tiles:
     grids: [nl_grid]
     sources: [luchtfoto2006_rd_tiles]
     format: image/jpeg
+    disable_storage: true
 
   lufo2005_rd_tiles:
     grids: [nl_grid]
     sources: [luchtfoto2005_rd_tiles]
     format: image/jpeg
+    disable_storage: true
 
   lufo2004_rd_tiles:
     grids: [nl_grid]
     sources: [luchtfoto2004_rd_tiles]
     format: image/jpeg
+    disable_storage: true
 
   lufo2003_rd_tiles:
     grids: [nl_grid]
     sources: [luchtfoto2003_rd_tiles]
     format: image/jpeg
+    disable_storage: true
 
   lufo2023_wm_tiles:
     grids: [webmercator]
     sources: [luchtfoto2023_wm_tiles]
     format: image/jpeg
+    disable_storage: true
 
 # Infrarood
 
@@ -370,26 +397,31 @@ caches:
     grids: [nl_grid]
     sources: [infrarood2023_rd_tiles]
     format: image/jpeg
+    disable_storage: true
 
   infrarood2022_rd_tiles:
     grids: [nl_grid]
     sources: [infrarood2022_rd_tiles]
     format: image/jpeg
+    disable_storage: true
 
   infrarood2021_rd_tiles:
     grids: [nl_grid]
     sources: [infrarood2021_rd_tiles]
     format: image/jpeg
+    disable_storage: true
 
   infrarood2020_rd_tiles:
     grids: [nl_grid]
     sources: [infrarood2020_rd_tiles]
     format: image/jpeg
+    disable_storage: true
 
   infrarood2018_rd_tiles:
     grids: [nl_grid]
     sources: [infrarood2018_rd_tiles]
     format: image/jpeg
+    disable_storage: true
 
 sources:
 # basiskaart standaard kleur
