@@ -1,5 +1,7 @@
-seeds:
+## Configuration for the mapproxy-seed tool
 
+
+seeds:
 #### TOPO RD - KBK & BGT - Standaard kleur
   topo_rd_kbk:
     caches: [topo_rd_cache]

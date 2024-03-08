@@ -1,4 +1,4 @@
-FROM python:3.7-bullseye
+FROM amsterdam/python:3.9-bullseye
 LABEL maintainer="datapunt@amsterdam.nl"
 
 EXPOSE 8000
@@ -15,9 +15,10 @@ COPY requirements.txt /app/
 RUN pip install -r requirements.txt
 
 COPY src/* /app/
+COPY log.ini /app/log.ini
 COPY docker-entrypoint.sh /bin
 
-RUN pip install MapProxy==1.13.1
+RUN pip install MapProxy==1.14.0
 
 USER datapunt
 
