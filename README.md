@@ -6,10 +6,7 @@ This repository contains a [MapProxy application](https://mapproxy.org/) for the
 
 ## Config files
 
-`mapproxy-base.yaml` - Shared globals and grids for the WMTS server and seeding jobs
 `mapproxy.yaml` - MapProxy WMTS config, this defines the service, sources, caches, layers and globals for the WMTS server.
-`mapproxy-seed.yaml` - Defines the sources and caches used in seeding the basiskaarten and luchtfotos.
-`seed.yaml` - MapProxy cache configuration, this defines which sources should be used to pre-generate tiles and to what destinations these should be written.
 
 Run this for local development
 
