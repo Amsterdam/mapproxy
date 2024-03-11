@@ -264,7 +264,7 @@ caches:
     grids: [nl_grid]
     sources: [luchtfoto2023_rd_tiles]
     format: image/jpeg
-    disable_storage: trues
+    disable_storage: true
 
   lufo2022_rd_tiles:
     grids: [nl_grid]
