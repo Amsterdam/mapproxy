@@ -18,7 +18,7 @@ services:
         fax: n/a
         email: datapunt@amsterdam.nl
         fees: 'None'
-    srs: ['28992']
+    srs: ['EPSG:3857','EPSG:28992', 'EPSG:900913']
   wmts:
     md:
       # metadata used in capabilities documents
