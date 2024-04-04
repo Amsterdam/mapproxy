@@ -464,163 +464,163 @@ sources:
   luchtfoto2023_rd_tiles:
     type: tile
     grid: nl_grid
-    url: https://OS_URL_REPLACE/lufo2023_rd/%(z)s/%(x)s/%(y)s.jpeg
+    url: https://OS_URL_REPLACE/lufo2023_RD/%(z)s/%(x)s/%(y)s.jpeg
 
 # luchtfoto's van 2022 rd
   luchtfoto2022_rd_tiles:
     type: tile
     grid: nl_grid
-    url: https://OS_URL_REPLACE/lufo2022_rd/%(z)s/%(x)s/%(y)s.jpeg
+    url: https://OS_URL_REPLACE/lufo2022_RD/%(z)s/%(x)s/%(y)s.jpeg
    
 # luchtfoto's van 2021 rd
   luchtfoto2021_rd_tiles:
     type: tile
     grid: nl_grid
-    url: https://OS_URL_REPLACE/lufo2021_rd/%(z)s/%(x)s/%(y)s.jpeg
+    url: https://OS_URL_REPLACE/lufo2021_RD/%(z)s/%(x)s/%(y)s.jpeg
 
 # luchtfoto's van 2020 rd
   luchtfoto2020_rd_tiles:
     type: tile
     grid: nl_grid
-    url: https://OS_URL_REPLACE/lufo2020_rd/%(z)s/%(x)s/%(y)s.jpeg
+    url: https://OS_URL_REPLACE/lufo2020_RD/%(z)s/%(x)s/%(y)s.jpeg
 
 # luchtfoto's van 2019 rd
   luchtfoto2019_rd_tiles:
     type: tile
     grid: nl_grid
-    url: https://OS_URL_REPLACE/lufo2019_rd/%(z)s/%(x)s/%(y)s.jpeg
+    url: https://OS_URL_REPLACE/lufo2019_RD/%(z)s/%(x)s/%(y)s.jpeg
 
 # luchtfoto's van 2018 rd
   luchtfoto2018_rd_tiles:
     type: tile
     grid: nl_grid
-    url: https://OS_URL_REPLACE/lufo2018_rd/%(z)s/%(x)s/%(y)s.jpeg
+    url: https://OS_URL_REPLACE/lufo2018_RD/%(z)s/%(x)s/%(y)s.jpeg
 
 # luchtfoto's van 2017 rd
   luchtfoto2017_rd_tiles:
     type: tile
     grid: nl_grid
-    url: https://OS_URL_REPLACE/lufo2017_rd/%(z)s/%(x)s/%(y)s.jpeg
+    url: https://OS_URL_REPLACE/lufo2017_RD/%(z)s/%(x)s/%(y)s.jpeg
 
 # luchtfoto's van 2016 rd
   luchtfoto2016_rd_tiles:
     type: tile
     grid: nl_grid
-    url: https://OS_URL_REPLACE/lufo2016_rd/%(z)s/%(x)s/%(y)s.jpeg
+    url: https://OS_URL_REPLACE/lufo2016_RD/%(z)s/%(x)s/%(y)s.jpeg
 
 # luchtfoto's van 2015 rd
   luchtfoto2015_rd_tiles:
     type: tile
     grid: nl_grid
-    url: https://OS_URL_REPLACE/lufo2015_rd/%(z)s/%(x)s/%(y)s.jpeg
+    url: https://OS_URL_REPLACE/lufo2015_RD/%(z)s/%(x)s/%(y)s.jpeg
 
 # luchtfoto's van 2014 rd
   luchtfoto2014_rd_tiles:
     type: tile
     grid: nl_grid
-    url: https://OS_URL_REPLACE/lufo2014_rd/%(z)s/%(x)s/%(y)s.jpeg
+    url: https://OS_URL_REPLACE/lufo2014_RD/%(z)s/%(x)s/%(y)s.jpeg
 
 # luchtfoto's van 2013 rd
   luchtfoto2013_rd_tiles:
     type: tile
     grid: nl_grid
-    url: https://OS_URL_REPLACE/lufo2013_rd/%(z)s/%(x)s/%(y)s.jpeg
+    url: https://OS_URL_REPLACE/lufo2013_RD/%(z)s/%(x)s/%(y)s.jpeg
 
 # luchtfoto's van 2012 rd
   luchtfoto2012_rd_tiles:
     type: tile
     grid: nl_grid
-    url: https://OS_URL_REPLACE/lufo2012_rd/%(z)s/%(x)s/%(y)s.jpeg
+    url: https://OS_URL_REPLACE/lufo2012_RD/%(z)s/%(x)s/%(y)s.jpeg
 
 # luchtfoto's van 2011 rd
   luchtfoto2011_rd_tiles:
     type: tile
     grid: nl_grid
-    url: https://OS_URL_REPLACE/lufo2011_rd/%(z)s/%(x)s/%(y)s.jpeg
+    url: https://OS_URL_REPLACE/lufo2011_RD/%(z)s/%(x)s/%(y)s.jpeg
 
 # luchtfoto's van 2010 rd
   luchtfoto2010_rd_tiles:
     type: tile
     grid: nl_grid
-    url: https://OS_URL_REPLACE/lufo2010_rd/%(z)s/%(x)s/%(y)s.jpeg
+    url: https://OS_URL_REPLACE/lufo2010_RD/%(z)s/%(x)s/%(y)s.jpeg
 
 # luchtfoto's van 2009 rd
   luchtfoto2009_rd_tiles:
     type: tile
     grid: nl_grid
-    url: https://OS_URL_REPLACE/lufo2009_rd/%(z)s/%(x)s/%(y)s.jpeg
+    url: https://OS_URL_REPLACE/lufo2009_RD/%(z)s/%(x)s/%(y)s.jpeg
 
 # luchtfoto's van 2008 rd
   luchtfoto2008_rd_tiles:
     type: tile
     grid: nl_grid
-    url: https://OS_URL_REPLACE/lufo2008_rd/%(z)s/%(x)s/%(y)s.jpeg
+    url: https://OS_URL_REPLACE/lufo2008_RD/%(z)s/%(x)s/%(y)s.jpeg
 
 # luchtfoto's van 2007 rd
   luchtfoto2007_rd_tiles:
     type: tile
     grid: nl_grid
-    url: https://OS_URL_REPLACE/lufo2007_rd/%(z)s/%(x)s/%(y)s.jpeg
+    url: https://OS_URL_REPLACE/lufo2007_RD/%(z)s/%(x)s/%(y)s.jpeg
 
 # luchtfoto's van 2006 rd
   luchtfoto2006_rd_tiles:
     type: tile
     grid: nl_grid
-    url: https://OS_URL_REPLACE/lufo2006_rd/%(z)s/%(x)s/%(y)s.jpeg
+    url: https://OS_URL_REPLACE/lufo2006_RD/%(z)s/%(x)s/%(y)s.jpeg
 
 # luchtfoto's van 2005 rd
   luchtfoto2005_rd_tiles:
     type: tile
     grid: nl_grid
-    url: https://OS_URL_REPLACE/lufo2005_rd/%(z)s/%(x)s/%(y)s.jpeg
+    url: https://OS_URL_REPLACE/lufo2005_RD/%(z)s/%(x)s/%(y)s.jpeg
 
 # luchtfoto's van 2004 rd
   luchtfoto2004_rd_tiles:
     type: tile
     grid: nl_grid
-    url: https://OS_URL_REPLACE/lufo2004_rd/%(z)s/%(x)s/%(y)s.jpeg
+    url: https://OS_URL_REPLACE/lufo2004_RD/%(z)s/%(x)s/%(y)s.jpeg
 
 # luchtfoto's van 2003 rd
   luchtfoto2003_rd_tiles:
     type: tile
     grid: nl_grid
-    url: https://OS_URL_REPLACE/lufo2003_rd/%(z)s/%(x)s/%(y)s.jpeg
+    url: https://OS_URL_REPLACE/lufo2003_RD/%(z)s/%(x)s/%(y)s.jpeg
 
 # luchtfoto wm
   luchtfoto2023_wm_tiles:
     type: tile
     grid: webmercator
-    url: https://OS_URL_REPLACE/lufo2023_wm/%(z)s/%(x)s/%(y)s.jpeg
+    url: https://OS_URL_REPLACE/lufo2023_WM/%(z)s/%(x)s/%(y)s.jpeg
 
 # infraroodbeelden van 2023 rd
   infrarood2023_rd_tiles:
     type: tile
     grid: nl_grid
-    url: https://OS_URL_REPLACE/infrarood2023_rd/%(z)s/%(x)s/%(y)s.jpeg
+    url: https://OS_URL_REPLACE/infrarood2023_RD/%(z)s/%(x)s/%(y)s.jpeg
 
 # infraroodbeelden van 2022 rd
   infrarood2022_rd_tiles:
     type: tile
     grid: nl_grid
-    url: https://OS_URL_REPLACE/infrarood2022_rd/%(z)s/%(x)s/%(y)s.jpeg
+    url: https://OS_URL_REPLACE/infrarood2022_RD/%(z)s/%(x)s/%(y)s.jpeg
    
 # infraroodbeelden van 2021 rd
   infrarood2021_rd_tiles:
     type: tile
     grid: nl_grid
-    url: https://OS_URL_REPLACE/infrarood2021_rd/%(z)s/%(x)s/%(y)s.jpeg
+    url: https://OS_URL_REPLACE/infrarood2021_RD/%(z)s/%(x)s/%(y)s.jpeg
 
 # infraroodbeelden van 2020 rd
   infrarood2020_rd_tiles:
     type: tile
     grid: nl_grid
-    url: https://OS_URL_REPLACE/infrarood2020_rd/%(z)s/%(x)s/%(y)s.jpeg
+    url: https://OS_URL_REPLACE/infrarood2020_RD/%(z)s/%(x)s/%(y)s.jpeg
 
 # infraroodbeelden van 2018 rd
   infrarood2018_rd_tiles:
     type: tile
     grid: nl_grid
-    url: https://OS_URL_REPLACE/infrarood2018_rd/%(z)s/%(x)s/%(y)s.jpeg
+    url: https://OS_URL_REPLACE/infrarood2018_RD/%(z)s/%(x)s/%(y)s.jpeg
 
 
 grids:
