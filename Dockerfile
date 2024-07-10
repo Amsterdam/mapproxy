@@ -1,4 +1,4 @@
-FROM amsterdam/python:3.9-bullseye
+FROM amsterdam/python:3.9.6-bullseye
 LABEL maintainer="datapunt@amsterdam.nl"
 
 EXPOSE 8000
