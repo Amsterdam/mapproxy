@@ -8,4 +8,4 @@ services:
       UWSGI_HTTP: "0.0.0.0:8000"
       UWSGI_MASTER: 1
       UWSGI_PROCESSES: 4
-      OS_URL: "dpbk-o-bhbuh2chc3evemgn.a01.azurefd.net" # Acceptance Tiles as default
+      OS_URL: "${OS_URL:-t1.acc.data.amsterdam.nl}" # Acceptance Tiles as default
