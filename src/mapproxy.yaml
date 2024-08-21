@@ -637,6 +637,8 @@ grids:
     num_levels: 22
 
 globals:
+  tiles:
+    expires_hours: 504
   cache:
     base_dir: '/app'
     lock_dir: '/app'
