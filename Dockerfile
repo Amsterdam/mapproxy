@@ -6,7 +6,9 @@ EXPOSE 8000
 ARG OS_URL
 ENV OS_URL=$OS_URL
 
-RUN adduser --system datapunt
+RUN adduser --system --uid 999 --group datapunt
+RUN groupmod -o -g 999 datapunt
+
 WORKDIR /app
 
 RUN chown datapunt -R /app
