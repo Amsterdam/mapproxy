@@ -1,2 +1,2 @@
 uwsgi==2.0.27
-pyproj==3.6.1
+pyproj==3.7.0
