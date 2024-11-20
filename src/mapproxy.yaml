@@ -16,7 +16,7 @@ services:
         country: Netherlands
         phone: n/a
         fax: n/a
-        email: datapunt@amsterdam.nl
+        email: data-helpdesk@amsterdam.nl
       fees: 'None'
     srs: ['EPSG:3857','EPSG:28992', 'EPSG:900913']
   wmts:
