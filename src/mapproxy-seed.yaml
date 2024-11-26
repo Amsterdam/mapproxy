@@ -1,0 +1,144 @@
+## Configuration for seeding tiles from MAPSERVER_URL_REPLACE WMS
+
+
+caches:
+#### TOPO RD - KBK & BGT
+
+# Standaard kleur
+  topo_rd_cache:
+    grids: [nl_grid]
+    sources: [topografie]
+    cache_dir: /mnt/tiles
+    cache:
+      type: file
+      directory_layout: tms
+
+# Light kleur
+  topo_rd_light_cache:
+    grids: [nl_grid]
+    sources: [topografie_light]
+    cache_dir: /mnt/tiles
+    cache:
+      type: file
+      directory_layout: tms
+
+# Zwartwit
+  topo_rd_zw_cache:
+    grids: [nl_grid]
+    sources: [topografie_zw]
+    cache_dir: /mnt/tiles
+    cache:
+      type: file
+      directory_layout: tms
+
+#### TOPO Webmercator (wm) - KBK & BGT
+
+# Standaard kleur
+  topo_wm_cache:
+    grids: [webmercator]
+    sources: [topografie]
+    cache_dir: /mnt/tiles
+    cache:
+      type: file
+      directory_layout: tms
+
+# Light kleur
+  topo_wm_light_cache:
+    grids: [webmercator]
+    sources: [topografie_light]
+    cache_dir: /mnt/tiles
+    cache:
+      type: file
+      directory_layout: tms
+
+ # Zwartwit
+  topo_wm_zw_cache:
+    grids: [webmercator]
+    sources: [topografie_zw]
+    cache_dir: /mnt/tiles
+    cache:
+      type: file
+      directory_layout: tms
+
+# Luchtfoto's
+  lufo_rd_cache:
+    grids: [nl_grid]
+    sources: [lufo_wms]
+    cache_dir: /mnt/tiles
+    format: image/jpeg
+    cache:
+      type: file
+      directory_layout: tms
+  
+  lufo_wm_cache:
+    grids: [webmercator]
+    sources: [lufo_wms]
+    cache_dir: /mnt/tiles
+    format: image/jpeg
+    cache:
+      type: file
+      directory_layout: tms
+
+sources:
+# basiskaart standaard kleur
+  topografie:
+    type: wms
+    req:
+      url: http://MAPSERVER_URL_REPLACE/maps/topografie
+      layers: basiskaart
+    seed_only: true
+    concurrent_requests: 10
+
+ # basiskaart light kleur
+  topografie_light:
+    type: wms
+    req:
+      url: http://MAPSERVER_URL_REPLACE/maps/topografie
+      layers: basiskaart-light
+    seed_only: true
+    concurrent_requests: 10
+
+# basiskaart zwartwit kleur
+  topografie_zw:
+    type: wms
+    req:
+      url: http://MAPSERVER_URL_REPLACE/maps/topografie
+      layers: basiskaart-zwartwit
+    seed_only: true
+    concurrent_requests: 10
+
+# Example to tile locally with the MAPSERVER_URL_REPLACE docker also running:
+  lufo_wms:
+    type: wms
+    req:
+      url: http://MAPSERVER_URL_REPLACE/maps/lufo
+      layers: lufo-TILE
+    seed_only: true
+    concurrent_requests: 10
+
+grids:
+  nl_grid:
+    srs: EPSG:28992
+    tile_size: [256,256]
+    origin: sw
+    res: [3440.64,1720.32,860.16,430.08,215.04,107.52,53.76,26.88,13.44,6.72,3.36,1.68,0.84,0.42,0.21,0.105,0.0525]
+    #     0       1       2      3      4      5      6     7     8     9    10   11   12   13   14   15    16
+    bbox: [-285401.920,22598.080,595401.9199999999,903401.9199999999]
+
+  webmercator:
+    base: GLOBAL_WEBMERCATOR
+    num_levels: 22
+
+globals:
+  cache:
+    base_dir: '/app'
+    lock_dir: '/app'
+    tile_lock_dir: '/app'
+    meta_size: [4, 4]
+    meta_buffer: 254
+  http:
+    ssl_no_cert_checks: True
+    client_timeout: 600
+
+  image:
+      resampling_method: bicubic
