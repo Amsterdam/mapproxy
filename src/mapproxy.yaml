@@ -13,11 +13,13 @@ services:
         address: n/a
         city: Amsterdam
         postcode: n/a
+        state: North-Holland
         country: Netherlands
         phone: n/a
         fax: n/a
         email: data-helpdesk@amsterdam.nl
-      fees: 'None'
+      access_constraints: 'none'
+      fees: 'none'
     srs: ['EPSG:3857','EPSG:28992', 'EPSG:900913']
   wmts:
     md:
@@ -32,11 +34,13 @@ services:
         address: n/a
         city: Amsterdam
         postcode: n/a
+        state: North-Holland
         country: Netherlands
         phone: n/a
         fax: n/a
         email: data-helpdesk@amsterdam.nl
-      fees: 'None'
+      access_constraints: 'none'
+      fees: 'none'
     restful: false
     kvp: true
 
