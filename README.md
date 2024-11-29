@@ -13,7 +13,7 @@ Within this project it serves multiple purposes:
 Running this for local development
 
 ```bash
-    docker-compose up database mapproxy mapserver
+    docker-compose up mapproxy mapserver
 ```
 
 This will spawn a mapproxy that consumes WMS from the mapserver container and serves WMTS from the acceptance objectstore.
