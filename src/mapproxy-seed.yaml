@@ -1,6 +1,5 @@
 ## Configuration for seeding tiles from MAPSERVER_URL_REPLACE WMS
 
-
 caches:
 #### TOPO RD - KBK & BGT
 
@@ -8,28 +7,28 @@ caches:
   topo_rd_cache:
     grids: [nl_grid]
     sources: [topografie]
-    cache_dir: /mnt/tiles
     cache:
-      type: file
-      directory_layout: tms
+      type: azureblob
+      directory: /
+      container_name: tiles
 
 # Light kleur
   topo_rd_light_cache:
     grids: [nl_grid]
     sources: [topografie_light]
-    cache_dir: /mnt/tiles
     cache:
-      type: file
-      directory_layout: tms
+      type: azureblob
+      directory: /
+      container_name: tiles
 
 # Zwartwit
   topo_rd_zw_cache:
     grids: [nl_grid]
     sources: [topografie_zw]
-    cache_dir: /mnt/tiles
     cache:
-      type: file
-      directory_layout: tms
+      type: azureblob
+      directory: /
+      container_name: tiles
 
 #### TOPO Webmercator (wm) - KBK & BGT
 
@@ -37,47 +36,47 @@ caches:
   topo_wm_cache:
     grids: [webmercator]
     sources: [topografie]
-    cache_dir: /mnt/tiles
     cache:
-      type: file
-      directory_layout: tms
+      type: azureblob
+      directory: /
+      container_name: tiles
 
 # Light kleur
   topo_wm_light_cache:
     grids: [webmercator]
     sources: [topografie_light]
-    cache_dir: /mnt/tiles
     cache:
-      type: file
-      directory_layout: tms
+      type: azureblob
+      directory: /
+      container_name: tiles
 
  # Zwartwit
   topo_wm_zw_cache:
     grids: [webmercator]
     sources: [topografie_zw]
-    cache_dir: /mnt/tiles
     cache:
-      type: file
-      directory_layout: tms
+      type: azureblob
+      directory: /
+      container_name: tiles
 
 # Luchtfoto's
   lufo_rd_cache:
     grids: [nl_grid]
     sources: [lufo_wms]
-    cache_dir: /mnt/tiles
     format: image/jpeg
     cache:
-      type: file
-      directory_layout: tms
+      type: azureblob
+      directory: /
+      container_name: tiles
   
   lufo_wm_cache:
     grids: [webmercator]
     sources: [lufo_wms]
-    cache_dir: /mnt/tiles
     format: image/jpeg
     cache:
-      type: file
-      directory_layout: tms
+      type: azureblob
+      directory: /
+      container_name: tiles
 
 sources:
 # basiskaart standaard kleur
