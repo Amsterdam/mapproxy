@@ -1,0 +1,66 @@
+services:
+  topo_rd:
+    build: .
+    command: >
+      mapproxy-seed -c 1 -s /app/seed.yaml -f /app/mapproxy-seed.yaml --seed=topo_rd_kbk,topo_rd_bgt
+    environment:
+      MAPSERVER_URL: "${MAPSERVER_URL:-map.data-t.azure.amsterdam.nl/tiled}"
+      AZURE_STORAGE_CONNECTION_STRING: "${AZURE_STORAGE_CONNECTION_STRING}"
+
+  topo_rd_light:
+    build: .
+    command: >
+      mapproxy-seed -c 1 -s /app/seed.yaml -f /app/mapproxy-seed.yaml --seed=topo_rd_light_kbk,topo_rd_light_bgt
+    environment:
+      MAPSERVER_URL: "${MAPSERVER_URL:-map.data-t.azure.amsterdam.nl/tiled}"
+      AZURE_STORAGE_CONNECTION_STRING: "${AZURE_STORAGE_CONNECTION_STRING}"
+
+  topo_rd_zw:
+    build: .
+    command: >
+      mapproxy-seed -1 2 -s /app/seed.yaml -f /app/mapproxy-seed.yaml --seed=topo_rd_zw_kbk,topo_rd_zw_bgt
+    environment:
+      MAPSERVER_URL: "${MAPSERVER_URL:-map.data-t.azure.amsterdam.nl/tiled}"
+      AZURE_STORAGE_CONNECTION_STRING: "${AZURE_STORAGE_CONNECTION_STRING}"
+
+  topo_wm:
+    build: .
+    command: >
+      mapproxy-seed -c 1 -s /app/seed.yaml -f /app/mapproxy-seed.yaml --seed=topo_wm_kbk,topo_wm_bgt
+    environment:
+      MAPSERVER_URL: "${MAPSERVER_URL:-map.data-t.azure.amsterdam.nl/tiled}"
+      AZURE_STORAGE_CONNECTION_STRING: "${AZURE_STORAGE_CONNECTION_STRING}"
+
+  topo_wm_light:
+    build: .
+    command: >
+      mapproxy-seed -c 1 -s /app/seed.yaml -f /app/mapproxy-seed.yaml --seed=topo_wm_light_kbk,topo_wm_light_bgt
+    environment:
+      MAPSERVER_URL: "${MAPSERVER_URL:-map.data-t.azure.amsterdam.nl/tiled}"
+      AZURE_STORAGE_CONNECTION_STRING: "${AZURE_STORAGE_CONNECTION_STRING}"
+
+  topo_wm_zw:
+    build: .
+    command: >
+      mapproxy-seed -c 1 -s /app/seed.yaml -f /app/mapproxy-seed.yaml --seed=topo_wm_zw_kbk,topo_wm_zw_bgt
+    environment:
+      MAPSERVER_URL: "${MAPSERVER_URL:-map.data-t.azure.amsterdam.nl/tiled}"
+      AZURE_STORAGE_CONNECTION_STRING: "${AZURE_STORAGE_CONNECTION_STRING}"
+
+  topo_rd_lufo:
+    build: .
+    user: root
+    command: >
+      mapproxy-seed -c 1 -s /app/seed.yaml -f /app/mapproxy-seed.yaml --seed=lufo_rd
+    environment:
+      MAPSERVER_URL: "${MAPSERVER_URL:-map.data-t.azure.amsterdam.nl/tiled}"
+      AZURE_STORAGE_CONNECTION_STRING: "${AZURE_STORAGE_CONNECTION_STRING}"
+
+  topo_wm_lufo:
+    build: .
+    user: root
+    command: >
+      mapproxy-seed -c 4 -s /app/seed.yaml -f /app/mapproxy-seed.yaml --seed=lufo_wm
+    environment:
+      MAPSERVER_URL: "${MAPSERVER_URL:-map.data-t.azure.amsterdam.nl/tiled}"
+      AZURE_STORAGE_CONNECTION_STRING: "${AZURE_STORAGE_CONNECTION_STRING}"
