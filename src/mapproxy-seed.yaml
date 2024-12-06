@@ -9,7 +9,7 @@ caches:
     sources: [topografie]
     cache:
       type: azureblob
-      directory: /
+      directory: /topo_rd/
       container_name: tiles
 
 # Light kleur
@@ -18,7 +18,7 @@ caches:
     sources: [topografie_light]
     cache:
       type: azureblob
-      directory: /
+      directory: /topo_rd_light/
       container_name: tiles
 
 # Zwartwit
@@ -27,7 +27,7 @@ caches:
     sources: [topografie_zw]
     cache:
       type: azureblob
-      directory: /
+      directory: /topo_rd_zw/
       container_name: tiles
 
 #### TOPO Webmercator (wm) - KBK & BGT
@@ -38,7 +38,7 @@ caches:
     sources: [topografie]
     cache:
       type: azureblob
-      directory: /
+      directory: /topo_wm/
       container_name: tiles
 
 # Light kleur
@@ -47,7 +47,7 @@ caches:
     sources: [topografie_light]
     cache:
       type: azureblob
-      directory: /
+      directory: /topo_wm_light/
       container_name: tiles
 
  # Zwartwit
@@ -56,7 +56,7 @@ caches:
     sources: [topografie_zw]
     cache:
       type: azureblob
-      directory: /
+      directory: /topo_wm_zw/
       container_name: tiles
 
 # Luchtfoto's
@@ -66,7 +66,7 @@ caches:
     format: image/jpeg
     cache:
       type: azureblob
-      directory: /
+      directory: /lufo_RD/
       container_name: tiles
   
   lufo_wm_cache:
@@ -75,7 +75,7 @@ caches:
     format: image/jpeg
     cache:
       type: azureblob
-      directory: /
+      directory: /lufo_WM/
       container_name: tiles
 
 sources:
