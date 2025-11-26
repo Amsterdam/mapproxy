@@ -1,4 +1,4 @@
-FROM python:3.10-bullseye
+FROM python:3.11-trixie
 LABEL maintainer="datapunt@amsterdam.nl"
 
 EXPOSE 8000
