@@ -1,0 +1,36 @@
+name: Tests
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+jobs:
+  test_container:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Run Mapproxy
+      run: docker compose up -d  &&
+           sleep 3
+    - name: index page returns 200 status code
+      run: |
+        [[ $(curl -s -o /dev/null -w "%{http_code}" localhost:8000) == 200 ]] || exit 1;
+    - name: demo page returns 200 status code
+      run: |
+        [[ $(curl -s -o /dev/null -w "%{http_code}" localhost:8000/demo/) == 200 ]] || exit 1;
+    - name: demo page lufo2023 wms layer exists
+      run: |    
+        [[ $(curl -s -o /dev/null -w "%{http_code}" 'http://localhost:8000/demo/?srs=EPSG%3A28992&format=image%2Fjpeg&wms_layer=lufo2023') == 200 ]] || exit 1;
+        [[ $(curl -s 'http://localhost:8000/demo/?srs=EPSG%3A28992&format=image%2Fjpeg&wms_layer=lufo2023' | wc -c) -gt 1000 ]] || exit 1;
+    - name: demo page lufo2023 wmts layer exists
+      run: |    
+        [[ $(curl -s -o /dev/null -w "%{http_code}" 'http://localhost:8000/demo/?wmts_layer=lufo2023&format=jpeg&srs=EPSG%3A28992') == 200 ]] || exit 1;
+        [[ $(curl -s 'http://localhost:8000/demo/?wmts_layer=lufo2023&format=jpeg&srs=EPSG%3A28992' | wc -c) -gt 1000 ]] || exit 1;
+    - name: lufo2023 wmts returns correct image tile
+      run: |  
+        [[ $(curl -s -o /dev/null -w "%{http_code}" 'http://localhost:8000/service?layer=lufo2023&style=&tilematrixset=nl_grid&Service=WMTS&Request=GetTile&Version=1.0.0&Format=jpeg&TileMatrix=9&TileCol=238&TileRow=240') == 200 ]] || exit 1;
+        [ $(curl -Is -o /dev/null -w '%header{etag}' 'http://localhost:8000/service?layer=lufo2023&style=&tilematrixset=nl_grid&Service=WMTS&Request=GetTile&Version=1.0.0&Format=jpeg&TileMatrix=9&TileCol=238&TileRow=240') = 'c7485dcc8d256a6f197ed7802687f252' ] || exit 1;
+        [ $(curl -Is -o /dev/null -w '%header{Content-Type}' 'http://localhost:8000/service?layer=lufo2023&style=&tilematrixset=nl_grid&Service=WMTS&Request=GetTile&Version=1.0.0&Format=jpeg&TileMatrix=9&TileCol=238&TileRow=240') = 'image/jpeg' ] || exit 1;
+       
+        
