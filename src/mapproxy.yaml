@@ -87,9 +87,14 @@ layers:
     sources: [topo_wm_zw_tiles]
   - name: lufo_rd
     title: Luchtfoto's (Rijksdriehoeksstelsel)
-    sources: [lufo2023_rd_tiles]
+    sources: [lufo2024_rd_tiles]
     md:
-      abstract: "Luchtfoto's van 2023 van het grondgebied van de gemeente Amsterdam"
+      abstract: "Luchtfoto's van 2024 van het grondgebied van de gemeente Amsterdam"
+  - name: lufo2024
+    title: Luchtfoto's 2024 (Rijksdriehoeksstelsel)
+    sources: [lufo2024_rd_tiles]
+    md:
+      abstract: "Luchtfoto's van 2024 van het grondgebied van de gemeente Amsterdam"
   - name: lufo2023
     title: Luchtfoto's 2023 (Rijksdriehoeksstelsel)
     sources: [lufo2023_rd_tiles]
@@ -197,7 +202,7 @@ layers:
       abstract: "Luchtfoto's van 2003 van het grondgebied van de gemeente Amsterdam"
   - name: lufo_wm
     title: Luchtfoto's (Web Mercator)
-    sources: [lufo2023_wm_tiles]
+    sources: [lufo2024_wm_tiles]
     md:
       abstract: "Luchtfoto's van 2023 van het grondgebied van de gemeente Amsterdam"
   - name: infrarood2023
@@ -263,7 +268,13 @@ caches:
     sources: [basiskaart_wm_zw_tiles]
     disable_storage: true
 
-# Luchtfoto's
+### Luchtfoto's (RD)
+  lufo2024_rd_tiles:
+    grids: [nl_grid]
+    sources: [luchtfoto2024_rd_tiles]
+    format: image/jpeg
+    disable_storage: true
+
   lufo2023_rd_tiles:
     grids: [nl_grid]
     sources: [luchtfoto2023_rd_tiles]
@@ -389,6 +400,14 @@ caches:
     format: image/jpeg
     disable_storage: true
 
+### Luchtfoto's (WM)
+
+  lufo2024_wm_tiles:
+    grids: [webmercator]
+    sources: [luchtfoto2024_wm_tiles]
+    format: image/jpeg
+    disable_storage: true
+  
   lufo2023_wm_tiles:
     grids: [webmercator]
     sources: [luchtfoto2023_wm_tiles]
@@ -463,6 +482,12 @@ sources:
     type: tile
     grid: webmercator
     url: https://OS_URL_REPLACE/topo_wm_zw/%(z)s/%(x)s/%(y)s.png
+
+# luchtfoto's van 2024 rd
+  luchtfoto2024_rd_tiles:
+    type: tile
+    grid: nl_grid
+    url: https://OS_URL_REPLACE/lufo2024_RD/%(z)s/%(x)s/%(y)s.jpeg
 
 # luchtfoto's van 2023 rd
   luchtfoto2023_rd_tiles:
@@ -590,7 +615,13 @@ sources:
     grid: nl_grid
     url: https://OS_URL_REPLACE/lufo2003_RD/%(z)s/%(x)s/%(y)s.jpeg
 
-# luchtfoto wm
+# luchtfoto 2024 wm
+  luchtfoto2024_wm_tiles:
+    type: tile
+    grid: webmercator
+    url: https://OS_URL_REPLACE/lufo2024_WM/%(z)s/%(x)s/%(y)s.jpeg
+
+# luchtfoto 2023 wm
   luchtfoto2023_wm_tiles:
     type: tile
     grid: webmercator
