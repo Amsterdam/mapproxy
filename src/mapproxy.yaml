@@ -615,7 +615,13 @@ sources:
     grid: nl_grid
     url: https://OS_URL_REPLACE/lufo2003_RD/%(z)s/%(x)s/%(y)s.jpeg
 
-# luchtfoto wm
+# luchtfoto 2024 wm
+  luchtfoto2024_wm_tiles:
+    type: tile
+    grid: webmercator
+    url: https://OS_URL_REPLACE/lufo2023_WM/%(z)s/%(x)s/%(y)s.jpeg
+
+# luchtfoto 2023 wm
   luchtfoto2023_wm_tiles:
     type: tile
     grid: webmercator
