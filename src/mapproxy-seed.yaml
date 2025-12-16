@@ -59,14 +59,14 @@ caches:
       directory: /topo_wm_zw/
       container_name: tiles
 
-# Luchtfoto's
+# Luchtfoto's + lufo jaartal dir
   lufo_rd_cache:
     grids: [nl_grid]
     sources: [lufo_wms]
     format: image/jpeg
     cache:
       type: azureblob
-      directory: /lufo_RD/
+      directory: /lufo2024_RD/
       container_name: tiles
   
   lufo_wm_cache:
@@ -75,7 +75,7 @@ caches:
     format: image/jpeg
     cache:
       type: azureblob
-      directory: /lufo_WM/
+      directory: /lufo2024_WM/
       container_name: tiles
 
 sources:
@@ -106,12 +106,13 @@ sources:
     seed_only: true
     concurrent_requests: 10
 
-# Example to tile locally with the MAPSERVER_URL_REPLACE docker also running:
+# run in container instances with explicit jaar like ./tiled/lufo2024:
+# 
   lufo_wms:
     type: wms
     req:
-      url: https://MAPSERVER_URL_REPLACE/maps/lufo
-      layers: lufo-TILE
+      url: https://MAPSERVER_URL_REPLACE/tiled/lufo2024
+      #layers: lufo-TILE
     seed_only: true
     concurrent_requests: 10
 
