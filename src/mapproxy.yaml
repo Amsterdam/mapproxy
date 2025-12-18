@@ -202,7 +202,7 @@ layers:
       abstract: "Luchtfoto's van 2003 van het grondgebied van de gemeente Amsterdam"
   - name: lufo_wm
     title: Luchtfoto's (Web Mercator)
-    sources: [lufo2024_wm_tiles]
+    sources: [lufo2023_wm_tiles]
     md:
       abstract: "Luchtfoto's van 2023 van het grondgebied van de gemeente Amsterdam"
   - name: infrarood2023
