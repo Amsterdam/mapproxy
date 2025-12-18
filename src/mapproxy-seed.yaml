@@ -111,8 +111,8 @@ sources:
   lufo_wms:
     type: wms
     req:
-      url: https://MAPSERVER_URL_REPLACE/lufo2024
-      layers: lufo-TILE
+      url: https://MAPSERVER_URL_REPLACE/maps/lufo2024
+      layers: lufo2024
     seed_only: true
     concurrent_requests: 10
 
