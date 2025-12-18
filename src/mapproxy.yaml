@@ -87,9 +87,9 @@ layers:
     sources: [topo_wm_zw_tiles]
   - name: lufo_rd
     title: Luchtfoto's (Rijksdriehoeksstelsel)
-    sources: [lufo2024_rd_tiles]
+    sources: [lufo2023_rd_tiles]
     md:
-      abstract: "Luchtfoto's van 2024 van het grondgebied van de gemeente Amsterdam"
+      abstract: "Luchtfoto's van 2023 van het grondgebied van de gemeente Amsterdam"
   - name: lufo2024
     title: Luchtfoto's 2024 (Rijksdriehoeksstelsel)
     sources: [lufo2024_rd_tiles]
