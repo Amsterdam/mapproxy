@@ -66,7 +66,7 @@ caches:
     format: image/jpeg
     cache:
       type: azureblob
-      directory: /lufo2024_RD/
+      directory: /lufo2025_RD/ # dir naam in de container
       container_name: tiles
   
   lufo_wm_cache:
@@ -75,7 +75,7 @@ caches:
     format: image/jpeg
     cache:
       type: azureblob
-      directory: /lufo2024_WM/
+      directory: /lufo2025_WM/
       container_name: tiles
 
 sources:
@@ -111,8 +111,8 @@ sources:
   lufo_wms:
     type: wms
     req:
-      url: https://MAPSERVER_URL_REPLACE/maps/lufo2024
-      layers: lufo2024
+      url: https://MAPSERVER_URL_REPLACE/maps/lufo2025
+      layers: lufo2025
     seed_only: true
     concurrent_requests: 10
 
