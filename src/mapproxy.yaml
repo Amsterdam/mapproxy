@@ -279,6 +279,12 @@ caches:
     disable_storage: true
 
 ### Luchtfoto's (RD)
+  lufo2025_rd_tiles:
+    grids: [nl_grid]
+    sources: [luchtfoto2025_rd_tiles]
+    format: image/jpeg
+    disable_storage: true
+
   lufo2024_rd_tiles:
     grids: [nl_grid]
     sources: [luchtfoto2024_rd_tiles]
@@ -412,6 +418,12 @@ caches:
 
 ### Luchtfoto's (WM)
 
+  lufo2025_wm_tiles:
+    grids: [webmercator]
+    sources: [luchtfoto2025_wm_tiles]
+    format: image/jpeg
+    disable_storage: true
+
   lufo2024_wm_tiles:
     grids: [webmercator]
     sources: [luchtfoto2024_wm_tiles]
@@ -492,6 +504,12 @@ sources:
     type: tile
     grid: webmercator
     url: https://OS_URL_REPLACE/topo_wm_zw/%(z)s/%(x)s/%(y)s.png
+
+# luchtfoto's van 2024 rd
+  luchtfoto2025_rd_tiles:
+    type: tile
+    grid: nl_grid
+    url: https://OS_URL_REPLACE/lufo2025_RD/%(z)s/%(x)s/%(y)s.jpeg
 
 # luchtfoto's van 2024 rd
   luchtfoto2024_rd_tiles:
@@ -624,6 +642,12 @@ sources:
     type: tile
     grid: nl_grid
     url: https://OS_URL_REPLACE/lufo2003_RD/%(z)s/%(x)s/%(y)s.jpeg
+
+# luchtfoto 2025 wm
+  luchtfoto2025_wm_tiles:
+    type: tile
+    grid: webmercator
+    url: https://OS_URL_REPLACE/lufo2025_WM/%(z)s/%(x)s/%(y)s.jpeg
 
 # luchtfoto 2024 wm
   luchtfoto2024_wm_tiles:
