@@ -40,17 +40,17 @@ RUN mapproxy-util create -t wsgi-app -f /app/mapproxy.yaml --force /app/app.py
 # COPY dockerfile_logging_snippet.py /tmp/
 # RUN cat /tmp/logging_snippet.py >> /app/app.py
 
-# RUN printf '%s\n' \
-# 'from logging.config import fileConfig' \
-# 'import os.path' \
-# 'fileConfig("/app/log.ini", {"here": os.path.dirname(__file__)})' \
-# >> /app/app.py
+RUN printf '%s\n' \
+'from logging.config import fileConfig' \
+'import os.path' \
+'fileConfig("/app/log.ini", {"here": os.path.dirname(__file__)})' \
+>> /app/app.py
 
-RUN cat >> /app/app.py <<'EOF'
-from logging.config import fileConfig
-import os.path
-fileConfig("/app/log.ini", {"here": os.path.dirname(__file__)})
-EOF
+# RUN cat >> /app/app.py <<'EOF'
+# from logging.config import fileConfig
+# import os.path
+# fileConfig("/app/log.ini", {"here": os.path.dirname(__file__)})
+# EOF
 
 USER datapunt
 
