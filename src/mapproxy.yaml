@@ -85,9 +85,10 @@ layers:
     md:
       abstract: Basiskaart Amsterdam - ZW in Web Mercator projectie
     sources: [topo_wm_zw_tiles]
+#### Luchtfoto's (RD)
   - name: lufo_rd
     title: Luchtfoto's (Rijksdriehoeksstelsel)
-    sources: [lufo2024_rd_tiles]
+    sources: [lufo2025_rd_tiles]
     md:
       abstract: "Luchtfoto's van 2024 van het grondgebied van de gemeente Amsterdam"
   - name: lufo2025
@@ -205,9 +206,10 @@ layers:
     sources: [lufo2003_rd_tiles]
     md:
       abstract: "Luchtfoto's van 2003 van het grondgebied van de gemeente Amsterdam"
+#### Luchtfoto's (WM)
   - name: lufo_wm
     title: Luchtfoto's (Web Mercator)
-    sources: [lufo2024_wm_tiles]
+    sources: [lufo2025 _wm_tiles]
     md:
       abstract: "Luchtfoto's van 2024 van het grondgebied van de gemeente Amsterdam"
   - name: lufo2025_wm
