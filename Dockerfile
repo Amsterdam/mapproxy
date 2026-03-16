@@ -9,7 +9,7 @@ ARG EXTRA_ARG2
 
 # Acceptance Tiles as default
 ENV OS_URL=${EXTRA_ARG1:-t1.acc.data.amsterdam.nl} \
-    MAPSERVER_URL=${EXTRA_ARG2/tiled:-map.data.amsterdam.nl/tiled}
+    MAPSERVER_URL=${EXTRA_ARG2:-map.data.amsterdam.nl}
 
 RUN adduser --system --uid 999 --group datapunt
 RUN groupmod -o -g 999 datapunt
