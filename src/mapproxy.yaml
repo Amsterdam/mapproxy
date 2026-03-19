@@ -90,7 +90,7 @@ layers:
     title: Luchtfoto's (Rijksdriehoeksstelsel)
     sources: [lufo2025_rd_tiles]
     md:
-      abstract: "Luchtfoto's van 2024 van het grondgebied van de gemeente Amsterdam"
+      abstract: "Luchtfoto's van 2025 van het grondgebied van de gemeente Amsterdam"
   - name: lufo2025
     title: Luchtfoto's 2025 (Rijksdriehoeksstelsel)
     sources: [lufo2025_rd_tiles]
@@ -209,9 +209,9 @@ layers:
 #### Luchtfoto's (WM)
   - name: lufo_wm
     title: Luchtfoto's (Web Mercator)
-    sources: [lufo2025 _wm_tiles]
+    sources: [lufo2025_wm_tiles]
     md:
-      abstract: "Luchtfoto's van 2024 van het grondgebied van de gemeente Amsterdam"
+      abstract: "Luchtfoto's van 2025 van het grondgebied van de gemeente Amsterdam"
   - name: lufo2025_wm
     title: Luchtfoto's (Web Mercator)
     sources: [lufo2025_wm_tiles]
