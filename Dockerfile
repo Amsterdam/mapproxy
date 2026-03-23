@@ -1,4 +1,4 @@
-FROM python:3.11-trixie
+FROM python:3.14-trixie
 LABEL maintainer="datapunt@amsterdam.nl"
 
 EXPOSE 8000
