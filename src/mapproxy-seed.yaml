@@ -78,6 +78,25 @@ caches:
       directory: /lufo2025_WM/
       container_name: tiles
 
+  # 
+  lufo2024_rd_cache:
+    grids: [nl_grid]
+    sources: [lufo_wms]
+    format: image/jpeg
+    cache:
+      type: azureblob
+      directory: /lufo2024_RD/ # dir naam in de container
+      container_name: luchtfoto
+  
+  lufo2024_wm_cache:
+    grids: [webmercator]
+    sources: [lufo_wms]
+    format: image/jpeg
+    cache:
+      type: azureblob
+      directory: /lufo2024_WM/
+      container_name: luchtfoto
+
 sources:
 # basiskaart standaard kleur
   topografie:
@@ -113,6 +132,14 @@ sources:
     req:
       url: https://MAPSERVER_URL_REPLACE/maps/lufo2025
       layers: lufo2025
+    seed_only: true
+    concurrent_requests: 10
+
+  lufo2024_wms:
+    type: wms
+    req:
+      url: https://MAPSERVER_URL_REPLACE/maps/lufo2024
+      layers: lufo2024
     seed_only: true
     concurrent_requests: 10
 

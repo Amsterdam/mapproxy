@@ -116,6 +116,22 @@ seeds:
     levels:
       from: 11
       to: 21
+  
+  lufo2024_rd:
+    caches: [lufo2024_rd_cache]
+    grids: [nl_grid]
+    coverages: ['lufo']
+    levels:
+      from: 5
+      to: 16
+
+  lufo2024_wm:
+    caches: [lufo2024_wm_cache]
+    grids: [webmercator]
+    coverages: ['lufo']
+    levels:
+      from: 11
+      to: 21
 
 coverages:
   kbk:
