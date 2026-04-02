@@ -67,7 +67,7 @@ caches:
     cache:
       type: azureblob
       directory: /lufo2025_RD/ # dir naam in de container
-      container_name: tiles
+      container_name: lufo
   
   lufo_wm_cache:
     grids: [webmercator]
@@ -76,26 +76,26 @@ caches:
     cache:
       type: azureblob
       directory: /lufo2025_WM/
-      container_name: tiles
+      container_name: lufo
 
   # 
   lufo2024_rd_cache:
     grids: [nl_grid]
-    sources: [lufo_wms]
+    sources: [lufo2024_wms]
     format: image/jpeg
     cache:
       type: azureblob
       directory: /lufo2024_RD/ # dir naam in de container
-      container_name: luchtfoto
+      container_name: lufo
   
   lufo2024_wm_cache:
     grids: [webmercator]
-    sources: [lufo_wms]
+    sources: [lufo2024_wms]
     format: image/jpeg
     cache:
       type: azureblob
       directory: /lufo2024_WM/
-      container_name: luchtfoto
+      container_name: lufo
 
 sources:
 # basiskaart standaard kleur
