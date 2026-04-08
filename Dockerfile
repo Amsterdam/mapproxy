@@ -14,7 +14,9 @@ ENV OS_URL=${EXTRA_ARG1:-t1.acc.data.amsterdam.nl} \
 RUN adduser --system --uid 999 --group datapunt
 RUN groupmod -o -g 999 datapunt
 
-# WORKDIR /app
+
+RUN mkdir -p /app && chown datapunt:datapunt /app <=== DEZE LINE IS DE FIX
+WORKDIR /app
 
 COPY requirements.txt /app/
 RUN pip install -r requirements.txt
