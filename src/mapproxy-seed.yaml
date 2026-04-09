@@ -67,7 +67,7 @@ caches:
     cache:
       type: azureblob
       directory: /lufo2025_RD/ # dir naam in de container
-      container_name: lufo
+      container_name: lufo # new dir name for lufo's
   
   lufo_wm_cache:
     grids: [webmercator]
