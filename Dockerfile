@@ -18,6 +18,9 @@ RUN groupmod -o -g 999 datapunt
 RUN mkdir -p /app && chown datapunt:datapunt /app
 WORKDIR /app
 
+RUN mkdir -p /app && chown datapunt:datapunt /tmp
+WORKDIR /tmp
+
 COPY requirements.txt /app/
 RUN pip install -r requirements.txt
 
