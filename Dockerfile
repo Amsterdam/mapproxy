@@ -14,7 +14,7 @@ ENV OS_URL=${EXTRA_ARG1:-t1.acc.data.amsterdam.nl} \
 RUN adduser --system --uid 999 --group datapunt
 RUN groupmod -o -g 999 datapunt
 
-
+RUN mkdir -p /tmp && chown datapunt:datapunt /tmp
 RUN mkdir -p /app && chown datapunt:datapunt /app
 WORKDIR /app
 
