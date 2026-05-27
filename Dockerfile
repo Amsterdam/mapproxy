@@ -1,4 +1,4 @@
-FROM python:3.11-trixie
+FROM python:3.14-trixie
 LABEL maintainer="datapunt@amsterdam.nl"
 
 EXPOSE 8000
@@ -26,7 +26,7 @@ COPY --chown=datapunt:datapunt src/ /app/
 RUN if [ -n "$MAPSERVER_URL" ] ; then sed -i 's#MAPSERVER_URL_REPLACE#'"$MAPSERVER_URL"'#g' /app/mapproxy-seed.yaml; fi && \
     if [ -n "$OS_URL" ]; then sed -i "s#OS_URL_REPLACE#${OS_URL}#g" /app/mapproxy.yaml ; fi
 
-COPY log.ini /app/log.ini 
+COPY log.ini /app/log.ini
 
 RUN pip install MapProxy==3.1.1
 RUN mapproxy-util create -t wsgi-app -f /app/mapproxy.yaml --force /app/app.py
