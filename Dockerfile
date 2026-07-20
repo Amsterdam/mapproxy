@@ -29,11 +29,19 @@ RUN if [ -n "$MAPSERVER_URL" ] ; then sed -i 's#MAPSERVER_URL_REPLACE#'"$MAPSERV
 COPY log.ini /app/log.ini
 
 RUN pip install MapProxy==3.1.1
+RUN pip install appinsights
 RUN mapproxy-util create -t wsgi-app -f /app/mapproxy.yaml --force /app/app.py
 RUN printf '%s\n' \
 'from logging.config import fileConfig' \
-'import os.path' \
+'from applicationinsights.requests import WSGIApplication' \
+'import os' \
 'fileConfig("/app/log.ini", {"here": os.path.dirname(__file__)})' \
+'APPLICATIONINSIGHTS_INSTRUMENTATION_KEY = os.getenv("APPLICATIONINSIGHTS_INSTRUMENTATION_KEY", "")' \
+'common_properties = { ' \
+'    "service": "MapProxy",' \
+'}' \
+'if APPLICATIONINSIGHTS_INSTRUMENTATION_KEY:' \
+'    application = WSGIApplication(APPLICATIONINSIGHTS_INSTRUMENTATION_KEY, application, common_properties=common_properties)' \
 >> /app/app.py
 
 USER datapunt
