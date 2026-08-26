@@ -23,7 +23,7 @@ services:
     srs: ['EPSG:3857','EPSG:28992', 'EPSG:900913']
   wmts:
     restful: true  #
-    kvp: false # zet op false als je alleen REST wilt
+    kvp: true # zet op false als je alleen REST wilt
     restful_template: '/1.0.0/{Layer}-{TileMatrixSet}/{TileMatrix}-{TileCol}-{TileRow}/tile'
     # or restful_featureinfo_template
     restful_fi_template: '/1.0.0/{Layer}-{TileMatrixSet}/{TileMatrix}-{TileCol}-{TileRow}/{I}-{J}/{InfoFormat}'
