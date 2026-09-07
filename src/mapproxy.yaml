@@ -22,14 +22,15 @@ services:
       fees: 'none'
     srs: ['EPSG:3857','EPSG:28992', 'EPSG:900913']
   wmts:
-    restful: true  # dit zet de rest api aan
+    # revoked api support due to mapserver issues
     kvp: true # zet op false als je alleen REST wilt
-    restful_template: '/1.0.0/{Layer}-{TileMatrixSet}/{TileMatrix}-{TileCol}-{TileRow}/tile'
+    #restful: true  # dit zet de rest api aan
+    #restful_template: '/1.0.0/{Layer}-{TileMatrixSet}/{TileMatrix}-{TileCol}-{TileRow}/tile'
     # or restful_featureinfo_template
-    restful_fi_template: '/1.0.0/{Layer}-{TileMatrixSet}/{TileMatrix}-{TileCol}-{TileRow}/{I}-{J}/{InfoFormat}'
-    featureinfo_formats:
-      - mimetype: text/html
-        suffix: html
+    #restful_fi_template: '/1.0.0/{Layer}-{TileMatrixSet}/{TileMatrix}-{TileCol}-{TileRow}/{I}-{J}/{InfoFormat}'
+    #featureinfo_formats:
+    #  - mimetype: text/html
+    #    suffix: html
     
     md:
       # metadata used in capabilities documents
