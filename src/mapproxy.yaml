@@ -1,5 +1,5 @@
 services:
-  demo:
+  demo: # if necessary, turn off for production
   wms:
     md:
       # metadata used in capabilities documents
@@ -20,17 +20,26 @@ services:
         email: data-helpdesk@amsterdam.nl
       access_constraints: 'none'
       fees: 'none'
-    srs: ['EPSG:3857','EPSG:28992', 'EPSG:900913']
+    srs: ['EPSG:3857','EPSG:28992'] # removed google mercator: 'EPSG:900913'
   wmts:
-    # revoked api support due to mapserver issues
     kvp: true # zet op false als je alleen REST wilt
-    #restful: true  # dit zet de rest api aan
-    #restful_template: '/1.0.0/{Layer}-{TileMatrixSet}/{TileMatrix}-{TileCol}-{TileRow}/tile'
-    # or restful_featureinfo_template
-    #restful_fi_template: '/1.0.0/{Layer}-{TileMatrixSet}/{TileMatrix}-{TileCol}-{TileRow}/{I}-{J}/{InfoFormat}'
-    #featureinfo_formats:
-    #  - mimetype: text/html
-    #    suffix: html
+    restful: true  # dit zet de rest api aan    
+    restful_template:
+        '/1.0.0/{Layer}-{TileMatrixSet}/{TileMatrix}-{TileCol}-{TileRow}/tile'
+        #TileMatrixSet is the grid name
+        #TileMatrix is the zoom level
+        #TileCol and TileRow are the x and y of the tile
+    restful_featureinfo_template:
+        '/1.0.0/{Layer}-{TileMatrixSet}/{TileMatrix}-{TileCol}-{TileRow}/{I}-{J}/{InfoFormat}'
+      #InfoFormat is the suffix of the requested feature info format.
+      #I and J are pixel column and row of the requested feature.      
+
+    # You need to enable wms_opts.featureinfo for each queryable source.
+    # featureinfo_formats:
+    #   - mimetype: application/gml+xml; version=3.1
+    #     suffix: gml
+    #   - mimetype: text/html
+    #     suffix: html
     
     md:
       # metadata used in capabilities documents
@@ -51,6 +60,26 @@ services:
         email: data-helpdesk@amsterdam.nl
       access_constraints: 'none'
       fees: 'none'
+
+  ogcapi:
+    # OGC API - Tiles, bereikbaar onder /ogcapi (vereist MapProxy >= 7.0)
+    # elke grid uit 'grids' wordt een tileMatrixSet met zijn eigen naam
+    # voor nu lijkt het erop dat alleen tileMatrix "WebmercatorQuad" gebruikt kan worden
+    enable_tiles: true
+    enable_maps: false # alleen tiles; zet op true voor OGC API - Maps
+    md:
+      # metadata used in landing page / collections documents
+      identification:
+        title: Data en Informatie Amsterdam
+        description: Map tile service Gemeente Amsterdam
+        url: https://data.amsterdam.nl/
+      contact:
+        name: Gemeente Amsterdam
+        email: data-helpdesk@amsterdam.nl
+        city: Amsterdam
+        stateorprovince: North-Holland
+        country: Netherlands
+
 
 layers:
   - name: topografie
@@ -93,7 +122,9 @@ layers:
     md:
       abstract: Basiskaart Amsterdam - ZW in Web Mercator projectie
     sources: [topo_wm_zw_tiles]
+
 #### Luchtfoto's (RD)
+
   - name: lufo_rd
     title: Luchtfoto's (Rijksdriehoeksstelsel)
     sources: [lufo2025_rd_tiles]
