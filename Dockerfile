@@ -28,7 +28,7 @@ RUN if [ -n "$MAPSERVER_URL" ] ; then sed -i 's#MAPSERVER_URL_REPLACE#'"$MAPSERV
 
 COPY log.ini /app/log.ini
 
-RUN pip install MapProxy==3.1.1
+RUN pip install MapProxy==7.0.0 # mapproxy>7 --> ogcapi support
 RUN pip install appinsights
 RUN mapproxy-util create -t wsgi-app -f /app/mapproxy.yaml --force /app/app.py
 RUN printf '%s\n' \
