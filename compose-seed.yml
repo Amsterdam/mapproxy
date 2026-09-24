@@ -4,7 +4,7 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        MAPSERVER_URL: "${MAPSERVER_URL:-map.data-t.azure.amsterdam.nl/tiled}"
+        EXTRA_ARG2: "${MAPSERVER_URL:-map.data-o.azure.amsterdam.nl/tiled}"
     command: >
       mapproxy-seed -c 1 -s /app/seed.yaml -f /app/mapproxy-seed.yaml --seed=topo_rd_kbk,topo_rd_bgt
     environment:
@@ -15,7 +15,7 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        MAPSERVER_URL: "${MAPSERVER_URL:-map.data-t.azure.amsterdam.nl/tiled}"
+        EXTRA_ARG2: "${MAPSERVER_URL:-map.data-o.azure.amsterdam.nl/tiled}"
     command: >
       mapproxy-seed -c 1 -s /app/seed.yaml -f /app/mapproxy-seed.yaml --seed=topo_rd_light_kbk,topo_rd_light_bgt
     environment:
@@ -26,9 +26,9 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        MAPSERVER_URL: "${MAPSERVER_URL:-map.data-t.azure.amsterdam.nl/tiled}"
+        EXTRA_ARG2: "${MAPSERVER_URL:-map.data-o.azure.amsterdam.nl/tiled}"
     command: >
-      mapproxy-seed -1 2 -s /app/seed.yaml -f /app/mapproxy-seed.yaml --seed=topo_rd_zw_kbk,topo_rd_zw_bgt
+      mapproxy-seed -c 1 -s /app/seed.yaml -f /app/mapproxy-seed.yaml --seed=topo_rd_zw_kbk,topo_rd_zw_bgt
     environment:
       AZURE_STORAGE_CONNECTION_STRING: "${AZURE_STORAGE_CONNECTION_STRING}"
 
@@ -37,7 +37,7 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        MAPSERVER_URL: "${MAPSERVER_URL:-map.data-t.azure.amsterdam.nl/tiled}"
+        EXTRA_ARG2: "${MAPSERVER_URL:-map.data-o.azure.amsterdam.nl/tiled}"
     command: >
       mapproxy-seed -c 1 -s /app/seed.yaml -f /app/mapproxy-seed.yaml --seed=topo_wm_kbk,topo_wm_bgt
     environment:
@@ -48,7 +48,7 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        MAPSERVER_URL: "${MAPSERVER_URL:-map.data-t.azure.amsterdam.nl/tiled}"
+        EXTRA_ARG2: "${MAPSERVER_URL:-map.data-o.azure.amsterdam.nl/tiled}"
     command: >
       mapproxy-seed -c 1 -s /app/seed.yaml -f /app/mapproxy-seed.yaml --seed=topo_wm_light_kbk,topo_wm_light_bgt
     environment:
@@ -59,7 +59,7 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        MAPSERVER_URL: "${MAPSERVER_URL:-map.data-t.azure.amsterdam.nl/tiled}"
+        EXTRA_ARG2: "${MAPSERVER_URL:-map.data-o.azure.amsterdam.nl/tiled}"
     command: >
       mapproxy-seed -c 1 -s /app/seed.yaml -f /app/mapproxy-seed.yaml --seed=topo_wm_zw_kbk,topo_wm_zw_bgt
     environment:
@@ -70,7 +70,7 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        MAPSERVER_URL: "${MAPSERVER_URL:-map.data-t.azure.amsterdam.nl/tiled}"
+        EXTRA_ARG2: "${MAPSERVER_URL:-map.data-o.azure.amsterdam.nl/tiled}"
     user: root
     command: >
       mapproxy-seed -c 1 -s /app/seed.yaml -f /app/mapproxy-seed.yaml --seed=lufo_rd
@@ -82,7 +82,7 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        MAPSERVER_URL: "${MAPSERVER_URL:-map.data-t.azure.amsterdam.nl/tiled}"
+        EXTRA_ARG2: "${MAPSERVER_URL:-map.data-o.azure.amsterdam.nl/tiled}"
     user: root
     command: >
       mapproxy-seed -c 1 -s /app/seed.yaml -f /app/mapproxy-seed.yaml --seed=lufo_wm
