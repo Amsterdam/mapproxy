@@ -1,6 +1,10 @@
 services:
   mapproxy:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        MAPSERVER_URL: "map.data-o.azure.amsterdam.nl/tiled" # dev mapserver; prd uses the Dockerfile default
     ports:
       - "8000:8000"
     environment:
@@ -8,5 +12,4 @@ services:
       UWSGI_MASTER: 1
       UWSGI_PROCESSES: 4
       OS_URL: "${OS_URL:-t1.acc.data.amsterdam.nl}" # Acceptance Tiles as default
-      MAPSERVER_URL: "${MAPSERVER_URL:-map.data-o.azure.amsterdam.nl}"
       APPLICATIONINSIGHTS_INSTRUMENTATION_KEY: ""

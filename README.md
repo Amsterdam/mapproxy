@@ -24,10 +24,14 @@ This will spawn a MapProxy container that serves WMTS and WMS services from the 
 To fill the Azure Blob store container with new tiles, run this (Linux):
 
 ```bash
-    export MAPSERVER_URL=mapserver_instance_for_reference_map
     export AZURE_STORAGE_CONNECTION_STRING=DefaultEndpointsProtocol=https;AccountName=my-storage-account;AccountKey=my-key
     ./start_tiles {rd|rd_light|rd_zw|rd_lufo|wm|wm_light|wm_zw|wm_lufo}
 ```
+
+The `MAPSERVER_URL_REPLACE` placeholder in `mapproxy-seed.yaml` is filled at build time from the `MAPSERVER_URL` build arg (`EXTRA_ARG2` also works, for the k8s pipeline):
+
+* dev (`compose.yml`, `compose-seed.yml`): `map.data-o.azure.amsterdam.nl/tiled`
+* prd (no build arg): the Dockerfile default `map.data.amsterdam.nl/tiled`
 
 ## Support
 
