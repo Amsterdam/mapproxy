@@ -3,13 +3,15 @@ LABEL maintainer="datapunt@amsterdam.nl"
 
 EXPOSE 8000
 
-# build-time inputs
+# build-time inputs (EXTRA_ARG* are what the k8s pipeline passes)
 ARG EXTRA_ARG1
 ARG EXTRA_ARG2
+# mapserver to seed from; defaults to prd
+ARG MAPSERVER_URL=${EXTRA_ARG2:-map.data.amsterdam.nl/tiled}
 
 # Acceptance Tiles as default
 ENV OS_URL=${EXTRA_ARG1:-t1.acc.data.amsterdam.nl} \
-    MAPSERVER_URL=${EXTRA_ARG2:-map.data.amsterdam.nl}
+    MAPSERVER_URL=${MAPSERVER_URL}
 
 RUN adduser --system --uid 999 --group datapunt
 RUN groupmod -o -g 999 datapunt

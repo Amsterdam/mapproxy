@@ -5,7 +5,7 @@ seeds:
     grids: [nl_grid]
     coverages: ['kbk']
     levels:
-      from: 5
+      from: 6
       to: 11
 
   topo_rd_bgt:
@@ -22,7 +22,7 @@ seeds:
     grids: [nl_grid]
     coverages: ['kbk']
     levels:
-      from: 5
+      from: 6
       to: 11
 
   topo_rd_light_bgt:
@@ -39,7 +39,7 @@ seeds:
     grids: [nl_grid]
     coverages: ['kbk']
     levels:
-      from: 5
+      from: 6
       to: 11
 
   topo_rd_zw_bgt:
@@ -135,7 +135,7 @@ seeds:
 
 coverages:
   kbk:
-    bbox: [94100,464250,170000,514160]
+    bbox: [90000,464250,175000,520000]
     srs: 'EPSG:28992'
   bgt:
     bbox: [104000,474000,136000,502100]
