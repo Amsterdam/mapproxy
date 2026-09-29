@@ -6,8 +6,8 @@ EXPOSE 8000
 # build-time inputs (EXTRA_ARG* are what the k8s pipeline passes)
 ARG EXTRA_ARG1
 ARG EXTRA_ARG2
-# mapserver base url (with scheme, without /tiled) to seed from; defaults to prd.
-# the k8s pipeline passes its MAP_URL as EXTRA_ARG2
+# mapserver to seed from; defaults to prd. the k8s pipeline passes it as EXTRA_ARG2,
+# in different formats per env (https://host or host/tiled): normalized below to https://host
 ARG MAPSERVER_URL=${EXTRA_ARG2:-https://map.data.amsterdam.nl}
 
 # Acceptance Tiles as default
@@ -26,7 +26,10 @@ RUN pip install -r requirements.txt
 
 COPY --chown=datapunt:datapunt src/ /app/
 
-RUN if [ -n "$MAPSERVER_URL" ] ; then sed -i 's#MAPSERVER_URL_REPLACE#'"$MAPSERVER_URL"'#g' /app/mapproxy-seed.yaml; fi && \
+RUN if [ -n "$MAPSERVER_URL" ] ; then \
+        url="${MAPSERVER_URL%/}"; url="${url%/tiled}"; \
+        case "$url" in http://*|https://*) ;; *) url="https://$url" ;; esac; \
+        sed -i 's#MAPSERVER_URL_REPLACE#'"$url"'#g' /app/mapproxy-seed.yaml; fi && \
     if [ -n "$OS_URL" ]; then sed -i "s#OS_URL_REPLACE#${OS_URL}#g" /app/mapproxy.yaml ; fi
 
 COPY log.ini /app/log.ini

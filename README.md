@@ -28,7 +28,7 @@ To fill the Azure Blob store container with new tiles, run this (Linux):
     ./start_tiles {rd|rd_light|rd_zw|rd_lufo|wm|wm_light|wm_zw|wm_lufo}
 ```
 
-The `MAPSERVER_URL_REPLACE` placeholder in `mapproxy-seed.yaml` is filled at build time from the `MAPSERVER_URL` build arg (the k8s pipeline passes its `MAP_URL` as `EXTRA_ARG2`). It is the mapserver base url with scheme; `/tiled/maps/...` is added in `mapproxy-seed.yaml`:
+The `MAPSERVER_URL_REPLACE` placeholder in `mapproxy-seed.yaml` is filled at build time from the `MAPSERVER_URL` build arg (the k8s pipeline passes its `MAP_URL` as `EXTRA_ARG2`). It is the mapserver base url; `https://host`, `host` and `host/tiled` all work (the Dockerfile normalizes to `https://host`) and `/tiled/maps/...` is added in `mapproxy-seed.yaml`:
 
 * dev (`compose.yml`, `compose-seed.yml`): `https://map.data-o.azure.amsterdam.nl`
 * prd (no build arg): the Dockerfile default `https://map.data.amsterdam.nl`
