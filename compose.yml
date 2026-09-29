@@ -4,7 +4,7 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        MAPSERVER_URL: "map.data-o.azure.amsterdam.nl/tiled" # dev mapserver; prd uses the Dockerfile default
+        MAPSERVER_URL: "https://map.data-o.azure.amsterdam.nl" # dev mapserver; prd uses the Dockerfile default
     ports:
       - "8000:8000"
     environment:

@@ -102,7 +102,7 @@ sources:
   topografie:
     type: wms
     req:
-      url: https://MAPSERVER_URL_REPLACE/maps/topografie
+      url: MAPSERVER_URL_REPLACE/tiled/maps/topografie
       layers: basiskaart
     seed_only: true
     concurrent_requests: 10
@@ -111,7 +111,7 @@ sources:
   topografie_light:
     type: wms
     req:
-      url: https://MAPSERVER_URL_REPLACE/maps/topografie
+      url: MAPSERVER_URL_REPLACE/tiled/maps/topografie
       layers: basiskaart-light
     seed_only: true
     concurrent_requests: 10
@@ -120,7 +120,7 @@ sources:
   topografie_zw:
     type: wms
     req:
-      url: https://MAPSERVER_URL_REPLACE/maps/topografie
+      url: MAPSERVER_URL_REPLACE/tiled/maps/topografie
       layers: basiskaart-zwartwit
     seed_only: true
     concurrent_requests: 10
@@ -130,7 +130,7 @@ sources:
   lufo_wms:
     type: wms
     req:
-      url: https://MAPSERVER_URL_REPLACE/maps/lufo2025
+      url: MAPSERVER_URL_REPLACE/tiled/maps/lufo2025
       layers: lufo2025
     seed_only: true
     concurrent_requests: 10
@@ -138,7 +138,7 @@ sources:
   lufo2024_wms:
     type: wms
     req:
-      url: https://MAPSERVER_URL_REPLACE/maps/lufo2024
+      url: MAPSERVER_URL_REPLACE/tiled/maps/lufo2024
       layers: lufo2024
     seed_only: true
     concurrent_requests: 10
