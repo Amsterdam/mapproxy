@@ -162,7 +162,7 @@ globals:
     lock_dir: '/app'
     tile_lock_dir: '/app'
     meta_size: [4, 4]
-    meta_buffer: 254
+    meta_buffer: 128 #was:254 roughly 15–40% faster depending on the level, check labels on overlapping tiles
   http:
     ssl_no_cert_checks: True
     client_timeout: 600
