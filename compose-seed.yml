@@ -3,8 +3,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      args:
-        MAPSERVER_URL: "https://map.data-o.azure.amsterdam.nl"
     command: >
       mapproxy-seed -c 2 -s /app/seed.yaml -f /app/mapproxy-seed.yaml --log-config /app/log.ini --seed=topo_rd_kbk,topo_rd_bgt
     environment:
@@ -14,8 +12,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      args:
-        MAPSERVER_URL: "https://map.data-o.azure.amsterdam.nl"
     command: >
       mapproxy-seed -c 2 -s /app/seed.yaml -f /app/mapproxy-seed.yaml --log-config /app/log.ini --seed=topo_rd_light_kbk,topo_rd_light_bgt
     environment:
@@ -25,8 +21,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      args:
-        MAPSERVER_URL: "https://map.data-o.azure.amsterdam.nl"
     command: >
       mapproxy-seed -c 2 -s /app/seed.yaml -f /app/mapproxy-seed.yaml --log-config /app/log.ini --seed=topo_rd_zw_kbk,topo_rd_zw_bgt
     environment:
@@ -36,8 +30,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      args:
-        MAPSERVER_URL: "https://map.data-o.azure.amsterdam.nl"
     command: >
       mapproxy-seed -c 2 -s /app/seed.yaml -f /app/mapproxy-seed.yaml --log-config /app/log.ini --seed=topo_wm_kbk,topo_wm_bgt
     environment:
@@ -47,8 +39,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      args:
-        MAPSERVER_URL: "https://map.data-o.azure.amsterdam.nl"
     command: >
       mapproxy-seed -c 2 -s /app/seed.yaml -f /app/mapproxy-seed.yaml --log-config /app/log.ini --seed=topo_wm_light_kbk,topo_wm_light_bgt
     environment:
@@ -58,8 +48,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      args:
-        MAPSERVER_URL: "https://map.data-o.azure.amsterdam.nl"
     command: >
       mapproxy-seed -c 2 -s /app/seed.yaml -f /app/mapproxy-seed.yaml --log-config /app/log.ini --seed=topo_wm_zw_kbk,topo_wm_zw_bgt
     environment:
@@ -69,8 +57,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      args:
-        MAPSERVER_URL: "https://map.data-o.azure.amsterdam.nl"
     user: root
     command: >
       mapproxy-seed -c 2 -s /app/seed.yaml -f /app/mapproxy-seed.yaml --log-config /app/log.ini --seed=lufo_rd
@@ -81,8 +67,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      args:
-        MAPSERVER_URL: "https://map.data-o.azure.amsterdam.nl"
     user: root
     command: >
       mapproxy-seed -c 2 -s /app/seed.yaml -f /app/mapproxy-seed.yaml --log-config /app/log.ini --seed=lufo_wm

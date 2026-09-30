@@ -1,10 +1,6 @@
 services:
   mapproxy:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      args:
-        MAPSERVER_URL: "https://map.data-o.azure.amsterdam.nl" # dev mapserver; prd uses the Dockerfile default
+    build: .
     ports:
       - "8000:8000"
     environment:
