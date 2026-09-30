@@ -6,8 +6,9 @@ EXPOSE 8000
 # build-time inputs (EXTRA_ARG* are what the k8s pipeline passes)
 ARG EXTRA_ARG1
 ARG EXTRA_ARG2
-# mapserver to seed from; defaults to prd. the k8s pipeline passes it as EXTRA_ARG2,
-# in different formats per env (https://host or host/tiled): normalized below to https://host
+# mapserver to seed from; defaults to prd. the k8s pipeline passes its MAPS_URL as EXTRA_ARG2
+# (a bare host, e.g. map.data-t.azure.amsterdam.nl); https://host and host/tiled also work,
+# all are normalized below to https://host
 ARG MAPSERVER_URL=${EXTRA_ARG2:-https://map.data.amsterdam.nl}
 
 # Acceptance Tiles as default
