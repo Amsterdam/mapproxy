@@ -5,12 +5,13 @@ EXPOSE 8000
 
 # build-time inputs (EXTRA_ARG* are what the k8s pipeline passes)
 ARG EXTRA_ARG1
-# EXTRA_ARG2 is the env's own mapserver (pipeline MAPS_URL); deliberately not used for seeding
+# EXTRA_ARG2 is the env's own mapserver (pipeline MAPS_URL, a bare host)
 ARG EXTRA_ARG2
-# mapserver to seed from: always the o mapserver, in every env (test's mapserver has no data).
+# mapserver to seed from: the env's own mapserver (EXTRA_ARG2), so prd seeds from prd.
+# falls back to the o mapserver when EXTRA_ARG2 is unset, and for test (its mapserver has no data).
 # override with --build-arg MAPSERVER_URL=...; https://host, host and host/tiled all work,
 # all are normalized below to https://host
-ARG MAPSERVER_URL=https://map.data-o.azure.amsterdam.nl
+ARG MAPSERVER_URL=${EXTRA_ARG2:-https://map.data-o.azure.amsterdam.nl}
 
 # Acceptance Tiles as default
 ENV OS_URL=${EXTRA_ARG1:-t1.acc.data.amsterdam.nl} \
@@ -31,6 +32,7 @@ COPY --chown=datapunt:datapunt src/ /app/
 RUN if [ -n "$MAPSERVER_URL" ] ; then \
         url="${MAPSERVER_URL%/}"; url="${url%/tiled}"; \
         case "$url" in http://*|https://*) ;; *) url="https://$url" ;; esac; \
+        if [ "$url" = "https://map.data-t.azure.amsterdam.nl" ]; then url="https://map.data-o.azure.amsterdam.nl"; fi; \
         sed -i 's#MAPSERVER_URL_REPLACE#'"$url"'#g' /app/mapproxy-seed.yaml; fi && \
     if [ -n "$OS_URL" ]; then sed -i "s#OS_URL_REPLACE#${OS_URL}#g" /app/mapproxy.yaml ; fi
 
