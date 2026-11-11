@@ -34,5 +34,5 @@ The `MAPSERVER_URL_REPLACE` placeholder in `mapproxy-seed.yaml` is filled at bui
 
 If we need help with MapProxy, we can contact the following person:
 
-Edward Mac Gillavry
-webmapper.net
+Bastiaan du Pon
+datapunt@amsterdam.nl
