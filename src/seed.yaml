@@ -1,10 +1,11 @@
 seeds:
+# De *_kbk seeds gebruiken de *_kbk_cache (bron geclipt op de kaart-bbox); de bgt-seeds de gewone caches.
 # refresh_before: zonder dit slaat mapproxy-seed bestaande tiles over (ook witte).
 # days: 7 = alles ouder dan 7 dagen opnieuw renderen; langer dan de looptijd van de job,
 # zodat een herstarte pod de tiles van de vorige poging overslaat.
 #### TOPO RD - KBK & BGT - Standaard kleur
   topo_rd_kbk:
-    caches: [topo_rd_cache]
+    caches: [topo_rd_kbk_cache]
     grids: [nl_grid]
     coverages: ['kbk']
     levels:
@@ -25,7 +26,7 @@ seeds:
 
 #### TOPO RD - KBK & BGT - Light kleur
   topo_rd_light_kbk:
-    caches: [topo_rd_light_cache]
+    caches: [topo_rd_light_kbk_cache]
     grids: [nl_grid]
     coverages: ['kbk']
     levels:
@@ -46,7 +47,7 @@ seeds:
 
 #### TOPO RD - KBK & BGT - zwartwit
   topo_rd_zw_kbk:
-    caches: [topo_rd_zw_cache]
+    caches: [topo_rd_zw_kbk_cache]
     grids: [nl_grid]
     coverages: ['kbk']
     levels:
@@ -67,7 +68,7 @@ seeds:
 
 #### TOPO wm - KBK & BGT - Standaard kleur
   topo_wm_kbk:
-    caches: [topo_wm_cache]
+    caches: [topo_wm_kbk_cache]
     grids: [webmercator]
     coverages: ['kbk']
     levels:
@@ -88,7 +89,7 @@ seeds:
 
 #### TOPO wm - KBK & BGT - Light kleur
   topo_wm_light_kbk:
-    caches: [topo_wm_light_cache]
+    caches: [topo_wm_light_kbk_cache]
     grids: [webmercator]
     coverages: ['kbk']
     levels:
@@ -109,7 +110,7 @@ seeds:
 
 #### TOPO wm - KBK & BGT - Zwarwit
   topo_wm_zw_kbk:
-    caches: [topo_wm_zw_cache]
+    caches: [topo_wm_zw_kbk_cache]
     grids: [webmercator]
     coverages: ['kbk']
     levels:

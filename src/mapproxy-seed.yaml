@@ -1,4 +1,14 @@
 ## Configuration for seeding tiles from MAPSERVER_URL_REPLACE WMS
+# Twee soorten topo-caches op dezelfde blob-mappen:
+# - topo_*_cache      : bgt-niveaus (ingezoomd), bron zonder clip. Tiles komen ongewijzigd van MapServer.
+# - topo_*_kbk_cache  : kbk-niveaus (uitgezoomd), bron geclipt op de kaart-bbox 90000,464250,175000,520000
+#                       (coverage_kaart.geojson): buiten de bbox wit. MapProxy schrijft hele blokken van 4x4 tiles
+#                       (meta_size), dus randblokken leveren ook witte tiles buiten de bbox op.
+# De clip stuurt elke metatile door MapProxy's merge-route (hercodering, ca. 0,12 s extra per metatile); daarom
+# alleen op de kbk-caches.
+# quantizer: mediancut staat op alle topo-caches: MapProxy kwantiseert een tile opnieuw zodra hij hem hercodeert, en ook
+# zonder clip als het palet van MapServer geen 256 kleuren heeft (op RD 6-7 en WM 11-12 zijn het er 251-252). De
+# standaard (fastoctree) houdt dan ca. 35 van de 250 kleuren over; mediancut is exact en kost alleen tijd op die metatiles.
 
 caches:
 #### TOPO RD - KBK & BGT
@@ -7,6 +17,9 @@ caches:
   topo_rd_cache:
     grids: [nl_grid]
     sources: [topografie]
+    image:
+      encoding_options:
+        quantizer: mediancut
     cache:
       type: azureblob
       directory: /topo_rd/
@@ -16,6 +29,9 @@ caches:
   topo_rd_light_cache:
     grids: [nl_grid]
     sources: [topografie_light]
+    image:
+      encoding_options:
+        quantizer: mediancut
     cache:
       type: azureblob
       directory: /topo_rd_light/
@@ -25,6 +41,9 @@ caches:
   topo_rd_zw_cache:
     grids: [nl_grid]
     sources: [topografie_zw]
+    image:
+      encoding_options:
+        quantizer: mediancut
     cache:
       type: azureblob
       directory: /topo_rd_zw/
@@ -36,6 +55,9 @@ caches:
   topo_wm_cache:
     grids: [webmercator]
     sources: [topografie]
+    image:
+      encoding_options:
+        quantizer: mediancut
     cache:
       type: azureblob
       directory: /topo_wm/
@@ -45,6 +67,9 @@ caches:
   topo_wm_light_cache:
     grids: [webmercator]
     sources: [topografie_light]
+    image:
+      encoding_options:
+        quantizer: mediancut
     cache:
       type: azureblob
       directory: /topo_wm_light/
@@ -54,6 +79,76 @@ caches:
   topo_wm_zw_cache:
     grids: [webmercator]
     sources: [topografie_zw]
+    image:
+      encoding_options:
+        quantizer: mediancut
+    cache:
+      type: azureblob
+      directory: /topo_wm_zw/
+      container_name: tiles
+
+#### TOPO kbk-niveaus: zelfde blob-mappen, bron geclipt op de kaart-bbox (alleen voor de *_kbk seeds)
+  topo_rd_kbk_cache:
+    grids: [nl_grid]
+    sources: [topografie_kbk]
+    image:
+      encoding_options:
+        quantizer: mediancut
+    cache:
+      type: azureblob
+      directory: /topo_rd/
+      container_name: tiles
+
+  topo_rd_light_kbk_cache:
+    grids: [nl_grid]
+    sources: [topografie_light_kbk]
+    image:
+      encoding_options:
+        quantizer: mediancut
+    cache:
+      type: azureblob
+      directory: /topo_rd_light/
+      container_name: tiles
+
+  topo_rd_zw_kbk_cache:
+    grids: [nl_grid]
+    sources: [topografie_zw_kbk]
+    image:
+      encoding_options:
+        quantizer: mediancut
+    cache:
+      type: azureblob
+      directory: /topo_rd_zw/
+      container_name: tiles
+
+  topo_wm_kbk_cache:
+    grids: [webmercator]
+    sources: [topografie_kbk]
+    image:
+      encoding_options:
+        quantizer: mediancut
+    cache:
+      type: azureblob
+      directory: /topo_wm/
+      container_name: tiles
+
+  topo_wm_light_kbk_cache:
+    grids: [webmercator]
+    sources: [topografie_light_kbk]
+    image:
+      encoding_options:
+        quantizer: mediancut
+    cache:
+      type: azureblob
+      directory: /topo_wm_light/
+      container_name: tiles
+
+  topo_wm_zw_kbk_cache:
+    grids: [webmercator]
+    sources: [topografie_zw_kbk]
+    image:
+      encoding_options:
+        quantizer: mediancut
     cache:
       type: azureblob
       directory: /topo_wm_zw/
@@ -122,6 +217,43 @@ sources:
     req:
       url: MAPSERVER_URL_REPLACE/tiled/maps/topografie
       layers: basiskaart-zwartwit
+    seed_only: true
+    concurrent_requests: 10
+
+# dezelfde drie bronnen, geclipt op de kaart-bbox (alleen voor de kbk-caches)
+  topografie_kbk:
+    type: wms
+    req:
+      url: MAPSERVER_URL_REPLACE/tiled/maps/topografie
+      layers: basiskaart
+    coverage:
+      datasource: coverage_kaart.geojson
+      srs: 'EPSG:28992'
+      clip: true
+    seed_only: true
+    concurrent_requests: 10
+
+  topografie_light_kbk:
+    type: wms
+    req:
+      url: MAPSERVER_URL_REPLACE/tiled/maps/topografie
+      layers: basiskaart-light
+    coverage:
+      datasource: coverage_kaart.geojson
+      srs: 'EPSG:28992'
+      clip: true
+    seed_only: true
+    concurrent_requests: 10
+
+  topografie_zw_kbk:
+    type: wms
+    req:
+      url: MAPSERVER_URL_REPLACE/tiled/maps/topografie
+      layers: basiskaart-zwartwit
+    coverage:
+      datasource: coverage_kaart.geojson
+      srs: 'EPSG:28992'
+      clip: true
     seed_only: true
     concurrent_requests: 10
 
