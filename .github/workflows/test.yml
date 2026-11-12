@@ -19,6 +19,11 @@ jobs:
     - name: index page returns 200 status code
       run: |
         [[ $(curl -s -o /dev/null -w "%{http_code}" localhost:8000) == 200 ]] || exit 1;
+    - name: OGC API landing page supports HTML and JSON
+      run: |
+        [[ $(curl -s -o /dev/null -w "%{http_code}" -H 'Accept: text/html' 'http://localhost:8000/ogcapi') == 200 ]] || exit 1;
+        [[ $(curl -s -o /dev/null -w "%{http_code}" 'http://localhost:8000/ogcapi?f=html') == 200 ]] || exit 1;
+        [[ $(curl -s -o /dev/null -w "%{http_code}" 'http://localhost:8000/ogcapi?f=json') == 200 ]] || exit 1;
     - name: demo page returns 200 status code
       run: |
         [[ $(curl -s -o /dev/null -w "%{http_code}" localhost:8000/demo/) == 200 ]] || exit 1;
