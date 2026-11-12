@@ -79,6 +79,9 @@ services:
         city: Amsterdam
         stateorprovince: North-Holland
         country: Netherlands
+      license:
+        name: ""
+        url: ""
 
 
 layers:
