@@ -1,12 +1,19 @@
 ## Configuration for seeding tiles from MAPSERVER_URL_REPLACE WMS
 
 caches:
+# quantizer: mediancut op alle topo-caches. MapProxy kwantiseert een tile opnieuw als het palet van MapServer
+# geen 256 kleuren heeft (RD 6-7 en WM 11-12: 251-252). De standaard (fastoctree) houdt daar ca. 35 van de 250
+# kleuren over; mediancut is exact en kost alleen tijd op die metatiles.
+
 #### TOPO RD - KBK & BGT
 
 # Standaard kleur
   topo_rd_cache:
     grids: [nl_grid]
     sources: [topografie]
+    image:
+      encoding_options:
+        quantizer: mediancut
     cache:
       type: azureblob
       directory: /topo_rd/
@@ -16,6 +23,9 @@ caches:
   topo_rd_light_cache:
     grids: [nl_grid]
     sources: [topografie_light]
+    image:
+      encoding_options:
+        quantizer: mediancut
     cache:
       type: azureblob
       directory: /topo_rd_light/
@@ -25,6 +35,9 @@ caches:
   topo_rd_zw_cache:
     grids: [nl_grid]
     sources: [topografie_zw]
+    image:
+      encoding_options:
+        quantizer: mediancut
     cache:
       type: azureblob
       directory: /topo_rd_zw/
@@ -36,6 +49,9 @@ caches:
   topo_wm_cache:
     grids: [webmercator]
     sources: [topografie]
+    image:
+      encoding_options:
+        quantizer: mediancut
     cache:
       type: azureblob
       directory: /topo_wm/
@@ -45,6 +61,9 @@ caches:
   topo_wm_light_cache:
     grids: [webmercator]
     sources: [topografie_light]
+    image:
+      encoding_options:
+        quantizer: mediancut
     cache:
       type: azureblob
       directory: /topo_wm_light/
@@ -54,6 +73,9 @@ caches:
   topo_wm_zw_cache:
     grids: [webmercator]
     sources: [topografie_zw]
+    image:
+      encoding_options:
+        quantizer: mediancut
     cache:
       type: azureblob
       directory: /topo_wm_zw/
