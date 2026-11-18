@@ -141,7 +141,7 @@ seeds:
   lufo_wm:
     caches: [lufo_wm_cache]
     grids: [webmercator]
-    coverages: ['lufo']
+    coverages: ['lufo_wm']
     levels:
       from: 11
       to: 21
@@ -161,7 +161,7 @@ seeds:
   lufo2024_wm:
     caches: [lufo2024_wm_cache]
     grids: [webmercator]
-    coverages: ['lufo']
+    coverages: ['lufo_wm']
     levels:
       from: 11
       to: 21
@@ -175,6 +175,16 @@ coverages:
   bgt:
     bbox: [104000,474000,136000,502100]
     srs: 'EPSG:28992'
+  # Outline of the 665 COGs of 2026 (1 km squares, ortho/2026_RGB_COG in container bron on
+  # stlufoglfdpgo{ont,prd}weu01); extent [110000,476000,139000,501000], without the empty corners.
+  # Relative paths: MapProxy resolves them from the directory of mapproxy-seed.yaml (/app).
   lufo:
-    bbox: [4.72876,52.2782,5.07916,52.4311]
-    srs: 'EPSG:4326'
+    datasource: coverages/lufo_coverage_rd.geojson
+    srs: 'EPSG:28992'
+  # Same outline in the webmercator grid's own srs. MapProxy reprojects a coverage per vertex and
+  # simplifies away collinear points first, so the RD file would turn the long straight RD edges
+  # into straight 3857 lines, up to 11 m off: white tiles just outside. The RD edges are densified
+  # every 100 m before reprojecting.
+  lufo_wm:
+    datasource: coverages/lufo_coverage_wm.geojson
+    srs: 'EPSG:3857'
