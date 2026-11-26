@@ -148,6 +148,26 @@ seeds:
     refresh_before:
       days: 7
   
+  lufo2025_rd:
+    caches: [lufo2025_rd_cache]
+    grids: [nl_grid]
+    coverages: ['lufo']
+    levels:
+      from: 5
+      to: 16
+    refresh_before:
+      days: 7
+
+  lufo2025_wm:
+    caches: [lufo2025_wm_cache]
+    grids: [webmercator]
+    coverages: ['lufo_wm']
+    levels:
+      from: 11
+      to: 21
+    refresh_before:
+      days: 7
+
   lufo2024_rd:
     caches: [lufo2024_rd_cache]
     grids: [nl_grid]
