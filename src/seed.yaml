@@ -175,8 +175,9 @@ coverages:
   bgt:
     bbox: [104000,474000,136000,502100]
     srs: 'EPSG:28992'
-  # Outline of the 665 COGs of 2026 (1 km squares, ortho/2026_RGB_COG in container bron on
-  # stlufoglfdpgo{ont,prd}weu01); extent [110000,476000,139000,501000], without the empty corners.
+  # Outline of the 746 orthophotos of 2026 (1 km squares, 2026_<x>_<y>_RGB_JPEG_hrl.tif); extent
+  # [109000,475000,139000,502000], the extent of the 2026 pyramid (overview/2026/pyramid on
+  # stlufoglfdpgo{ont,prd}weu01, regenerated 2026-11-20), without its 64 km2 of empty corners.
   # Relative paths: MapProxy resolves them from the directory of mapproxy-seed.yaml (/app).
   lufo:
     datasource: coverages/lufo_coverage_rd.geojson
